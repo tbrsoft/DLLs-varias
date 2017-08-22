@@ -1,0 +1,23 @@
+MAC 1: 000FEA1BF8A8
+BiosCaption: Award Modular BIOS v6.00PG
+BiosDate: noX11
+BIOSDescription: Award Modular BIOS v6.00PG
+BIOSIdentificationCode: NULO
+BIOSManufacturer: Award Software International, Inc.
+BIOSName: Award Modular BIOS v6.00PG
+BIOSReleaseDate: 20040812000000.000000+000
+BIOSSerialNumber:  
+BIOSSMBIOSBIOSVersion: F3
+BIOSSMBIOSMajorVersion: 2
+BIOSSMBIOSMinorVersion: 3
+BIOSVersion: P4M266 - 42302e31
+Country: Argentina
+PROCCaption: x86 Family 15 Model 4 Stepping 1
+PROCCCspeed: 2267
+PROCDeviceId: CPU0
+PROCFamily: 2
+PROCId: BFEBFBFF00000F41
+PROCInfoReserved: 401000F
+PROCRevis: 1025
+PROCType: 3
+WinVersion: Windows XP

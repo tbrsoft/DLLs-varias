@@ -1,0 +1,10 @@
+Form1 = 110, 110, 693, 555, Z, 22, 22, 605, 467, C
+WaveInRecorder = 0, 0, 0, 0, C
+EncoderWAV = 0, 0, 0, 0, C
+modDraw = 176, 176, 759, 621, 
+clsDraw = 132, 132, 715, 577, 
+clsFourier = 0, 0, 0, 0, C
+clsSmooth = 0, 0, 0, 0, C
+clsDSP = 198, 198, 781, 643, 
+IIRFilter = 0, 0, 583, 445, 
+frmFXOpts = 0, 0, 0, 0, C, 44, 44, 627, 489, C

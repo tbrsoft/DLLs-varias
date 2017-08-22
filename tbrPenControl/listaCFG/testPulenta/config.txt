@@ -1,0 +1,183 @@
+
+le falta validar respuestas. por ejemplo solonumeros
+le falta que se descativen opciones que dependen de otras
+que los ejecutables muestren primero la info y si se da ok recien ahi se ejecutan
+que al entrar a uno tipo 3 (texto) se ponga el fomo para escribir el texto
+
+
+
+los renglones que no devuelvan ubound=x en split "|" por lo menos son considerados comentarios. Asi que este archivo de configuracion es muy flexible para escribirle comentarios
+Si deseo un salto de linea dentro de algunos de los textos de la configuracion escribo "&&"
+Si deseo variables uso %%nombreVar%% y el sistema luego las evaluara
+
+TIPOS DE ELEMENTOS
+Public Enum ElemType 'cada elemento al ser elegido mostrara un contenido diferente
+    ListaCombo = 0 'lista en la que se elije 1 sola opcion
+    ListaMulti = 1 'lista con checkboxes
+    Numero = 2 'se elije un numero (habra propiedades minimo, maximo y step
+    TextoSimple = 3 'el usuario escribe lo que quiere
+    EjecutarProceso = 4 'por ejemplo se carga musica
+    SoloInfo = 5 'es para los tiutulos de las secciones, al elegir entrar se despliega su menu interno
+    SelectPath = 6
+End Enum
+
+
+*****************************************************************************************
+0 |ROOT|Configuración de %%NombreSistema%% | Opciones generales modificables de %%NombreSistema%% |5|0
+
+*****************************************************************************************
+101|Adminmminfo|Contenido multimedia|Definir, agregar o quitar contenido de esta rockola|5|0
+    105|adminmm|Agregar o quitar musica|Desde aqui puede agregar, eliminar y modificar los discos y su contenido|4|101|*adminmm
+    102|abmorigenes|Origen de la musica|Indicar en que directorios se buscara música al iniciar el sistema|4|101|*abmorig
+    103|editrank|Editar ranking|Ver la lista de los mas escuchados y hacer modificaciones|4|101|*abmrank
+    104|verstatsorig|Estadisticas segun origen|Ver origenes, discos y canciones mas escuchadas|4|101|*estadbyorigen
+
+
+*****************************************************************************************
+1 |visualizacion|Visualizacion| Modificar el aspecto grafico |5|0
+salida video teni las opciones:  TV&&TV + indicadores&&Minima&&FullScreen&&FullScreen -Minima
+pero necesito simplificar asi que me quedo con minima y tv (fullscreen)
+   10|salidavideo|Salida de video|Configuración para la pantalla de reproducción de videos. Puede ser en monitor o en TV con variaciones en cada uno|0|1|TV&&Minima
+   13|DiscosH|Discos horizontales|Cantidad de discos por pagina horizontal|2|1|2 7 1 3
+   14|DiscosV|Discos Verticales|Cantidad de discos por pagina Vertical|2|1|1 4 1 2
+   15|habtouch|Habilitar touch Screen|Agrega botones varios y activa la compatibilidad con touch screen|0|1|No·0&&Si·1
+   16|HideTemasToPlay|Ocultar pendientes|Ocultar la lista de las siguientes canciones a ejecutar|0|1|No·0&&Si·1
+   20|modoNumInfo|Seleccion numérica| Elegir entre selección directa o numerica |5|1
+      17|MostrarModoNumpad|Modo numérico|El modo de visualizacion será ya con la lista de temas incluirá en la página principal. La seleccion no será directa sino a traves de un teclado numerico que deberá exponerse al usuario&&Debera reiniciar %%NombreSistema%% para ver este cambio realizado|0|20|No·0&&Si·1
+   19|UsarVumetro|Usar VUMetro|Mostrar el medidor de sonido (consume recursos adicionales de la PC, no usar si la pc es limitada)|0|1|No usar·0&&Usar medidor grande·1&&Usar medidor pequeño·2
+   21|SkinInfo|Skin e imágenes|Opciones sobre skins disponibles e imágenes modificables|5|1
+      22|TmpImageFondoPortadas|Imagen base fondo|Imagen de fondo de la página principal|6|21|%%ap%%fondos\fondoGenesis-MP6-4.jpg|files jpg gif bmp jpeg
+
+*****************************************************************************************
+23 |playInfo|Reproducción| Opciones sobre la reproduccion general |5|0
+
+    SEGUIRAQUI = DE ESTE DEPENDE EL QUE SIGUE (ACTIVADO O DESACTIVADO)
+
+    24|NoBloqRepeatMusic|Permitir duplicados|Permitir la programación de música que ya esta en lista de espera para reproducir.|0|23|Bloquer repetidos·0&&No bloquear repetidos·1
+    25|NoDuplicarMusic|Permitir sin repetir|Permitir la programación de música que ya esta en lista de espera pero no duplicarlo en la lista. Ejecutar solo una vez para todos los usuarios que la hayan elegido. De esta forma podrá cobrar una reproducción mas de una vez.|0|23|Repetir Duplicados·0&&No repetir duplicados·1
+    26|BloqLargeMusic|Bloqueo segun duracion|Bloquear las reporducciones de musica extensas (cero anula bloqueo). Definir máximos minutos por ejecución|2|23|0 15 1 6
+    27|KillMusic|Pendientes persistentes|Al encender %%NombreSistema%% eliminar musica pendiente|0|23|No·0&&Si·1
+    28|KillCredits|Creditos persistentes|Al encender %%NombreSistema%% eliminar créditos pendiente|0|23|No·0&&Si·1
+    31|MuestrasMusicaInfo|Musica promocional| Opciones sobre la musica que automaticamente se lanza|5|0
+       29|TimeAutoPlay|AutoPlay|Tiempo (en minutos) para autoejecutar tema luego de que no se ejecute ningún tema o video. Coloque cero para musica continua.|2|31|0 90 3 60
+       30|TimeMuestraPlay2|Tiempo muestras|Tiempo (en segundos) que se escucharán los temas de muestra. Coloque cero para ejecutarse completamente y a volumen normal (sin reducir). Coloque 1000 para reducir el volumen e igualmente reproducir completo|2|31|0 300 30 10
+       32|vol2|Volumen|Volumen de los temas autoejecutados (porcentaje del volumen principal).|2|31|0 100 30 10
+
+    76|PreciosInfo|Precios|Detalle de precios y promociones|5|23
+       77|creditporcoin|Creditos monedero 01|Créditos que se suman por cada señal proveniente del monedero 01|2|76|1 50 1 1
+       78|creditporcoin2|Creditos monedero 02|Créditos que se suman por cada señal proveniente del monedero 02|2|76|1 50 1 1
+
+       pesos de cada señal puede ser complicado ya que en algunos paises puede ser 0.25 y en otros 5000. o sea un numero simple no sirve, lo pongo como texto
+       81|PesosSenal |$ por cada señal|dinero que vale cada crédito. Sirve para que el sistema sepa mostrar en dinero los créditos cargados|3|76|0.50
+
+
+	pueden manejarse los precios con opcion segun demanda o no. mpRock sera el unico que lo tiene
+	para eso necesito que esten las opciones de 2 formas
+	en este caso van estas dos y no la 82 y sus hijos. Luego en el sistema no veo la lista para definir el precio
+
+       113|creditparamusica1 |Precio musica |Precio de la reproduccion de música (en créditos)  |2|76|0 30 1 1
+       114|creditparavideo1  |Precio video  |Precio de la reproduccion de videos (en créditos)  |2|76|0 30 1 2
+
+	opciones segun demanda solo mpRock
+
+       82|PrecioSegunDemandaInfo|Precio segun demanda|Puede configurar los precios para que varíen segun la demanda. Asi también podrá recortar la musica para acelerar los periodos de espera larga para los usuarios. Si coloca algún prcio en cero podrá pasar al modo gratuito por ejemplo para uso personal|5|76
+          83|creditparamusica1 |Precio musica 0-5   |Precio de la reproduccion de música cuando haya entre 0 y 5 canciones en espera  |2|82|0 30 1 1
+          84|creditparamusica6 |Precio musica 6-10  |Precio de la reproduccion de música cuando haya entre 6 y 10 canciones en espera |2|82|0 30 1 1
+          85|creditparamusica11|Precio musica 11-19 |Precio de la reproduccion de música cuando haya entre 11 y 20 canciones en espera|2|82|0 30 1 1
+          86|creditparamusica20|Precio musica 21-mas|Precio de la reproduccion de música cuando haya más de 20 canciones en espera    |2|82|0 30 1 1
+
+          87|creditparavideo1 |Precio video 0-5   |Precio de la reproduccion de videos cuando haya entre 0 y 5 canciones en espera  |2|82|0 30 1 2
+          88|creditparavideo6 |Precio video 6-10  |Precio de la reproduccion de videos cuando haya entre 6 y 10 canciones en espera |2|82|0 30 1 2
+          89|creditparavideo11|Precio video 11-19 |Precio de la reproduccion de videos cuando haya entre 11 y 20 canciones en espera|2|82|0 30 1 2
+          90|creditparavideo20|Precio video 21-mas|Precio de la reproduccion de videos cuando haya más de 20 canciones en espera    |2|82|0 30 1 2
+
+          91|ReproducirPorcMusica1 |Porc reproducción 0-5   |Porcentaje de ejecución de las canciones pagadas cuando haya entre 0 y 5 canciones en espera  |2|82|30 100 2 100
+          92|ReproducirPorcMusica6 |Porc reproducción 6-10  |Porcentaje de ejecución de las canciones pagadas cuando haya entre 6 y 10 canciones en espera |2|82|30 100 2 100
+          93|ReproducirPorcMusica11|Porc reproducción 11-19 |Porcentaje de ejecución de las canciones pagadas cuando haya entre 11 y 20 canciones en espera|2|82|30 100 2 100
+          94|ReproducirPorcMusica20|Porc reproducción 21-mas|Porcentaje de ejecución de las canciones pagadas cuando haya más de 20 canciones en espera    |2|82|30 100 2 100
+      
+      108|cerocreditos|Poner en cero creditos|En caso que realice pruebas es posible que queden cargados muschos créditos. Para simplicar el proceso se puede poner en cero desde aqui|4|76|*cerocreditos
+
+
+*****************************************************************************************
+2 |botonesInfo|Botones| Administrar que señales se usan para cada función |5|0
+   35|botoneslistaInfo|Desde teclado| Administrar con que teclas se realiza cada funcion |5|2
+      37|teclader          |Derecha          |Movimiento a la derecha                                       |0|35|%%listakey%%
+      38|teclaizq          |Izquierda        |Movimiento a la izquierda                                     |0|35|%%listakey%%
+      39|teclaok           |OK               |Tecla que ingresa a los discos, selecciona ejecuciones, etc   |0|35|%%listakey%%
+      40|teclaesc          |Salir            |Salir de los discos y avanzar un ritmo. Cancelar en general   |0|35|%%listakey%%
+      41|teclapagad        |Pagina Adelante  |Avanzar una pagina hacia adelante                             |0|35|%%listakey%%
+      42|teclapagat        |Pagina Atras     |Retroceder una pagina hacia atras                             |0|35|%%listakey%%
+      43|teclaritmoad      |Ritmo Adelante   |Avanzar un ritmo hacia adelante                               |0|35|%%listakey%%
+      44|teclaritmoat      |Ritmo Atras      |Retroceder un ritmo hacia atras                               |0|35|%%listakey%%
+      45|teclanewficha     |Coin 1           |Recepción de una señal por el monedero 01                     |0|35|%%listakey%%
+      79|teclanewficha2    |Coin 2           |Recepción de una señal por el monedero 02                     |0|35|%%listakey%%
+      46|teclaconfig       |Ingreso configuración|Ingresar a este menu de configuración                     |0|35|%%listakey%%
+      47|teclacerrarsistema|Cerrar %%NombreSistema%%|Tecla para salir de %%NombreSistema%%                  |0|35|%%listakey%%
+      48|teclashowcontador |Mostrar contador |Mostrar los contadores de crédito (histórico y reiniciable)   |0|35|%%listakey%%
+      49|teclabajavolumen  |Bajar volumen    |Bajar volumen                                                 |0|35|%%listakey%%
+      50|teclasubevolumen  |Subir volumen    |Subir volumen          					    |0|35|%%listakey%%
+      51|teclaputcerocontador|Poner en cero contador|Poner en cero el contador reiniciable (el historico es invariable)|0|35|%%listakey%%
+      52|teclanextmusic    |Siguiente canción|Cancelar la reproducción actual y pasar a la que sigue        |0|35|%%listakey%%
+      53|teclaarriba       |Arriba           |Movimiento hacia arriba (no indispensable)		    |0|35|%%listakey%%
+      54|teclaabajo        |Abajo            |Movimiento hacia abajo (no indispensable)			    |0|35|%%listakey%%
+      55|teclaregleta      |Ver regleta      |Opcional. Ver lista de discos en modo texto para agilizar selección|0|35|%%listakey%%
+    
+
+   56|h2klistaInfo|Desde H2-K|Administrar con que señal de la interfase H2-K se realiza cada funcion |5|2
+      57|tecladerx2          |Derecha          |Movimiento a la derecha                                       |0|56|%%listakeyh2k%%
+      58|teclaizqx2          |Izquierda        |Movimiento a la izquierda                                     |0|56|%%listakeyh2k%%
+      59|teclaokx2           |OK               |Tecla que ingresa a los discos, selecciona ejecuciones, etc   |0|56|%%listakeyh2k%%
+      60|teclaescx2          |Salir            |Salir de los discos y avanzar un ritmo. Cancelar en general   |0|56|%%listakeyh2k%%
+      61|teclapagadx2        |Pagina Adelante  |Avanzar una pagina hacia adelante                             |0|56|%%listakeyh2k%%
+      62|teclapagatx2        |Pagina Atras     |Retroceder una pagina hacia atras                             |0|56|%%listakeyh2k%%
+      63|teclaritmoadx2      |Ritmo Adelante   |Avanzar un ritmo hacia adelante                               |0|56|%%listakeyh2k%%
+      64|teclaritmoatx2      |Ritmo Atras      |Retroceder un ritmo hacia atras                               |0|56|%%listakeyh2k%%
+      65|teclanewfichax2     |Coin 1           |Recepción de una señal por el monedero 1                      |0|56|%%listakeyh2k%%
+      80|teclanewficha2x2    |Coin 2           |Recepción de una señal por el monedero 2                      |0|56|%%listakeyh2k%%
+      66|teclaconfigx2       |Ingreso configuración|Ingresar a este menu de configuración                     |0|56|%%listakeyh2k%%
+      67|teclacerrarsistemax2|Cerrar %%NombreSistema%%|Tecla para salir de %%NombreSistema%%                  |0|56|%%listakeyh2k%%
+      68|teclashowcontadorx2 |Mostrar contador |Mostrar los contadores de crédito (histórico y reiniciable)   |0|56|%%listakeyh2k%%
+      69|teclabajavolumenx2  |Bajar volumen    |Bajar volumen                                                 |0|56|%%listakeyh2k%%
+      70|teclasubevolumenx2  |Subir volumen    |Subir volumen          					      |0|56|%%listakeyh2k%%
+      71|teclaputcerocontadorx2|Poner en cero contador|Poner en cero el contador reiniciable (el historico es invariable)|0|56|%%listakeyh2k%%
+      72|teclanextmusicx2    |Siguiente canción|Cancelar la reproducción actual y pasar a la que sigue        |0|56|%%listakeyh2k%%
+      73|teclaarribax2       |Arriba           |Movimiento hacia arriba (no indispensable)		      |0|56|%%listakeyh2k%%
+      74|teclaabajox2        |Abajo            |Movimiento hacia abajo (no indispensable)		      |0|56|%%listakeyh2k%%
+      75|teclaregletax2      |Ver regleta      |Opcional. Ver lista de discos en modo texto para agilizar selección|0|56|%%listakeyh2k%%
+
+
+   3|h2k|Interase H2-k|Opciones de la interfase (botones + llave de licencia)|5|2
+	4|UsarS3|Activar|Buscar la interfase H2-K cada vez que inicia el sistema|0|3|No·0&&Si·1
+	5|LPTPORT0|Direccion del puerto (1)|Habitualmente es "378", solo se cambia si se usa un puerto paralelo PCI|3|3|378
+      106|LPTPORT1|Direccion del puerto (2)|Habitualmente es "379", solo se cambia si se usa un puerto paralelo PCI|3|3|379
+      107|LPTPORT2|Direccion del puerto (3)|Habitualmente es "37A", solo se cambia si se usa un puerto paralelo PCI|3|3|37A
+   
+*****************************************************************************************
+
+
+*****************************************************************************************
+33|mantenimientoInfo|Mantenimiento|Opciones generales de mantenimiento y reparación|5|0
+
+   6 | stats|Revisar estadisticas | Ver historico de uso del equipo y contadores para recaudar |5|33
+      11 | stats-counter|Valor Contadores | Valor de los contadores && Contador Historico= %%ContadorHistorico%% && Contador Reiniciable= %%ContadorReiniciable%%| 5 | 6
+      12 | stats-counter-reini|Reiniciar Contador | Reiniciar el contador reiniciable | 4 | 6|*reinicountr
+  109|ApagarAlCierre|Apagar pc al cerrar %%nombresistema%% |Una vez que funcione como rockola es comodo que el equipo se apague al cerrarse el sistema|0|33|No·0&&Si·1
+  110|inisysiniwin|Iniciar %%nombresistema%% |Una vez que funcione como rockola es necesario que el sistema se inicie al iniciar Windows|4|33|*inisysiniwin
+  111|inisysiniwinno|No iniciar %%nombresistema%% |Una vez que funcione como rockola es necesario que el sistema se inicie al iniciar Windows|4|33|*inisysiniwinno
+
+   34|ActivarERR|Registro avanzado errores|Activar solo cuando se recomiende y desactivar luego de usarse.&& Esta opción consume mas recuersos de su PC pero registra muchas mas información necesaria|0|33|No·0&&Si·1
+  112|TamMaxTapa|KB portadas|Tamaño máximo permitido en KiloBytes para evitar recargas de memoria|2|33|30 250 10 50
+   95|SeguridadInfo|Seguridad|Opciones de seguridad para esta rockola|5|33
+      96|kygfc|Clave configuración|Clave para acceder a esta configuración. Dejandola en blanco se anula|3|95|
+      97|Only2Music|Solo musica segura|Permitir la reproducción solo de discos que se hayan insertado desde el pendrive automatizado|0|95|No·0&&Si·1
+      98|ValidarMusica|Validar musica actual|Es posible que desee tomar como valida la musica cargada actualmente, si no lo hace la musica que este en el sistema ahora (si no fue insertada desde pendrive) no sera visible|4|95|*validarmusica
+      99|SemanasBloq|Bloquear rockola segun musica|Cantidad de semanas en que si no se inserta musica desde el pendrive se bloqueara la rockola|2|95|0 40 1 0
+     100|pdCreate|Crear pendrive administrativo|Cargar la información necesaria para que un pendrive acceda a la rockola. El acceso puede ser para actualizar musica, revisar los contadores y otras funciones|4|95|*pdcreate
+
+
+
+*****************************************************************************************
+8 | finalizar |Finalizar | Opciones de cierre |5 | 0| *end
+   7 | fin |Salir sin grabar | Cerrar Configuración descartando los cambios|4 | 8| *end
+   9 | grabar |Grabar y salir | Grabar los cambios y cerrar configuración |4 | 8| *saveandexit

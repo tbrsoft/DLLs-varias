@@ -1,0 +1,31 @@
+MAC 1: 001966D52FCC
+BiosCaption: Default System BIOS
+BiosDate: noX11
+BIOSDescription: Default System BIOS
+BIOSIdentificationCode: NULO
+BIOSManufacturer: American Megatrends Inc.
+BIOSName: Default System BIOS
+BIOSReleaseDate: 20090512000000.000000+000
+BIOSSerialNumber: To Be Filled By O.E.M.
+BIOSSMBIOSBIOSVersion: P1.20
+BIOSSMBIOSMajorVersion: 2
+BIOSSMBIOSMinorVersion: 5
+BIOSVersion: A M I  - 5000912
+Country: Argentina
+PROCCaption: x86 Family 6 Model 22 Stepping 1
+PROCCCspeed: 1795
+PROCDeviceId: CPU0
+PROCFamily: 13
+PROCId: AFEBFBFF00010661
+PROCInfoReserved: 16010006
+PROCRevis: 5633
+PROCType: 3
+WinVersion: Windows XP
+Disk SN(0):WD-WMAV35666595
+Disk FR(0):01.03E01
+Disk MN(0):WDC WD1600AAJS-00L7A0
+FINAL: 001966D52FCC|To Be Filled By O.E.M.|AFEBFBFF00010661|16010006|WD-WMAV35666595|
+EX3: nox11
+SFSFSF:3pm
+SV066:765702
+FH067:80923

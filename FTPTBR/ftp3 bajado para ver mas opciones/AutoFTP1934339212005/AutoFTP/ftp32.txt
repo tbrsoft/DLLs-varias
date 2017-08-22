@@ -1,0 +1,15 @@
+
+<< your configuration script in the system32 folder, is ftp32. Rightclick it and choose "Open With"
+to open it in Notepad or Wordpad. It should look similar like the text below (seven text lines with
+a parameter one each line) 
+
+Don't use these example parameters, they are fictional and the script will not work with them>>
+
+
+open corporate.skynet.com
+tango
+AzY5bBF
+cd /My_FTP_Sub_Directory
+bin
+mput C:/LocalUploadFolder/*
+bye

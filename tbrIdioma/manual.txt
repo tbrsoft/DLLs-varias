@@ -1,0 +1,38 @@
+Instrucciones para traducir un proyecto
+
+Utilizar el addin para agregar las instrucciones de traduccion al proyecto.
+Traducir el archivo fuente a cualquier idioma con tbrIdiomas.
+Si no se hizo desde el complemento seguir los siguientes tres pasos:
+	Agregar la clase translator al proyecto.
+	Agregar la referencia a "Microsoft Scripting Runtime"
+	Agregar la sig linea a algun modulo:
+	
+		Public Trans as New Translator
+
+
+Agregar la carpeta Idiomas al projecto y guardar ahi solamente los archivos de idioma, no los fuentes.
+Se puede agregar la opcion Cambiar idioma, para obtener los idiomas disponibles se utiliza la funcion Languages,
+que devuelve una matriz de cadenas.
+Establecer el idioma con Trans.Language="Idioma". 
+Si no se setea ningun idioma el comportamiento por defecto es devolver la misma cadena que se mando por parametro.
+Si no encuentra la cadena a traducir, devuelve la misma cadena.
+
+
+Instrucciones Addin
+
+Abrir primero el addin.
+Despues abrir el proyecto que se quiere traducir.
+Usar el asistente para agregar las instrucciones de traduccion.
+Despues generar el archivo fuente de idioma con el boton "Generar documento a traducir".
+Desde el asistente se puede agregar la clase traductor, las referencias necesarias y la declaracion del traductor.
+Usar el programa tbrIdiomas para traducir un archivo fuente de idioma a cualquier idioma.
+
+
+Instrucciones tbrIdiomas
+
+Abrir un archivo fuente de idioma.
+Traducir todas las palabras.
+Guardar el archivo con el nombre de un idioma, por ej Ingles.lan,
+porque la clase traductor levanta los archvos de la carpeta idiomas y asi los muestra.
+
+Se puede usar para corregir un archivo de idioma tambien.

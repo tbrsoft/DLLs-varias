@@ -1,0 +1,6 @@
+** 0.7.920 
+	se uso en casi todos los 3pm 7x (enero-set 2008)
+** 0.8.116 (no existen valores intermedios
+	se agrego InternalSV e InternalFH para control 
+	de versiones por fecha y version. Se compilo 
+	el 23092008 por primera vez. SI TIENE COMP BINARIA

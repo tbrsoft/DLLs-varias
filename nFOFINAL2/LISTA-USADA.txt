@@ -1,0 +1,10 @@
+Claves de encriptacion de los diferentes usos del nuevo sistema de licencias
+el segundo parametro es forSF (id del software)
+
+mpRock:"","mpRock
+
+e2Games: "Error al cargar","e2Games"
+
+Martino: Solo interfase, no sistema lic, "Genesis-MP6"
+
+tbrFotos: "las fotos de mi abuela", "tbrFotos"

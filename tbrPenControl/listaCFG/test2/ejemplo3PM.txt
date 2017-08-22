@@ -1,0 +1,46 @@
+
+los renglones que no devuelvan ubound=x en split "|" por lo menos son considerados comentarios. Asi que este archivo de configuracion es muy flexible para escribirle comentarios
+Si deseo un salto de linea dentro de algunos de los textos de la configuracion escribo "&&"
+
+0 |ROOT|Funciones extendidas | Uso externo del sistema con funciones ampliadas de administracion | 5 | 0
+
+1 | addmusic |Agregar musica | Cargar la musica que trae en el pendrive al sistema&&Puede insertar todo o parte| 5 | 0
+   la lista de ritmos disponible cambia segun el cliente por lo que es un proceso (tipo 4) buscar en el pendrive los disponibles y en 3PM los que estan en uso para ver si son iguales
+   5 |findmusicusb| Buscar en USB | Lista de la musica disponible para actualizar segun "origen de disco" |4 | 1 | listaNewMusicUSB
+
+8 | quitarmusica|Quitar musica  | Elimine musica no utilizada&&Permite quitar el contenido que ya no este en uso| 5 | 0|
+   habra de todas formas en 3pm herramientas para automatizar la eliminacion de discos en la config. Aqui sera manual
+   4 |findnosusados| Buscar no usados | Busca los peores discos&&Para quitar de este equipo y liberar espacio | 4 |8|listaMusicaSinUso
+
+2 | stats|Revisar estadisticas | Ver historico de uso del equipo y contadores para recaudar | 5 | 0
+
+10 |cfg| Configurar | Cambiar opciones del programa|5|0
+   11 |origs| Origenes musica | Definir en que ubicaciónes esta el contenido a mostrar e la fonola|5|10
+	13 |addorig| Agregar origen | Definir en que ubicaciónes esta el contenido a mostrar e la fonola|4|11|agregarorigen
+
+   12 |view| Vista | Cambiar opciones gráficas |5|10
+
+6 | fin |Finalizar mantenimiento | Graba un registro general del estado del equipo y cierra este programa |5 | 0 
+   7 | finRestart |Fin reiniciando | Reinicia para que se apliquen todos los cambios y seguir utilizado esta rockola |4 | 6 | endrestart
+   9 | finNORestart |Fin sin reiniciar | Cerrar sin reiniciar (usuarios avanzados) |4 | 6 | endNOrestart
+
+
+**************
+9 - Grabar estadisticas al pendrive !!!!!!!!!!!!!
+10- SALIR
+**************
+
+funciones declaradas.
+
+listaNewMusicUSB: mostrar los origenes que estan en el pendrive y los que usa 3PM. Permitir meter uno en otro
+debera tener una lista a la izquierda de lo que tiene el pendrive y a la derecha
+listaMusicaSinUso: Mostrar los peores discos e indicar espacio libre en disco para que se evalue si hace falta o no
+
+Public Enum ElemType 'cada elemento al ser elegido mostrara un contenido diferente
+    ListaCombo = 0 'lista en la que se elije 1 sola opcion
+    ListaMulti = 1 'lista con checkboxes
+    Numero = 2 'se elije un numero (habra propiedades minimo, maximo y step
+    TextoSimple = 3 'el usuario escribe lo que quiere
+    EjecutarProceso = 4 'por ejemplo se carga musica
+    SoloInfo = 5 'es para los tiutulos de las secciones, al elegir entrar se despliega su menu interno
+End Enum

@@ -1,0 +1,1 @@
+Esta DLL es la que se comunica via TCP para recibir el Archivo de Licencia y devolverlo.

@@ -1,0 +1,20 @@
+Los métodos de encriptamiento utilizados fueron basados en el contenido de:
+http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=12023&lngWId=1
+
+
+
+Title: SECURE encryption algorithms
+Description: This is a collection of SECURE encryption algorithms (BLOWFISH, TWOFISH, SKIPJACK, TEA, GOST, RC4 and DES). This post contains highly optimized code, if a similar post already exist here on PSC this one is at least a couple of 1000x faster!!
+This is not like everybody else's "unbreakable" code, these are standardized encryption algorithms where the only possible way to crack it is by brute-force. DES is probably the least secure one (it took 22 hours for a supercomputer + 100,000 computers to crack it (distributed.net)). And that's the least secure one. ;)
+This file came from Planet-Source-Code.com...the home millions of lines of source code
+You can view comments on this code/and or vote on it at: http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=12023&lngWId=1
+
+The author may have retained certain copyrights to this code...please observe their request and the law by reviewing all copyright conditions at the above URL.
+
+
+
+
+
+El algoritmo Base64 fué tomado desde:
+http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=11351&lngWId=1
+

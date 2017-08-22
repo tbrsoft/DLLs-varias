@@ -1,0 +1,2 @@
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\class\generic\usbgen.c 142 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\class\generic\usbgen.c 162 : comparison of a signed integer to an unsigned integer detected

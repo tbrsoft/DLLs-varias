@@ -1,0 +1,116 @@
+D:\dev\DLL-SVN\trunk\tbrPNG3
+D:\dev\DLL-SVN\trunk\tbrTypoMM
+D:\dev\DLL-SVN\trunk\tbrPenControl
+D:\dev\DLL-SVN\trunk\tbrConfig05
+D:\dev\DLL-SVN\trunk\tbrSuperGui
+D:\dev\DLL-SVN\trunk\tbrTextShow
+D:\dev\DLL-SVN\trunk\tbrSuperGui_con_manu
+D:\dev\DLL-SVN\trunk\tbrMPaquet2
+E:\exD\BUP MANUEL\Trabajo tbrSoft\10 - DLL-SVN\trunk\tbrMPaquet
+E:\exD\BUP MANUEL\Trabajo tbrSoft\10 - DLL-SVN\trunk\tbrMPaquet2
+E:\exD\BUP MANUEL\Trabajo tbrSoft\10 - DLL-SVN\trunk\tbrSuperGui_con_manu
+E:\exD\BUP MANUEL\Trabajo tbrSoft\10 - DLL-SVN\trunk\tbrPenControl
+E:\exD\BUP MANUEL\Trabajo tbrSoft\10 - DLL-SVN\tags\tbrSuperGui
+E:\exD\BUP MANUEL\Trabajo tbrSoft\10 - DLL-SVN\trunk\tbrTextShow
+D:\dev\DLL-SVN\trunk\tbrProcesos
+C:\dev\DLL-SVN
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrProcesos
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\busquedarecursiva
+C:\Documents and Settings\qiooo\Mis documentos\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrControles
+C:\Documents and Settings\qiooo\Mis documentos\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrGraph
+C:\Documents and Settings\qiooo\Mis documentos\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrGraph\_bin
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrJUSE-02
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrSuperGui_03
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbr-Errores
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrConfig05
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrPenControl
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\tags\tbrSuperGui_con_manu
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrObjetoX
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrIdiomaII
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\tbrProps
+C:\Documents and Settings\qiooo\Mis documentos\dev\DLL-SVN\trunk\nFOFINAL2
+D:\dev\DLL2
+C:\Archivos de programa\Inno Setup 5\vbfiles\other
+D:\dev\DLL2\FTPTBR
+D:\dev\DLL-SVN\trunk\nFOFINAL2
+D:\dev\DLL-SVN\trunk\tbrJUSE-02
+D:\dev\DLL2\IMgs TRASNP
+D:\dev\DLL-SVN\trunk\tbrIdiomaII
+D:\dev\DLL2\tbrLogVersiones
+D:\dev\DLL-SVN\trunk\tbrSuperGui_04.1
+D:\dev\DLL-SVN\tags\tbrSuperGui_con_manu
+D:\dev\H3K\trunk\__FINAL\tbrSoftH3kBaseDLL
+D:\dev\DLL2\nFOFINAL
+D:\dev\3kunder\trunk\3PM_kafka\externos\SKS-DLL3
+D:\dev\DLL2\tbrmmPlayer\_BIN
+D:\dev\DLL-SVN\tags\tbrJUSE-01
+D:\dev\DLL2\_OTROS\caesCrypt\Proyecto
+D:\dev\DLL2\tbrTimer
+D:\dev\DLL2\tbrUSB_Detect
+D:\dev\DLL2\tbrVUMetro
+D:\dev\H3K\trunk\__FINAL\tbrSoftH3kBaseDLL\tbrH3kDll
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrControles
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrGraph
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\Facturacion
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\modTbrAccesos
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\NumeroLetra
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrArbol
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrBaseDatos
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrClaveDll
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrClavesDll
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrContabilidad
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrPrintTodo
+D:\dev\DLL2\tbrENC
+D:\dev\DLL-SVN\trunk\tbr-Errores
+D:\dev\H3K\trunk\__FINAL\tbrSoftH3kBaseDLL\_bin
+D:\dev\DLL2\tbrtimer
+D:\dev\DLL2\tbrMNMPlayer
+D:\dev\DLL2\tbrMMPlayer
+D:\dev\DLL2\tbrALotOfPictures
+D:\dev\tbrBluetooth\Trunk
+D:\dev\DLL-SVN\trunk\tbrMP3Enc
+D:\dev\H3K\trunk\__FINAL\tbrSoftH3kBaseDLL\bin
+D:\dev\H3K\trunk\__FINAL\tbrSoftH3kBaseDLL\tbrh3kDll\_bin
+D:\dev\DLL2\_OTROS\caesCrypt\Proyecto\_BIN
+D:\dev\DLL2\tbrEncripter DLL
+D:\dev\tbrEG
+D:\dev\DLL2\ARTIME-Revisar\tbrControles
+D:\dev\DLL2\ARTIME-Revisar\tbrFactura
+D:\dev\tbrDVD\tag\tbrDVD5.2b\DLLS\tbrContabilidadPrueba
+D:\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS\tbrContabilidadPrueba
+D:\dev\DLL2\DllListaRep
+D:\dev\DLL-SVN\trunk\nFOFINAL2\_BIN
+D:\dev\3kunder\tags\3PM_8.0.44_kafka_20100412 - para mosse\externos\SKS-DLL3\_BIN
+X:\win-d\dev\DLL2\FTPTBR
+X:\win-d\dev\rafa\SistemaCabina\biblioteca rafa\dll
+X:\win-d\dev\3kunder\trunk\3PM_kafka\externos
+X:\win-d\dev\DLL-SVN\tags
+X:\win-d\dev\tbrDVD
+X:\win-d\dev\tbrDVD\trunk\tbrDVD5.2b\DLLS
+D:\dev\3kunder\tags\3PM_8.usb-Mosse-PrevioLanzamiento
+e:\dev
+e:\dev\dll2
+e:\dev\dll-svn\
+e:\dev\dll-svn\ftptbr
+e:\dev\dll2\ftptbr
+E:\dev\DLL-SVN\trunk\tbr-Errores
+e:\dev\dll-svn\tags
+e:\dev\dll-svn\tags\tbrprogress
+E:\dev\DLL2\_OTROS\caesCrypt
+E:\dev\DLL-SVN\trunk\nFOFINAL2
+E:\dev\DLL2\TbrGrapNoUsaDB
+E:\dev\DLL2\TbrGrapNoUsaDB\bin\
+e:\dev\dll2\tbrmmPlayer
+e:\dev\dll2\DllListaRep
+E:\dev\DLL-SVN\trunk\tbrWaveRecord-DLL
+E:\dev\DLL2\tbrALotOfPictures
+E:\dev\DLL2\tbrVUMetro
+E:\dev\DLL2\tbrSkinCreate\v1muerta (en uso)\DLL
+E:\dev\3kunder\trunk\3PM_kafka\externos\SKS-DLL3
+E:\dev\DLL-SVN\trunk\busquedarecursiva
+e:\dev\mprock
+E:\dev\DLL2\nfofinal
+E:\dev\DLL2\tbrFotoWebCam
+E:\dev\H3K\trunk\__FINAL
+E:\dev\DLL2\FTPTBR

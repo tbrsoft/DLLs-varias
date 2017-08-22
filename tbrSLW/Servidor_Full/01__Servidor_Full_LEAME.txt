@@ -1,0 +1,2 @@
+Servidor_Full es el ex-nFOFINAL2.
+Ahora tine incorporada la dll de tbrSLW para funcionar en TCP/IP

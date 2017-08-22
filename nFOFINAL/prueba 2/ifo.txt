@@ -1,0 +1,31 @@
+MAC 1: 080027ED1807
+BiosCaption: Default System BIOS
+BiosDate: noX11
+BIOSDescription: Default System BIOS
+BIOSIdentificationCode: NULO
+BIOSManufacturer: innotek GmbH
+BIOSName: Default System BIOS
+BIOSReleaseDate: 20061201000000.000000+000
+BIOSSerialNumber: 0
+BIOSSMBIOSBIOSVersion: VirtualBox
+BIOSSMBIOSMajorVersion: 2
+BIOSSMBIOSMinorVersion: 5
+BIOSVersion: VBOX   - 1
+Country: Argentina
+PROCCaption: x86 Family 15 Model 75 Stepping 2
+PROCCCspeed: 2208
+PROCDeviceId: CPU0
+PROCFamily: 2
+PROCId: NULO
+PROCInfoReserved: 4B02000F
+PROCRevis: 19202
+PROCType: NULO
+WinVersion: Windows XP
+Disk SN(0):VBc15c7bb3-a2ef4260
+Disk FR(0):1.0
+Disk MN(0):VBOX HARDDISK
+FINAL: 080027ED1807|0|NULO|4B02000F|VBc15c7bb3-a2ef4260|
+EX3: nox11
+SFSFSF:idSoft_STR
+SV066:6
+FH067:80923

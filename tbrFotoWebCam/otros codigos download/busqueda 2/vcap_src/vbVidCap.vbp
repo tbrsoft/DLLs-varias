@@ -1,0 +1,59 @@
+Type=Exe
+Module=mVFW; VFW.bas
+Module=mCmnDlg; CmnDlg.bas
+Form=Main.frm
+Module=mCapApp; CapApp.bas
+Module=mApiDecs; ApiDecs.bas
+Module=mACM; ACM.bas
+Form=CapVid.frm
+Form=CapFrame.frm
+Form=Alloc.frm
+Form=Prefs.frm
+Form=CapPal.frm
+Form=About.frm
+Module=mGetFree; GetFree.bas
+IconForm="frmMain"
+Startup="frmMain"
+HelpFile=""
+Title="vbVidCap"
+ExeName32="vbVidCap.exe"
+Command32=""
+Name="vbVidCap"
+HelpContextID="0"
+Description="VB version of VidCap32.exe by Ray Mercer"
+CompatibleMode="0"
+MajorVer=1
+MinorVer=1
+RevisionVer=1
+AutoIncrementVer=1
+ServerSupportFiles=0
+VersionComments="A VB-only "clone" of MS VidCap32.exe by Ray Mercer <raymer@shrinkwrapvb.com>"
+VersionCompanyName="ShrinkwrapVB <http://www.shrinkwrapvb.com>"
+VersionFileDescription="vbVidCap - Video Capture Application"
+VersionLegalCopyright="Copyright (C) 1998-2000 by Ray Mercer"
+VersionLegalTrademarks="vbVidCap Copyright (C) 1998-2000 by Ray Mercer"
+VersionProductName="vbVidCap"
+CondComp="USECALLBACKS = 1"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[RVB]
+DeleteClass1=frmMain
+DeleteClass2=MemCap
+DeleteClass3=frmAlloc
+DeleteClass4=Form2
+
+[MS Transaction Server]
+AutoRefresh=1

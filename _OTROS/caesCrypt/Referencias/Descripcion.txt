@@ -1,0 +1,11 @@
+caesCrypt
+
+Colección de algoritmos SEGUROS de encriptamiento (BLOWFISH, TWOFISH, SKIPJACK, TEA, GOST, RC4 y DES). Adicionalmente se puede obtener el codigo encriptado o desencriptado usando Base64.
+
+Este módulo contiene código altamente optimizado y si alguno similr existe en PSC (PlanetSourceCode.com) seguramente éste es al menos 1000x mas rápido.
+
+Estos no son como todos los otros códigos irrompibles, éstos son algoritmos estandarizados de cifrado donde está la única manera posible de romperlos es por la fuerza bruta.
+
+El DES es probablemente el menos seguro hay que recordar que tomó 22 horas para una supercomputadora + 100.000 computadoras para romperlo (distributed.net)). Y es uno de los mas seguros jajaja
+
+La clase Crypt encapsula a todos los métodos criptográficos contenidos en las diferentes clases las cuales son privadas y esta expone todos sus métodos comunes y permite de una forma sencilla seleccionar el método criptográfico en un momento dado.

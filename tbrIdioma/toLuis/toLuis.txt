@@ -1,0 +1,23 @@
+abri el tbrIdiomas
+
+dentro de este elegi la opcion archivo -> abrir
+español.lansource
+
+Este tiene una lista de cadenas de texto que son las que se necesitan traducir
+
+Simplemente las vas eligiendo de la lista y abajo tenes una caja de texto para poner la traduccion
+
+Hay algunas cadenas que cobran sentido en varios renglones debido a que estan cortadas por variables que no se deben traducor por que muchas veces son números. Quizas se haga un poco incomodo
+
+Avisame si queda alguna duda del contexto de las frases a traducir
+
+Si es posible marcame los errores en el español que veas en un archivo de texto o donde te guste
+
+Bueno, a medida que vayas trabajando ponele archivo -> guardar como ...
+y elegi el nombre "ingles" o english, cualquier archivo distinto al original. Sin esto todo el trabajo se pierde
+
+espero el archivo english.ian que es lo que necesito
+
+bye
+
+andres

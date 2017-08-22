@@ -1,0 +1,1 @@
+problema importante, cuando se haya ejecutado el traductor despueshay q tener cuidado de no modificar las propiedades porq se pueden perder referencias a las cadenas

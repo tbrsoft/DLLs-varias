@@ -1,0 +1,34 @@
+tener en cuenta la propiedad INDEX de los objetos !!!
+*********************
+no leer lineas comentadas
+*********************
+poner textos que al tenerlos omita el renglon (en mi caso hay miles de funciones de log interno que son en español)
+*********************
+no toma las concatenaciones que son sin variables intermedias como algo junto !!. ( "a" + "b" + vbcrlf + "jaja")
+Otra opcion es que la función tenga un segundo parametro opcional que indique el texto que sigue forma parte del mismo texto
+Entonces al llevarlo a la lista de traducción apareceria 
+Pensandolo bien daria problemas para traducir la funcion
+*********************
+no tomas dos cadenas en el mismo renglon para traducir. se puede pintar e insertar sin problemas igual
+*********************
+cuando hay una sola comilla al final de un renglon da un error en el selLeng
+*********************
+algunos textos que forman parte de cadenas mas grandes son referencias para el programa y no se pueden cambiar. Con un "contexto" u "observaciones" se podría especificar
+*********************
+Al encontrar por ejemplo .. pic.loadpicture("logo.jpg") podria identificar a "loadpicture" como la funcion o propiedad que usa la cadena. De esta forma podríamos decirle que no use mas cadenas de esa funcion
+*********************
+ver repeticiones de textos o "muy parecidos"
+*********************
+podria unir los "a" + _
+	"b"
+que usamos para que sea legible o sea un replace (' " + _ " ' por un espacio en blanco 
+de forma que se enganchen los renglones
+tener en cuenta el máximo largo de un renglon que permita visual basic
+*********************
+al hacer la traduccion el valor predeterminado no sea <TRADUCIR> si no el mismo en español. 
+En algunos casos son solo pequeños cambios
+*********************
+algunas veces las concatenaciones tienen sustantivos o adjetivos que cambian el orden en otros idiomas
+habria que ver la forma de que las variables vayan al traductor para que las reubique
+no es facil
+*********************

@@ -1,0 +1,1809 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Begin VB.UserDocument docPlayer 
+   BackColor       =   &H80000003&
+   ClientHeight    =   720
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   1284
+   BeginProperty Font 
+      Name            =   "Courier New"
+      Size            =   7.2
+      Charset         =   204
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   HScrollSmallChange=   225
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   720
+   ScaleWidth      =   1284
+   VScrollSmallChange=   225
+   Begin VB.Timer tmrCurrentPosition 
+      Interval        =   100
+      Left            =   924
+      Top             =   84
+   End
+   Begin MSComDlg.CommonDialog comDlg 
+      Left            =   756
+      Top             =   84
+      _ExtentX        =   677
+      _ExtentY        =   677
+      _Version        =   393216
+      CancelError     =   -1  'True
+      DialogTitle     =   "Choose media file"
+      Filter          =   $"docPlayer.dox":0000
+      Flags           =   4
+   End
+   Begin MSComctlLib.ImageList imlColumnHeaders 
+      Left            =   420
+      Top             =   84
+      _ExtentX        =   804
+      _ExtentY        =   804
+      BackColor       =   -2147483643
+      ImageWidth      =   8
+      ImageHeight     =   8
+      MaskColor       =   16711935
+      _Version        =   393216
+   End
+   Begin VB.PictureBox picButtonBar 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000003&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   180
+      Left            =   0
+      ScaleHeight     =   180
+      ScaleWidth      =   1272
+      TabIndex        =   1
+      TabStop         =   0   'False
+      Top             =   504
+      Width           =   1272
+   End
+   Begin MSComctlLib.ListView lvwPlayList 
+      Height          =   516
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   1272
+      _ExtentX        =   2244
+      _ExtentY        =   910
+      View            =   3
+      LabelEdit       =   1
+      Sorted          =   -1  'True
+      MultiSelect     =   -1  'True
+      LabelWrap       =   -1  'True
+      HideSelection   =   0   'False
+      OLEDragMode     =   1
+      OLEDropMode     =   1
+      FullRowSelect   =   -1  'True
+      _Version        =   393217
+      ColHdrIcons     =   "imlColumnHeaders"
+      ForeColor       =   -2147483640
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Appearance      =   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Verdana"
+         Size            =   7.8
+         Charset         =   204
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      OLEDragMode     =   1
+      OLEDropMode     =   1
+      NumItems        =   5
+      BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         Object.Width           =   706
+      EndProperty
+      BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         Alignment       =   1
+         SubItemIndex    =   1
+         Text            =   "#"
+         Object.Width           =   706
+      EndProperty
+      BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   2
+         Text            =   "File"
+         Object.Width           =   3528
+      EndProperty
+      BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   3
+         Text            =   "Location"
+         Object.Width           =   3528
+      EndProperty
+      BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   4
+         Text            =   "Date"
+         Object.Width           =   1764
+      EndProperty
+   End
+   Begin VB.Menu mnuPopup 
+      Caption         =   "PlayList"
+      Visible         =   0   'False
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Add files..."
+         Index           =   1
+         Shortcut        =   ^D
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Remove selected	Del"
+         Index           =   2
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Remove all"
+         Index           =   3
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "-"
+         Index           =   4
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Cut"
+         Index           =   5
+         Shortcut        =   ^X
+         Visible         =   0   'False
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Copy"
+         Index           =   6
+         Shortcut        =   ^C
+         Visible         =   0   'False
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Paste"
+         Index           =   7
+         Shortcut        =   ^V
+         Visible         =   0   'False
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "-"
+         Index           =   8
+         Visible         =   0   'False
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Select All"
+         Index           =   9
+         Shortcut        =   ^A
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "-"
+         Index           =   10
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Open Playlist"
+         Index           =   11
+         Shortcut        =   ^O
+      End
+      Begin VB.Menu mnuPlayList 
+         Caption         =   "Save Playlist"
+         Index           =   12
+         Shortcut        =   ^S
+      End
+   End
+End
+Attribute VB_Name = "docPlayer"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+'=========================================================================
+'
+'   You are free to use this source as long as this copyright message
+'     appears on your program's "About" dialog:
+'
+'   VbAmp Player Project
+'   Copyright (c) 2002 Vlad Vissoultchev (wqw@myrealbox.com)
+'
+'=========================================================================
+Option Explicit
+Private Const MODULE_NAME As String = "docPlayer"
+
+'=========================================================================
+' API
+'=========================================================================
+
+'--- for mouse_event
+Private Const MOUSEEVENTF_LEFTDOWN      As Long = &H2
+'--- for m_oVideoWindow.WindowStyle
+Private Const WS_CHILD                  As Long = &H40000000
+Private Const IDC_HAND                  As Long = 32649&
+'--- for SetWindowPos
+Private Const SWP_NOSIZE                As Long = &H1
+Private Const SWP_NOMOVE                As Long = &H2
+Private Const SWP_NOZORDER              As Long = &H4
+Private Const SWP_NOREDRAW              As Long = &H8
+Private Const SWP_NOACTIVATE            As Long = &H10
+Private Const SWP_FRAMECHANGED          As Long = &H20       '  The frame changed: send WM_NCCALCSIZE
+Private Const SWP_FLAGS                 As Long = SWP_NOZORDER Or SWP_NOSIZE Or SWP_NOMOVE Or SWP_FRAMECHANGED
+'--- for Get/SetWindowLong
+Private Const GWL_STYLE                 As Long = (-16)
+'--- for listview messages
+Private Const LVM_FIRST                 As Long = &H1000
+Private Const LVM_GETHEADER             As Long = (LVM_FIRST + 31)
+'--- for pvSetRedraw
+Private Const WM_SETREDRAW              As Long = &HB
+'--- for listview headers messages
+Private Const HDM_FIRST                 As Long = &H1200
+Private Const HDM_SETITEM               As Long = (HDM_FIRST + 4)
+Private Const HDS_BUTTONS               As Long = &H2
+'--- for HD_ITEM.mask
+Private Const HDI_IMAGE                 As Long = &H20
+Private Const HDI_FORMAT                As Long = &H4
+'--- for HD_ITEM.fmt
+Private Const HDF_RIGHT                 As Long = 1
+Private Const HDF_IMAGE                 As Long = &H800
+Private Const HDF_BITMAP_ON_RIGHT       As Long = &H1000
+Private Const HDF_BITMAP                As Long = &H2000
+Private Const HDF_STRING                As Long = &H4000
+
+Private Declare Sub mouse_event Lib "user32" (ByVal dwFlags As Long, ByVal dx As Long, ByVal dy As Long, ByVal cButtons As Long, ByVal dwExtraInfo As Long)
+Private Declare Function GetCapture Lib "user32" () As Long
+Private Declare Function LoadCursor Lib "user32" Alias "LoadCursorA" (ByVal hInstance As Long, ByVal lpCursorName As Long) As Long
+Private Declare Function SetCursor Lib "user32" (ByVal hCursor As Long) As Long
+Private Declare Function Rectangle Lib "gdi32" (ByVal hDC As Long, ByVal X1 As Long, ByVal Y1 As Long, ByVal X2 As Long, ByVal Y2 As Long) As Long
+Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As Long
+Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect As RECT, ByVal bErase As Long) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hWnd As Long, lpRect As RECT) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function SetWindowText Lib "user32" Alias "SetWindowTextA" (ByVal hWnd As Long, ByVal lpString As String) As Long
+Private Declare Function SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Declare Function GetClassName Lib "user32" Alias "GetClassNameA" (ByVal hWnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hWnd As Long, ByVal Msg As Long, ByVal wParam As Long, lParam As Any) As Long
+Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As Integer
+
+Private Type RECT
+    Left        As Long
+    Top         As Long
+    Right       As Long
+    Bottom      As Long
+End Type
+
+Private Type HD_ITEM
+    mask        As Long
+    cxy         As Long
+    pszText     As String
+    hbm         As Long
+    cchTextMax  As Long
+    fmt         As Long
+    lParam      As Long
+    iImage      As Long
+    iOrder      As Long
+End Type
+
+'=========================================================================
+' Constants and member variables
+'=========================================================================
+
+Private Const CAP_MSG                   As String = "VbAmp Player"
+'--- resources IDs
+Private Const RID_BMP_BTNUP             As Long = 101 '--- size: 20x16
+Private Const RID_BMP_BTNDOWN           As Long = 102
+'--- string constants
+Private Const STR_MEDIA_FILES           As String = "*.wav;*.mpa;*.mp2;*.mp3;*.au;*.aif;*.aiff;*.snd;*.avi;*.qt;*.mov;*.mpg;*.mpeg;*.m1v;*.asf;*.wma;*.wmv;*.mid;*.midi;*.rmi;*.m2v"
+Private Const STR_TITLE_MEDIA_FILES     As String = "Media files"
+Private Const STR_FILTER_MEDIA_FILES    As String = "Media files (%1)|%1|All files(*.*)|*.*"
+Private Const STR_TITLE_PLAYLISTS       As String = "Playlist files"
+Private Const STR_FILTER_PLAYLISTS      As String = "Playlist files (*.bsl)|*.bsl|All files(*.*)|*.*"
+Private Const STR_CLASS_FLOATING        As String = "VBFloatingPalette"
+'--- registry constants
+Private Const STR_REG_COMMON            As String = "Common"
+Private Const STR_REG_NUMBERWIDTH       As String = "NumberWidth"
+Private Const STR_REG_MEDIAWIDTH        As String = "MediaWidth"
+Private Const STR_REG_LOCATIONWIDTH     As String = "LocationWidth"
+Private Const STR_REG_DATEWIDTH         As String = "DateWidth"
+Private Const STR_REG_INITDIRMEDIA      As String = "InitDirMedia"
+Private Const STR_REG_INITDIRPLAYLIST   As String = "InitDirPlaylist"
+Private Const STR_REG_VISIBLE           As String = "Visible"
+'--- long constants (for UI painting)
+Private Const LNG_BUTTON_WIDTH          As Long = 20
+Private Const LNG_BUTTON_HEIGHT         As Long = 16
+Private Const LNG_VOLUME_WIDTH          As Long = 32
+Private Const LNG_NUM_BUTTONS           As Long = 5
+'--- default constants
+Private Const DEF_NUMBERWIDTH           As Long = 400
+Private Const DEF_MEDIAWIDTH            As Long = 3000
+Private Const DEF_LOCATIONWIDTH         As Long = 2000
+Private Const DEF_DATEWIDTH             As Long = 2000
+
+Private m_eButtonPressed            As UcsPlayerButtons
+Private m_bButtonDown               As Boolean
+Private m_oBasicAudio               As IBasicAudio
+Private m_oBasicVideo               As IBasicVideo2
+Private m_oMediaEvent               As IMediaEvent
+Private m_oVideoWindow              As IVideoWindow
+Private m_oMediaControl             As IMediaControl
+Private m_oMediaPosition            As IMediaPosition
+Private m_lAspectX                  As Long
+Private m_lAspectY                  As Long
+Private m_bPlaying                  As Boolean
+Private m_sPosition                 As String
+Private m_sPlaylistName             As String
+Private m_sInitDirMedia             As String
+Private m_sInitDirPlaylist          As String
+Private m_cDragged                  As Collection
+Private m_cDraggedIdx               As Collection
+Private m_dblLastPosition           As Double
+Private m_bVideoAvailable           As Boolean
+Private m_bAudioAvailable           As Boolean
+Private m_bFullscreen               As Boolean
+
+'--- these are also resource ID of buttons bitmaps, size: 11x9px
+Private Enum UcsPlayerButtons
+    ucsBtnPlay = 105
+    ucsBtnStop = 103
+    ucsBtnPause = 104
+    ucsBtnPrev = 106
+    ucsBtnNext = 107
+    ucsBtnPlayList = 108
+End Enum
+
+'--- used by pvHitTest method to indicate region a pt belongs to
+'---   according to the client area
+Private Enum UcsPlayerHittestEnum
+    ucsHitNowhere
+    ucsHitBackground
+    ucsHitButton
+    ucsHitSeek
+    ucsHitVolume
+End Enum
+
+'--- popup menu items indexes
+Private Enum UcsPlayerMenuEnum
+    ucsMnuAddFiles = 1
+    ucsMnuRemoveSelected
+    ucsMnuRemoveAll
+    ucsMnuSep1
+    ucsMnuCut
+    ucsMnuCopy
+    ucsMnuPaste
+    ucsMnuSep2
+    ucsMnuSelectAll
+    ucsMnuSep3
+    ucsMnuOpenPlaylist
+    ucsMnuSavePlaylist
+End Enum
+
+'--- used to index a listitem's SubItems collection
+Private Enum UcsPlayerListviewSubitems
+    ucsSubNumber = 1
+    ucsSubFile
+    ucsSubLocation
+    ucsSubDate
+End Enum
+
+'--- used to index listview's ColumnHeaders collection
+Private Enum UcsPlayerListviewColumnHeaders
+    ucsCol_Hidden = 1
+    ucsColNumber
+    ucsColFile
+    ucsColLocation
+    ucsColDate
+End Enum
+
+'=========================================================================
+' Error handling
+'=========================================================================
+
+Private Sub RaiseError(sFunc As String)
+    PushError sFunc, MODULE_NAME
+    PopRaiseError
+End Sub
+
+Private Function ShowError(sFunc As String) As VbMsgBoxResult
+    PushError sFunc, MODULE_NAME
+    ShowError = PopShowError(CAP_MSG)
+End Function
+
+'=========================================================================
+' Methods
+'=========================================================================
+
+'= Public ================================================================
+
+Public Sub ReadSettings()
+    Const FUNC_NAME     As String = "ReadSettings"
+    Dim hwndHeader      As Long
+    Dim lIdx            As Long
+    
+    On Error GoTo EH
+    Screen.MousePointer = vbHourglass
+    '--- fix font size (for small and large-fonts settings)
+    UserDocument.Font.Size = 8
+    '--- make listview's headers flat
+'    hwndHeader = SendMessage(lvwPlayList.hWnd, LVM_GETHEADER, 0, ByVal 0&)
+'    Call SetWindowLong(hwndHeader, GWL_STYLE, GetWindowLong(hwndHeader, GWL_STYLE) And (Not HDS_BUTTONS))
+'    Call SetWindowPos(lvwPlayList.hWnd, 0, 0, 0, 0, 0, SWP_FLAGS)
+    '--- restore columns headers from registry
+    With lvwPlayList.ColumnHeaders
+        .Item(ucsCol_Hidden).Width = 0
+        .Item(ucsColNumber).Width = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_NUMBERWIDTH, DEF_NUMBERWIDTH)
+        .Item(ucsColFile).Width = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_MEDIAWIDTH, DEF_MEDIAWIDTH)
+        .Item(ucsColLocation).Width = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_LOCATIONWIDTH, DEF_LOCATIONWIDTH)
+        .Item(ucsColDate).Width = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_DATEWIDTH, DEF_DATEWIDTH)
+    End With
+    '--- restore init dirs from registry
+    m_sInitDirMedia = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_INITDIRMEDIA, g_oVbIde.LastUsedPath)
+    m_sInitDirPlaylist = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_INITDIRPLAYLIST, g_oVbIde.LastUsedPath)
+    '--- restore playlist from a file
+    Call pvLoadPlaylist(App.Path & "\" & STR_APP_NAME & ".bsl")
+    '--- position and size controls
+    Call pvSizeControls
+    '--- restore visibility
+    g_oAddinWindow.Visible = GetSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_VISIBLE, "1") = "1"
+    Screen.MousePointer = vbDefault
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    Screen.MousePointer = vbDefault
+    PopRaiseError
+End Sub
+
+Public Sub SaveSettings()
+    Const FUNC_NAME     As String = "SaveSettings"
+    
+    On Error Resume Next
+    Screen.MousePointer = vbHourglass
+    '--- cleanup registry key
+    Call DeleteSetting(STR_APP_NAME)
+    On Error GoTo EH
+    '--- save column headers in registry
+    With lvwPlayList.ColumnHeaders
+        Call SaveSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_NUMBERWIDTH, .Item(ucsColNumber).Width)
+        Call SaveSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_MEDIAWIDTH, .Item(ucsColFile).Width)
+        Call SaveSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_LOCATIONWIDTH, .Item(ucsColLocation).Width)
+    End With
+    '--- save init dirs in registry
+    Call SaveSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_INITDIRMEDIA, m_sInitDirMedia)
+    Call SaveSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_INITDIRPLAYLIST, m_sInitDirPlaylist)
+    '--- save playlist in a file
+    Call pvSavePlaylist(App.Path & "\" & STR_APP_NAME & ".bsl")
+    '--- save visibility
+    Call SaveSetting(STR_APP_NAME, STR_REG_COMMON, STR_REG_VISIBLE, Abs(g_oAddinWindow.Visible))
+    Screen.MousePointer = vbDefault
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    Screen.MousePointer = vbDefault
+    PopRaiseError
+End Sub
+
+Public Sub RefreshDocument()
+    On Error Resume Next
+    Call pvRefreshButtonBar
+End Sub
+
+'= Private ===============================================================
+
+Private Sub pvPaintButtonBar()
+    Const FUNC_NAME     As String = "pvPaintButtonBar"
+    Dim oMemDC          As cMemDC
+    Dim lLeft           As Long
+    Dim lRight          As Long
+    Dim lTop            As Long
+    Dim lBottom         As Long
+    Dim lWidth          As Long
+    Dim dblPos          As Double
+    Dim bDisabled       As Boolean
+
+    On Error GoTo EH
+    Set oMemDC = New cMemDC
+    With oMemDC
+        Call .Init(picButtonBar.ScaleX(picButtonBar.ScaleWidth, picButtonBar.ScaleMode, vbPixels), picButtonBar.ScaleY(picButtonBar.ScaleHeight, picButtonBar.ScaleMode, vbPixels), , picButtonBar.hDC)
+        Call .Cls(vbInactiveTitleBar)
+        '--- paint buttons (from left to right)
+        lLeft = 0
+        lBottom = .Height - 1
+        '--- 'play' or 'pause' button
+        Call pvPaintButton(oMemDC, lLeft + 2, lBottom, IIf(m_bPlaying, ucsBtnPause, ucsBtnPlay), m_bButtonDown And (m_eButtonPressed = IIf(m_bPlaying, ucsBtnPause, ucsBtnPlay)), False, lLeft, lTop)
+        '--- 'stop' button
+        Call pvPaintButton(oMemDC, lLeft + 2, lBottom, ucsBtnStop, m_bButtonDown And (m_eButtonPressed = ucsBtnStop), False, lLeft, lTop)
+        '--- 'previous' button
+        If Not lvwPlayList.SelectedItem Is Nothing Then
+            bDisabled = (lvwPlayList.SelectedItem.Index = 1)
+        Else
+            bDisabled = True
+        End If
+        Call pvPaintButton(oMemDC, lLeft + 2, lBottom, ucsBtnPrev, m_bButtonDown And (m_eButtonPressed = ucsBtnPrev), bDisabled, lLeft, lTop)
+        '--- 'next' button
+        If Not lvwPlayList.SelectedItem Is Nothing Then
+            bDisabled = (lvwPlayList.SelectedItem.Index = lvwPlayList.ListItems.Count)
+        Else
+            bDisabled = True
+        End If
+        Call pvPaintButton(oMemDC, lLeft + 2, lBottom, ucsBtnNext, m_bButtonDown And (m_eButtonPressed = ucsBtnNext), bDisabled, lLeft, lTop)
+        '--- 'playlist' button
+        Call pvPaintButton(oMemDC, lLeft + 2, lBottom, ucsBtnPlayList, m_bButtonDown And (m_eButtonPressed = ucsBtnPlayList), False, lLeft, lTop)
+        '--- paint progres bar xor position indicator
+        lLeft = lLeft + 2
+        lTop = lTop + 1
+        lRight = .Width - LNG_VOLUME_WIDTH
+        lBottom = .Height - 2
+        lWidth = lRight - lLeft
+        '--- if enough space -> draw rect
+        If lRight > lLeft + 5 Then
+            Call .FrameRect(lLeft, lTop, lRight, lBottom, IIf(m_bPlaying, vbButtonFace, vbWhite))
+            If Not m_oMediaPosition Is Nothing Then
+                '--- 2px inside
+                Call .FillRect((lLeft + 2), lTop + 2, (lLeft + 2) + 1 * (lWidth - 4), lBottom - 2, vbHighlight)
+            End If
+            '--- draw progress bar indicator text
+            Set .Font = UserDocument.Font
+            .BackStyle = BS_TRANSPARENT
+            If Not m_oMediaPosition Is Nothing Then
+                .ForeColor = vbYellow
+            Else
+                .ForeColor = .TranslateColor(vbButtonFace) Xor .TranslateColor(vbHighlight) Xor vbYellow
+            End If
+            Call .DrawText(m_sPosition, lLeft + 1, lTop - 1, lRight - 1, lBottom, DT_CENTER Or DT_TOP Or DT_WORD_ELLIPSIS)
+            '--- xor rest of progress bar
+            If Not m_oMediaPosition Is Nothing Then
+                If m_oMediaPosition.Duration <> 0 Then
+                    dblPos = m_oMediaPosition.CurrentPosition / m_oMediaPosition.Duration
+                End If
+                .Brush = CreateSolidBrush(.TranslateColor(vbButtonFace) Xor .TranslateColor(vbHighlight))
+                .DrawMode = vbXorPen
+                Call Rectangle(.hDC, (lLeft + 2) + dblPos * (lWidth - 4) - 1, lTop + 1, (lLeft + 2) + 1 * (lWidth - 4) + 1, lBottom - 1)
+                .Brush = 0
+            End If
+        End If
+        '--- paint volume control
+        lTop = .Height - 14
+        lBottom = .Height - 5
+        If lRight > lLeft Then
+            .DrawMode = vbCopyPen
+            For lLeft = lRight + 4 To .Width - 2 Step 3
+                Call .DrawLine(lLeft, lTop, lLeft, lTop + (lLeft - lRight + 2) \ 3, vbWindowBackground)
+            Next
+        End If
+        '--- blit to picture control dc (if cMemDC is not using
+        '---    picButtonBar.hDC directly)
+        If .IsMemoryDC Then
+            Call .BitBlt(picButtonBar.hDC)
+        End If
+    End With
+    '--- another blit to picture control dc (no AutoRedraw caching is used)
+    If picButtonBar.AutoRedraw Then
+        Call picButtonBar.Refresh
+    End If
+    Exit Sub
+EH:
+    Debug.Print FUNC_NAME; " "; Hex(Err.Number); vbCrLf; Err.Description; vbCrLf; Err.Source
+    Resume Next
+End Sub
+
+Private Sub pvPaintButton( _
+            ByVal oMemDC As cMemDC, _
+            ByVal LeftX As Long, _
+            ByVal BottomY As Long, _
+            ByVal lBtnID As UcsPlayerButtons, _
+            ByVal bPressed As Boolean, _
+            ByVal bDisabled As Boolean, _
+            RightX As Long, _
+            TopY As Long)
+    Const FUNC_NAME     As String = "pvPaintButton"
+    Dim oPic            As StdPicture
+    Dim lX              As Long
+    Dim lY              As Long
+    
+    On Error GoTo EH
+    With oMemDC
+        '--- draw button background
+        Set oPic = LoadResPicture(IIf(Not bPressed, RID_BMP_BTNDOWN, RID_BMP_BTNUP), vbResBitmap)
+        RightX = LeftX + pvHM2Pix(oPic.Width)
+        TopY = BottomY - pvHM2Pix(oPic.Height)
+        Call .PaintPicture(oPic, LeftX, TopY, clrMask:=MASK_COLOR)
+        '--- draw button image centered
+        Set oPic = LoadResPicture(lBtnID, vbResBitmap)
+        lX = (LeftX + RightX - pvHM2Pix(oPic.Width)) \ 2 + Abs(bPressed)
+        lY = (TopY + BottomY - pvHM2Pix(oPic.Height)) \ 2 + Abs(bPressed)
+        If bDisabled Then
+            Call .PaintDisabledPicture(oPic, lX, lY, clrMask:=MASK_COLOR)
+        Else
+            Call .PaintPicture(oPic, lX, lY, clrMask:=MASK_COLOR)
+        End If
+    End With
+    Exit Sub
+EH:
+    RaiseError FUNC_NAME
+End Sub
+
+Private Function pvHitTest( _
+            ByVal X As Single, _
+            ByVal Y As Single, _
+            eButton As UcsPlayerButtons, _
+            dblPos As Double) As UcsPlayerHittestEnum
+    Const FUNC_NAME     As String = "pvHitTest"
+    Dim lX              As Long
+    Dim lY              As Long
+    Dim lPos            As Long
+    Dim lSize           As Long
+        
+    On Error GoTo EH
+    '--- check if inside client area
+    If Not (X >= 0 And X <= picButtonBar.ScaleWidth And Y >= 0 And Y <= picButtonBar.ScaleHeight) Then
+        pvHitTest = ucsHitNowhere
+        Exit Function
+    End If
+    '--- at least on the background
+    pvHitTest = ucsHitBackground
+    lX = picButtonBar.ScaleX(X, picButtonBar.ScaleMode, vbPixels)
+    lY = picButtonBar.ScaleY(Y, picButtonBar.ScaleMode, vbPixels)
+    If lY > picButtonBar.ScaleY(picButtonBar.ScaleHeight, picButtonBar.ScaleMode, vbPixels) - LNG_BUTTON_HEIGHT Then
+        '--- check if on 'play' or 'pause' button
+        lPos = 2
+        If lX > lPos And lX < lPos + LNG_BUTTON_WIDTH Then
+            pvHitTest = ucsHitButton
+            eButton = IIf(m_bPlaying, ucsBtnPause, ucsBtnPlay)
+            Exit Function
+        End If
+        '--- check if on 'stop' button
+        lPos = lPos + LNG_BUTTON_WIDTH + 2
+        If lX > lPos And lX < lPos + LNG_BUTTON_WIDTH Then
+            pvHitTest = ucsHitButton
+            eButton = ucsBtnStop
+            Exit Function
+        End If
+        '--- check if on 'prev' button
+        lPos = lPos + LNG_BUTTON_WIDTH + 2
+        If lX > lPos And lX < lPos + LNG_BUTTON_WIDTH Then
+            pvHitTest = ucsHitButton
+            eButton = ucsBtnPrev
+            Exit Function
+        End If
+        '--- check if on 'next' button
+        lPos = lPos + LNG_BUTTON_WIDTH + 2
+        If lX > lPos And lX < lPos + LNG_BUTTON_WIDTH Then
+            pvHitTest = ucsHitButton
+            eButton = ucsBtnNext
+            Exit Function
+        End If
+        '--- check if on 'playlist' button
+        lPos = lPos + LNG_BUTTON_WIDTH + 2
+        If lX > lPos And lX < lPos + LNG_BUTTON_WIDTH Then
+            pvHitTest = ucsHitButton
+            eButton = ucsBtnPlayList
+            Exit Function
+        End If
+        '--- check if on progress bar
+        lPos = lPos + LNG_BUTTON_WIDTH + 3
+        lSize = picButtonBar.ScaleX(picButtonBar.ScaleWidth, picButtonBar.ScaleMode, vbPixels) - LNG_VOLUME_WIDTH - 3
+        If lX >= lPos And lX <= lSize And lSize > lX Then
+            pvHitTest = ucsHitSeek
+            dblPos = (lX - lPos) / (lSize - lPos)
+            Exit Function
+        End If
+        '--- check if on volume control
+        lPos = lSize + 3
+        lSize = picButtonBar.ScaleX(picButtonBar.ScaleWidth, picButtonBar.ScaleMode, vbPixels) - 3
+        If lX >= lPos Then
+            pvHitTest = ucsHitVolume
+            dblPos = (lX - lPos - 3) / (lSize - lPos - 3)
+            If dblPos < 0 Then dblPos = 0
+            If dblPos > 1 Then dblPos = 1
+            Exit Function
+        End If
+    End If
+    Exit Function
+EH:
+    RaiseError FUNC_NAME
+End Function
+
+Private Function pvLoadMediaFile( _
+            sFileName As String) As Boolean
+    Const FUNC_NAME     As String = "pvLoadMediaFile"
+    Dim sFile           As String
+    
+    On Error Resume Next        '--- enter danger zone
+    
+        '--- construct filter graph
+        Set m_oMediaControl = New FilgraphManager
+        Call m_oMediaControl.RenderFile(sFileName)
+        '--- invalid format
+        If Err.Number <> 0 Then
+            '--- cleanup
+            Set m_oMediaControl = Nothing
+            Call pvButtonClick(ucsBtnStop)
+            Exit Function
+        End If
+        '--- set audio props
+        Set m_oBasicAudio = m_oMediaControl
+        Err.Clear
+        m_oBasicAudio.Volume = 0 ' [-4000,0]
+        m_bAudioAvailable = (Err.Number = 0)
+        '--- set video props
+        Set m_oBasicVideo = m_oMediaControl
+        m_lAspectX = 0: m_lAspectY = 0
+        m_oBasicVideo.GetPreferredAspectRatio m_lAspectX, m_lAspectY
+        If m_lAspectX = 0 Or m_lAspectY = 0 Then
+            '--- DivXG400 is screwing aspect -> keep source aspect
+            m_oBasicVideo.GetSourcePosition 0, 0, m_lAspectX, m_lAspectY
+        End If
+        '--- default to 4:3 aspect
+        If m_lAspectX = 0 Or m_lAspectY = 0 Then
+            m_lAspectX = 4: m_lAspectY = 3
+        End If
+        '--- set render window ZOrder
+        Set m_oVideoWindow = m_oMediaControl
+        m_oVideoWindow.WindowStyle = WS_CHILD
+        Err.Clear
+        m_oVideoWindow.Owner = UserDocument.hWnd
+        m_bVideoAvailable = (Err.Number = 0)
+        Set m_oMediaEvent = m_oMediaControl
+        Set m_oMediaPosition = m_oMediaControl
+    
+    On Error GoTo EH            '--- end of danger zone
+    
+    '--- fix caption
+    Call pvSplitName(sFileName, sFile, "")
+    Call pvSetParentCaption(sFile)
+    '--- position and size controls (including video window)
+    Call pvSizeControls
+    '--- success
+    pvLoadMediaFile = True
+    Exit Function
+EH:
+    RaiseError FUNC_NAME
+End Function
+
+Private Function pvSelectMediaFiles( _
+            ByVal bMulti As Boolean) As Collection
+    Const FUNC_NAME     As String = "pvSelectMediaFiles"
+    Dim vSplit          As Variant
+    Dim vIter           As Variant
+    
+    On Error GoTo EH
+    '--- return a collection
+    Set pvSelectMediaFiles = New Collection
+    '--- init openfile dialog
+    comDlg.Flags = cdlOFNHideReadOnly Or (Abs(bMulti) * (cdlOFNAllowMultiselect Or cdlOFNExplorer))
+    comDlg.DialogTitle = STR_TITLE_MEDIA_FILES
+    comDlg.Filter = Replace(STR_FILTER_MEDIA_FILES, "%1", STR_MEDIA_FILES)
+    comDlg.MaxFileSize = 32000 '--- could be a problem!!
+    comDlg.InitDir = m_sInitDirMedia
+    On Error GoTo EH_Cancel
+    Call comDlg.ShowOpen
+    On Error GoTo EH
+    '--- if not multiselect -> use .FileName prop straight
+    If InStr(comDlg.FileName, vbNullChar) = 0 Then
+        '--- save last folder used
+        Call pvSplitName(comDlg.FileName, "", m_sInitDirMedia)
+        Call pvSelectMediaFiles.Add(comDlg.FileName)
+    Else '--- multiselect -> parse .FileName prop
+        vSplit = Split(comDlg.FileName, vbNullChar)
+        '--- save m_sInitDirMedia for next opensave  dialog, too
+        m_sInitDirMedia = vSplit(0) & IIf(Right(vSplit(0), 1) = "\", "", "\")
+        vSplit(0) = ""
+        For Each vIter In vSplit
+            If Len(vIter) > 0 Then
+                Call pvSelectMediaFiles.Add(m_sInitDirMedia & vIter)
+            End If
+        Next
+    End If
+EH_Cancel:
+    Exit Function
+EH:
+    RaiseError FUNC_NAME
+End Function
+
+Private Sub pvButtonClick( _
+            ByVal eBtn As UcsPlayerButtons)
+    Const FUNC_NAME     As String = "pvButtonClick"
+    Dim vIter           As Variant
+    Dim lIdx            As Long
+    
+    On Error GoTo EH
+    Screen.MousePointer = vbHourglass
+    Select Case eBtn
+    Case ucsBtnPlay
+        '--- if no media loaded -> load current file
+        If m_oMediaControl Is Nothing Then
+            '--- if no file found in playlist -> select media files
+            If lvwPlayList.ListItems.Count = 0 Then
+                '--- openfile dialog (multiselect)
+                For Each vIter In pvSelectMediaFiles(True)
+                    Call pvAddMediaToPlaylist(vIter)
+                Next
+                '--- select first playlist entry (if any)
+                If lvwPlayList.ListItems.Count > 0 Then
+                    Set lvwPlayList.SelectedItem = lvwPlayList.ListItems(1)
+                    Call lvwPlayList.SelectedItem.EnsureVisible
+                End If
+            End If
+            '--- if any playlist entry selected -> load file
+            If Not lvwPlayList.SelectedItem Is Nothing Then
+                Call pvLoadMediaFile(lvwPlayList.SelectedItem.Tag)
+            End If
+        End If
+        '--- if media control ok -> play media
+        If Not m_oMediaControl Is Nothing Then
+            Call m_oMediaControl.Run
+            m_bPlaying = True
+            '--- if video available -> hide playlist (and show video window)
+            lvwPlayList.Visible = Not m_bVideoAvailable
+            If m_bVideoAvailable And m_bFullscreen Then
+                m_oVideoWindow.FullScreenMode = True
+            End If
+        End If
+    Case ucsBtnStop
+        '--- issue stop on current media control
+        If Not m_oMediaControl Is Nothing Then
+            Call m_oMediaControl.Stop
+        End If
+        m_bPlaying = False
+        m_bFullscreen = False
+        '--- show playlist (focused)
+        lvwPlayList.Visible = True
+        lvwPlayList.SetFocus
+        '--- restore caption
+        Call pvSetParentCaption(STR_APP_NAME & IIf(Len(m_sPlaylistName) > 0, " - " & m_sPlaylistName, ""))
+        '--- cleanup
+        Set m_oBasicAudio = Nothing
+        Set m_oBasicVideo = Nothing
+        Set m_oMediaEvent = Nothing
+        Set m_oVideoWindow = Nothing
+        Set m_oMediaControl = Nothing
+        Set m_oMediaPosition = Nothing
+    Case ucsBtnPause
+        '--- issue pause on current media control
+        If Not m_oMediaControl Is Nothing Then
+            Call m_oMediaControl.Pause
+        End If
+        m_bPlaying = False
+        m_bFullscreen = False
+    Case ucsBtnPlayList
+        '--- show/hide playlist (if hidden at present)
+        If Not m_oMediaControl Is Nothing And m_bVideoAvailable Then
+            lvwPlayList.Visible = Not lvwPlayList.Visible
+            If lvwPlayList.Visible Then
+                lvwPlayList.SetFocus
+                lvwPlayList.ZOrder
+            End If
+        Else
+            lvwPlayList.Visible = True
+        End If
+        m_bFullscreen = False
+    Case ucsBtnNext
+        With lvwPlayList
+            If Not .SelectedItem Is Nothing Then
+                '--- if next entry available -> move next, load & play media
+                If .SelectedItem.Index < .ListItems.Count Then
+                    '--- move next
+                    .SelectedItem.Selected = False
+                    Set .SelectedItem = .ListItems(.SelectedItem.Index + 1)
+                    Call .SelectedItem.EnsureVisible
+                    '--- load
+                    If pvLoadMediaFile(.SelectedItem.Tag) Then
+                        '--- play
+                        Call pvButtonClick(ucsBtnPlay)
+                    End If
+                End If
+            End If
+        End With
+        m_bFullscreen = False
+    Case ucsBtnPrev
+        With lvwPlayList
+            If Not .SelectedItem Is Nothing Then
+                '--- if previous entry available -> move prev, load & play media
+                If .SelectedItem.Index > 1 Then
+                    '--- move prev
+                    .SelectedItem.Selected = False
+                    Set .SelectedItem = .ListItems(.SelectedItem.Index - 1)
+                    Call .SelectedItem.EnsureVisible
+                    '--- load
+                    If pvLoadMediaFile(.SelectedItem.Tag) Then
+                        '--- play
+                        Call pvButtonClick(ucsBtnPlay)
+                    End If
+                End If
+            End If
+        End With
+        m_bFullscreen = False
+    End Select
+    Screen.MousePointer = vbDefault
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    Screen.MousePointer = vbDefault
+    PopRaiseError
+End Sub
+
+Private Function pvAddMediaToPlaylist( _
+            ByVal sMedia As String, _
+            Optional ByVal lIndex As Long) As ListItem
+    Const FUNC_NAME     As String = "pvAddMediaToPlaylist"
+    Dim sFile           As String
+    Dim sFolder         As String
+    
+    On Error GoTo EH
+    Call pvSplitName(sMedia, sFile, sFolder)
+    If Len(sFile) > 0 Then
+        '--- optional before index
+        If lIndex > 0 Then
+            Set pvAddMediaToPlaylist = lvwPlayList.ListItems.Add(lIndex)
+        Else
+            Set pvAddMediaToPlaylist = lvwPlayList.ListItems.Add()
+        End If
+        '--- init subitems and tag prop
+        With pvAddMediaToPlaylist
+            .SubItems(ucsSubNumber) = lvwPlayList.ListItems.Count
+            .SubItems(ucsSubFile) = sFile
+            .SubItems(ucsSubLocation) = sFolder
+            On Error Resume Next
+            '--- FileDateTime might file (if file not exists)
+            .SubItems(ucsSubDate) = Format(FileDateTime(sMedia), "yyyy.mm.dd hh:mm:ss")
+            On Error GoTo EH
+            .Tag = sMedia
+        End With
+    End If
+    Exit Function
+EH:
+    RaiseError FUNC_NAME
+End Function
+
+Private Function pvAddAllMediaToPlaylist( _
+            ByVal sFolder As String, _
+            Optional ByVal lIndex As Long) As Long
+    Const FUNC_NAME     As String = "pvAddAllMediaToPlaylist"
+    Dim sFileName       As String
+    Dim vIter           As Variant
+    Dim lCount          As Long
+    Dim cFolders        As Collection
+    
+    On Error GoTo EH
+    '--- init local vars
+    Set cFolders = New Collection
+    If Right(sFolder, 1) <> "\" Then
+        sFolder = sFolder & "\"
+    End If
+    '--- loop files and collect folders for latter processing
+    sFileName = Dir(sFolder & "*", vbDirectory)
+    Do While Len(sFileName) > 0
+        If pvFileExists(sFolder & sFileName) Then
+            If (GetAttr(sFolder & sFileName) And vbDirectory) <> 0 Then
+                If Left(sFileName, 1) <> "." Then
+                    Call cFolders.Add(sFolder & sFileName)
+                End If
+            Else
+                '--- check if file suffix is of a known media file
+                For Each vIter In Split(STR_MEDIA_FILES, ";")
+                    If sFileName Like vIter Then
+                        Call pvAddMediaToPlaylist(sFolder & sFileName, lIndex)
+                        pvAddAllMediaToPlaylist = pvAddAllMediaToPlaylist + 1
+                        If lIndex > 0 Then
+                            lIndex = lIndex + 1
+                        End If
+                    End If
+                Next
+            End If
+        End If
+        sFileName = Dir
+    Loop
+    '--- process collected folders recursively
+    Do While cFolders.Count > 0
+        lCount = pvAddAllMediaToPlaylist(cFolders(1), lIndex)
+        pvAddAllMediaToPlaylist = pvAddAllMediaToPlaylist + lCount
+        If lIndex > 0 Then
+            lIndex = lIndex + lCount
+        End If
+        Call cFolders.Remove(1)
+    Loop
+    Exit Function
+EH:
+    RaiseError FUNC_NAME
+    Resume
+End Function
+
+Private Sub pvLoadPlaylist( _
+            sPlaylistFile As String)
+    Const FUNC_NAME     As String = "pvLoadPlaylist"
+    Dim nFile           As Integer
+    Dim sText           As String
+    Dim vIter           As Variant
+    
+    On Error GoTo EH
+    '--- open and read entire playlist file
+    nFile = FreeFile()
+    Open sPlaylistFile For Binary As #nFile
+    sText = Space(LOF(nFile))
+    Get #nFile, , sText
+    Close #nFile: nFile = 0
+    '--- split file and fill listview
+    Call pvSetRedraw(False)
+    Call lvwPlayList.ListItems.Clear
+    For Each vIter In Split(sText, vbCrLf)
+        Call pvAddMediaToPlaylist(vIter)
+    Next
+    '--- autosize Number column
+    Call SendMessage(lvwPlayList.hWnd, LVM_FIRST + 30, ucsColNumber - 1, ByVal -1)
+    Call pvSetRedraw(True)
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    If nFile <> 0 Then
+        Close #nFile: nFile = 0
+    End If
+    PopRaiseError
+End Sub
+
+Private Sub pvSavePlaylist( _
+            sPlaylistFile As String)
+    Const FUNC_NAME     As String = "pvSavePlaylist"
+    Dim nFile           As Integer
+    Dim vIter           As Variant
+    Dim lIdx            As Long
+    
+    On Error Resume Next
+    '--- delete previous file
+    If pvFileExists(comDlg.FileName) Then
+        Call SetAttr(comDlg.FileName, vbArchive)
+        Call Kill(comDlg.FileName)
+    End If
+    On Error GoTo EH
+    '--- create and write playlist file line by line
+    nFile = FreeFile()
+    Open sPlaylistFile For Output As #nFile
+    For lIdx = 1 To lvwPlayList.ListItems.Count
+        Print #nFile, lvwPlayList.ListItems(lIdx).Tag
+    Next
+    Close #nFile: nFile = 0
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    If nFile <> 0 Then
+        Close #nFile: nFile = 0
+    End If
+    PopRaiseError
+End Sub
+
+Private Sub pvFixTooltip( _
+            eHit As UcsPlayerHittestEnum, _
+            eBtn As UcsPlayerButtons)
+    Const FUNC_NAME     As String = "pvFixTooltip"
+    Dim sTooltip        As String
+
+    On Error GoTo EH
+    '--- if over prev/next button show prev/next playlist entry as tooltip
+    If eHit = ucsHitButton Then
+        Select Case eBtn
+        Case ucsBtnPlay
+            sTooltip = "Play media"
+        Case ucsBtnPause
+            sTooltip = "Pause media (right click for Fullscreen mode)"
+        Case ucsBtnStop
+            sTooltip = "Stop media"
+        Case ucsBtnPrev
+            If Not lvwPlayList.SelectedItem Is Nothing Then
+                If lvwPlayList.SelectedItem.Index > 1 Then
+                    sTooltip = lvwPlayList.ListItems(lvwPlayList.SelectedItem.Index - 1).SubItems(ucsSubFile)
+                End If
+            End If
+        Case ucsBtnNext
+            If Not lvwPlayList.SelectedItem Is Nothing Then
+                If lvwPlayList.SelectedItem.Index < lvwPlayList.ListItems.Count Then
+                    sTooltip = lvwPlayList.ListItems(lvwPlayList.SelectedItem.Index + 1).SubItems(ucsSubFile)
+                End If
+            End If
+        Case ucsBtnPlayList
+            sTooltip = "Show/Hide playlist"
+        End Select
+    ElseIf eHit = ucsHitSeek Then
+        sTooltip = "Seek"
+    ElseIf eHit = ucsHitVolume Then
+        sTooltip = "Adjust volume"
+    End If
+    If picButtonBar.ToolTipText <> sTooltip Then
+        picButtonBar.ToolTipText = sTooltip
+    End If
+    Exit Sub
+EH:
+    RaiseError FUNC_NAME
+End Sub
+
+Private Sub pvSizeControls()
+    Dim lWidth          As Long
+    Dim lHeight         As Long
+    Dim lCurWidth       As Long
+    Dim lCurHeight      As Long
+
+    On Error Resume Next
+    '--- move controls around
+    Call lvwPlayList.Move(0, 0, ScaleWidth, ScaleHeight - ScaleY(LNG_BUTTON_HEIGHT + 2, vbPixels))
+    Call picButtonBar.Move(0, ScaleHeight - ScaleY(LNG_BUTTON_HEIGHT + 2, vbPixels), ScaleWidth, ScaleY(LNG_BUTTON_HEIGHT + 2, vbPixels))
+    If Not m_oVideoWindow Is Nothing Then
+        '--- preserve aspect of video
+        lWidth = ScaleX(lvwPlayList.Width, ScaleMode, vbPixels)
+        lCurWidth = lWidth
+        lHeight = ScaleY(lvwPlayList.Height, ScaleMode, vbPixels)
+        lCurHeight = lHeight
+        '--- use double (in case of overflow)
+        If CDbl(m_lAspectX) * lHeight > CDbl(m_lAspectY) * lWidth Then
+            lHeight = lWidth * CDbl(m_lAspectY) / m_lAspectX
+        Else
+            lWidth = lHeight * CDbl(m_lAspectX) / m_lAspectY
+        End If
+        Call m_oVideoWindow.SetWindowPosition((lCurWidth - lWidth) \ 2, (lCurHeight - lHeight) \ 2, lWidth, lHeight)
+    End If
+End Sub
+
+Private Sub pvSetParentCaption( _
+            sCaption As String)
+    Const FUNC_NAME     As String = "pvSetParentCaption"
+    Dim hwndParent      As Long
+    Dim sClassName      As String
+    
+    On Error GoTo EH
+    '--- first, hack the 'scrolling' container
+    hwndParent = GetParent(GetParent(UserDocument.hWnd))
+    Call SetWindowText(hwndParent, sCaption)
+    Call SetWindowPos(hwndParent, 0, 0, 0, 0, 0, SWP_FLAGS)
+    '--- next, figure out if docker is floating
+    hwndParent = GetParent(hwndParent)
+    sClassName = Space(256)
+    Call GetClassName(hwndParent, sClassName, Len(sClassName))
+    sClassName = Left(sClassName, InStr(sClassName, vbNullChar) - 1)
+    '--- if floating -> hack the 'floating' continaer
+    If sClassName = STR_CLASS_FLOATING Then
+        Call SetWindowText(hwndParent, sCaption)
+        Call SetWindowPos(hwndParent, 0, 0, 0, 0, 0, SWP_FLAGS)
+    End If
+    Exit Sub
+EH:
+    RaiseError FUNC_NAME
+End Sub
+
+Private Sub pvSplitName( _
+            ByVal sFileName As String, _
+            sFile As String, _
+            sFolder As String)
+    Const FUNC_NAME     As String = "pvSplitName"
+    Dim lIdx            As Long
+    
+    On Error GoTo EH
+    '--- find last backslash and split folder from file
+    lIdx = InStrRev(sFileName, "\")
+    If lIdx > 0 Then
+        sFile = Mid(sFileName, lIdx + 1)
+        sFolder = Left(sFileName, lIdx - 1)
+        '--- if a single drivename append trailing backslash
+        If Right(sFolder, 1) = ":" Then
+            sFolder = sFolder & "\"
+        End If
+    Else
+        sFile = sFileName
+        sFolder = ""
+    End If
+    Exit Sub
+EH:
+    RaiseError FUNC_NAME
+End Sub
+
+Private Sub pvFixListNumbers()
+    Const FUNC_NAME     As String = "pvFixListNumbers"
+    Dim lIdx            As Long
+
+    On Error GoTo EH
+    '--- should be fast enough. optimisation: could check if not changed
+    '---   before setting the new value.
+    For lIdx = 1 To lvwPlayList.ListItems.Count
+        lvwPlayList.ListItems(lIdx).SubItems(ucsSubNumber) = lIdx
+    Next
+    Exit Sub
+EH:
+    RaiseError FUNC_NAME
+End Sub
+
+Private Sub pvRefreshButtonBar()
+    Dim rc              As RECT
+    
+    On Error Resume Next
+    '--- forces repaint (posts WM_PAINT on picButtonBar.hwnd message queue)
+    picButtonBar.AutoRedraw = False
+    Call GetClientRect(picButtonBar.hWnd, rc)
+    Call InvalidateRect(picButtonBar.hWnd, rc, 1)
+End Sub
+
+Private Function pvFileExists( _
+            sFile As String) As Boolean
+    On Error Resume Next
+    '--- simple way to check if a file exists (works for folders too!!)
+    Call FileLen(sFile)
+    pvFileExists = (Err.Number = 0)
+End Function
+
+Private Sub pvSetRedraw( _
+            ByVal bEnabled As Boolean)
+    Call SendMessage(lvwPlayList.hWnd, WM_SETREDRAW, Abs(bEnabled), ByVal 0)
+End Sub
+
+Private Function pvHM2Pix( _
+            ByVal Value As Double) As Double
+   pvHM2Pix = Value * 1440 / 2540 / Screen.TwipsPerPixelX
+End Function
+
+'=========================================================================
+' Control events
+'=========================================================================
+
+Private Sub UserDocument_Initialize()
+    On Error Resume Next
+    With New cMemDC
+        .Init 8, 8
+        .Cls MASK_COLOR
+        .DrawLine 4, 1, 7, 7, vbWindowBackground
+        .DrawLine 4, 2, 7, 7, vbWindowBackground
+        .DrawLine 0, 7, 3, 0, vbButtonShadow
+        .DrawLine 0, 7, 3, 1, vbButtonShadow
+        .DrawLine 7, 7, 0, 7, vbWindowBackground
+        Call imlColumnHeaders.ListImages.Add(, , .Image)
+        .Cls MASK_COLOR
+        .DrawLine 0, 0, 3, 7, vbButtonShadow
+        .DrawLine 0, 0, 3, 6, vbButtonShadow
+        .DrawLine 4, 6, 8, -1, vbWindowBackground
+        .DrawLine 4, 5, 7, 0, vbWindowBackground
+        .DrawLine 0, 0, 7, 0, vbButtonShadow
+        Call imlColumnHeaders.ListImages.Add(, , .Image)
+    End With
+End Sub
+
+Private Sub UserDocument_Resize()
+    On Error Resume Next
+    '--- reposition controls and refresh button bar
+    Call pvSizeControls
+    Call pvRefreshButtonBar
+End Sub
+
+Private Sub picButtonBar_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Dim eBtn            As UcsPlayerButtons
+    Dim dblSeekPos      As Double
+    
+    On Error Resume Next
+    '--- hack mouse pointer -> hourglass on progress bar & volume control
+    If X > picButtonBar.ScaleX((LNG_BUTTON_WIDTH + 2) * LNG_NUM_BUTTONS + 2, vbPixels, picButtonBar.ScaleMode) _
+            And Y >= picButtonBar.ScaleHeight - picButtonBar.ScaleY(LNG_BUTTON_HEIGHT - 2, vbPixels, picButtonBar.ScaleMode) Then
+        SetCursor LoadCursor(0, IDC_HAND)
+    End If
+    '--- if left button pressed -> (prepare to) respond to click
+    If (Button And vbLeftButton) <> 0 Then
+        Select Case pvHitTest(X, Y, eBtn, dblSeekPos)
+        Case ucsHitButton
+            '--- prepare to click on MouseUp
+            m_eButtonPressed = eBtn
+            m_bButtonDown = True
+            Call pvRefreshButtonBar
+        Case ucsHitSeek
+            '--- seek media
+            If Not m_oMediaPosition Is Nothing Then
+                m_oMediaPosition.CurrentPosition = dblSeekPos * m_oMediaPosition.Duration
+            End If
+        Case ucsHitVolume
+            '--- change volume
+            If Not m_oBasicAudio Is Nothing And m_bAudioAvailable Then
+                m_oBasicAudio.Volume = dblSeekPos * 4000 - 4000
+            End If
+        End Select
+    End If
+End Sub
+
+Private Sub picButtonBar_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Const FUNC_NAME     As String = "picButtonBar_MouseMove"
+    Dim eHit            As UcsPlayerHittestEnum
+    Dim eBtn            As UcsPlayerButtons
+    Dim dblSeekPos      As Double
+    
+    On Error GoTo EH
+    '--- hack mouse pointer -> hourglass on progress bar & volume control
+    If X > picButtonBar.ScaleX((LNG_BUTTON_WIDTH + 2) * LNG_NUM_BUTTONS + 2, vbPixels, picButtonBar.ScaleMode) _
+            And Y >= picButtonBar.ScaleHeight - picButtonBar.ScaleY(LNG_BUTTON_HEIGHT - 2, vbPixels, picButtonBar.ScaleMode) Then
+        Call SetCursor(LoadCursor(0, IDC_HAND))
+    End If
+    '--- simple check if lost capture when should be capturing
+    '---   mouse events on dragging (WM_CANCELMODE probably missed)
+    If m_eButtonPressed <> 0 Then
+        If GetCapture() <> picButtonBar.hWnd Then
+            m_eButtonPressed = 0
+            m_bButtonDown = False
+            Call pvRefreshButtonBar
+            Exit Sub
+        End If
+    End If
+    eHit = pvHitTest(X, Y, eBtn, dblSeekPos)
+    '--- if left button pressed -> check if hover or out of the button,
+    '---   or interactive dragging of progress bar or volume control
+    If (Button And vbLeftButton) <> 0 Then
+        If eHit = ucsHitButton Then
+            '--- just left the pressed button and wend over another one
+            If m_bButtonDown <> (m_eButtonPressed = eBtn) Then
+                m_bButtonDown = (m_eButtonPressed = eBtn)
+                Call pvRefreshButtonBar
+            End If
+        Else
+            '--- just left the pressed button
+            If m_bButtonDown Then
+                m_bButtonDown = False
+                Call pvRefreshButtonBar
+            End If
+            If m_eButtonPressed = 0 Then
+                '--- if over progress bar constant seeking
+                If eHit = ucsHitSeek Then
+                    If Not m_oMediaPosition Is Nothing Then
+                        m_oMediaPosition.CurrentPosition = dblSeekPos * m_oMediaPosition.Duration
+                    End If
+                '--- if over volume control dynamicly change volume
+                ElseIf eHit = ucsHitVolume Then
+                    If Not m_oBasicAudio Is Nothing And m_bAudioAvailable Then
+                        m_oBasicAudio.Volume = dblSeekPos * 4000 - 4000
+                    End If
+                End If
+            End If
+        End If
+    Else
+        '--- nothing pressed -> redraw button raised
+        If m_eButtonPressed <> 0 Then
+            m_eButtonPressed = 0
+            m_bButtonDown = False
+            Call pvRefreshButtonBar
+        End If
+    End If
+    '--- figure out tooltip
+    Call pvFixTooltip(eHit, eBtn)
+    Exit Sub
+EH:
+    Select Case ShowError(FUNC_NAME)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub picButtonBar_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Const FUNC_NAME     As String = "picButtonBar_MouseUp"
+    Dim eHit            As UcsPlayerHittestEnum
+    Dim eBtn            As UcsPlayerButtons
+    
+    On Error GoTo EH
+    eHit = pvHitTest(X, Y, eBtn, 0)
+    '--- if left button is down -> check whether click occured
+    If m_eButtonPressed <> 0 Then
+        If (Button And vbLeftButton) <> 0 Then
+            If eHit = ucsHitButton Then
+                If eBtn = m_eButtonPressed Then
+                    Call pvButtonClick(m_eButtonPressed)
+                End If
+            End If
+            m_eButtonPressed = 0
+            m_bButtonDown = False
+            pvRefreshButtonBar
+        End If
+    End If
+    If (Button And vbRightButton) <> 0 Then
+        If eHit = ucsHitButton And eBtn = ucsBtnPause And m_bVideoAvailable Then
+            m_oVideoWindow.FullScreenMode = True
+            m_bFullscreen = True
+        End If
+    End If
+    '--- figure out tooltip
+    Call pvFixTooltip(eHit, eBtn)
+    Exit Sub
+EH:
+    Select Case ShowError(FUNC_NAME)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub picButtonBar_DblClick()
+    On Error Resume Next
+    If GetAsyncKeyState(vbKeyLButton) < 0 Then
+        Call mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
+    End If
+End Sub
+
+Private Sub picButtonBar_Paint()
+    On Error Resume Next
+    picButtonBar.AutoRedraw = True
+    Call pvPaintButtonBar
+End Sub
+
+Private Sub tmrCurrentPosition_Timer()
+    Dim sPosition       As String
+    Dim lRetCode        As Long
+    Dim lWidth          As Long
+    Dim dblPos          As Double
+    
+    On Error Resume Next
+    '--- check for end of media
+    If Not m_oMediaEvent Is Nothing Then
+        Call m_oMediaEvent.WaitForCompletion(10, lRetCode)
+        If lRetCode <> 0 And Not lvwPlayList.SelectedItem Is Nothing Then
+            If m_bVideoAvailable Then
+                m_bFullscreen = m_oVideoWindow.FullScreenMode
+            End If
+            '--- if no more files available -> pause
+            If lvwPlayList.SelectedItem.Index = lvwPlayList.ListItems.Count Then
+                Call pvButtonClick(ucsBtnPause)
+            Else '--- otherwise -> switch to next file
+                Call pvButtonClick(ucsBtnNext)
+            End If
+            Call pvRefreshButtonBar
+        End If
+    End If
+    '--- figure out position text and slider
+    If Not m_oMediaPosition Is Nothing Then
+        sPosition = Format(m_oMediaPosition.CurrentPosition / (24# * 60# * 60#), "hh:mm:ss") & "/" & Format(m_oMediaPosition.Duration / (24# * 60# * 60#), "hh:mm:ss")
+        dblPos = m_oMediaPosition.CurrentPosition / m_oMediaPosition.Duration
+    Else
+        sPosition = "00:00:00"
+        dblPos = 0
+    End If
+    lWidth = ScaleX(picButtonBar.ScaleWidth, picButtonBar.ScaleMode, vbPixels) - LNG_NUM_BUTTONS * (LNG_BUTTON_WIDTH + 2) + LNG_VOLUME_WIDTH + 6
+    '--- if slider length changed or position text changed -> refresh
+    If CLng(lWidth * dblPos) <> CLng(lWidth * m_dblLastPosition) _
+                Or m_sPosition <> sPosition Then
+        m_dblLastPosition = dblPos
+        m_sPosition = sPosition
+        Call pvRefreshButtonBar
+    End If
+End Sub
+
+Private Sub lvwPlayList_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If (Button And vbRightButton) <> 0 Then
+        PopupMenu mnuPopup
+    End If
+End Sub
+
+Private Sub mnuPlayList_Click(Index As Integer)
+    Const FUNC_NAME     As String = "mnuPlayList_Click"
+    Dim lIdx            As Long
+    Dim lSelIdx         As Long
+    Dim vIter           As Variant
+    
+    On Error GoTo EH
+    With lvwPlayList
+        Select Case Index
+        Case ucsMnuAddFiles
+            '--- let use multiselect files and append them to playlist
+            For Each vIter In pvSelectMediaFiles(True)
+                Call pvSetRedraw(False)
+                Call pvAddMediaToPlaylist(vIter)
+            Next
+            Call pvSetRedraw(True)
+        Case ucsMnuRemoveSelected
+            '--- remove selected entries starting from the end and looping
+            '---   to the beginning of the playlist
+            Call pvSetRedraw(False)
+            For lIdx = .ListItems.Count To 1 Step -1
+                If .ListItems(lIdx).Selected Then
+                    .ListItems(lIdx).Selected = False
+                    .ListItems.Remove lIdx
+                    If lIdx < .ListItems.Count Then
+                        lSelIdx = lIdx
+                    Else
+                        lSelIdx = .ListItems.Count
+                    End If
+                End If
+            Next
+            '--- figure out currently selected entry
+            If lSelIdx > 0 Then
+                Set .SelectedItem = .ListItems(lSelIdx)
+                Call .SelectedItem.EnsureVisible
+            End If
+            Call pvFixListNumbers
+            Call pvSetRedraw(True)
+            Call pvRefreshButtonBar
+        Case ucsMnuRemoveAll
+            '--- remove all playlist entries
+            Call pvSetRedraw(False)
+            Call .ListItems.Clear
+            Call pvSetRedraw(True)
+            Call pvRefreshButtonBar
+        Case ucsMnuCut
+        Case ucsMnuCopy
+        Case ucsMnuPaste
+        Case ucsMnuSelectAll
+            '--- select all entries and move to the beginning of playlist
+            Call pvSetRedraw(False)
+            For lIdx = 1 To .ListItems.Count
+                .ListItems(lIdx).Selected = True
+            Next
+            If .ListItems.Count > 0 Then
+                Set .SelectedItem = .ListItems(1)
+                Call .SelectedItem.EnsureVisible
+            End If
+            Call pvSetRedraw(True)
+        Case ucsMnuOpenPlaylist
+            '--- select playlist file
+            comDlg.Flags = cdlOFNHideReadOnly
+            comDlg.DialogTitle = STR_TITLE_PLAYLISTS
+            comDlg.Filter = STR_FILTER_PLAYLISTS
+            comDlg.InitDir = m_sInitDirPlaylist
+            On Error GoTo EH_Cancel
+            Call comDlg.ShowOpen
+            On Error GoTo EH
+            '--- if playlist file exists -> normal processing
+            If pvFileExists(comDlg.FileName) Then
+                '--- store last folder for next opensave dialog
+                Call pvSplitName(comDlg.FileName, "", m_sInitDirPlaylist)
+                Call pvLoadPlaylist(comDlg.FileName)
+                '--- fix caption and refresh
+                Call pvSplitName(comDlg.FileName, m_sPlaylistName, "")
+                Call pvSetParentCaption(STR_APP_NAME & IIf(Len(m_sPlaylistName) > 0, " - " & m_sPlaylistName, ""))
+                Call pvRefreshButtonBar
+            End If
+        Case ucsMnuSavePlaylist
+            '--- select target playlist file
+            comDlg.Flags = cdlOFNOverwritePrompt
+            comDlg.DialogTitle = STR_TITLE_PLAYLISTS
+            comDlg.Filter = STR_FILTER_PLAYLISTS
+            comDlg.InitDir = m_sInitDirPlaylist
+            On Error GoTo EH_Cancel
+            Call comDlg.ShowSave
+            On Error GoTo EH
+            '--- store last folder for next opensave dialog
+            Call pvSplitName(comDlg.FileName, "", m_sInitDirPlaylist)
+            Call pvSavePlaylist(comDlg.FileName)
+        End Select
+EH_Cancel:
+    End With
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    lvwPlayList.Visible = True
+    Select Case PopShowError(CAP_MSG)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub lvwPlayList_DblClick()
+    Const FUNC_NAME     As String = "lvwPlayList_DblClick"
+    
+    On Error GoTo EH
+    '--- if anything selected -> emulate default ('play') button click
+    If Not lvwPlayList.SelectedItem Is Nothing Then
+        Screen.MousePointer = vbHourglass
+        If pvLoadMediaFile(lvwPlayList.SelectedItem.Tag) Then
+            Call pvButtonClick(ucsBtnPlay)
+        End If
+        Screen.MousePointer = vbDefault
+    End If
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    Screen.MousePointer = vbDefault
+    Select Case PopShowError(CAP_MSG)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub lvwPlayList_KeyDown(KeyCode As Integer, Shift As Integer)
+    Const FUNC_NAME     As String = "lvwPlayList_KeyDown"
+    
+    On Error GoTo EH
+    If Shift = vbCtrlMask Then
+        '--- translate shortcuts with ctrl hold
+        Select Case KeyCode
+        Case vbKeyD
+            Call mnuPlayList_Click(ucsMnuAddFiles)
+        Case vbKeyX
+            Call mnuPlayList_Click(ucsMnuCut)
+        Case vbKeyC
+            Call mnuPlayList_Click(ucsMnuCopy)
+        Case vbKeyV
+            Call mnuPlayList_Click(ucsMnuPaste)
+        Case vbKeyA
+            Call mnuPlayList_Click(ucsMnuSelectAll)
+        Case vbKeyO
+            Call mnuPlayList_Click(ucsMnuOpenPlaylist)
+        Case vbKeyS
+            Call mnuPlayList_Click(ucsMnuSavePlaylist)
+        End Select
+    ElseIf Shift = 0 Then
+        '--- translate shortcuts with no modifiers
+        Select Case KeyCode
+        Case vbKeyDelete
+            Call mnuPlayList_Click(ucsMnuRemoveSelected)
+        End Select
+    End If
+    Exit Sub
+EH:
+    Select Case ShowError(FUNC_NAME)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub lvwPlayList_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+    Const FUNC_NAME     As String = "lvwPlayList_ColumnClick"
+    Dim hwndHeader      As Long
+    Dim hdItem          As HD_ITEM
+    
+    On Error GoTo EH
+    '--- skip 'invisible' and 'Number' columns
+    If ColumnHeader.Index > 2 Then
+        If lvwPlayList.SortKey = ColumnHeader.Index - 1 Then
+            lvwPlayList.SortOrder = 1 - lvwPlayList.SortOrder
+        Else
+            lvwPlayList.SortKey = ColumnHeader.Index - 1
+            lvwPlayList.SortOrder = lvwAscending
+        End If
+        '--- column headers icons (bitmap on right)
+        hwndHeader = SendMessage(lvwPlayList.hWnd, LVM_GETHEADER, 0, ByVal 0)
+        For Each ColumnHeader In lvwPlayList.ColumnHeaders
+            With hdItem
+                .mask = HDI_IMAGE Or HDI_FORMAT
+                .pszText = ColumnHeader.Text
+                .fmt = HDF_STRING Or IIf(ColumnHeader.Alignment = lvwColumnRight, HDF_RIGHT, 0)
+                If ColumnHeader.Index - 1 = lvwPlayList.SortKey Then
+                    .fmt = .fmt Or HDF_IMAGE Or HDF_BITMAP_ON_RIGHT
+                    .iImage = lvwPlayList.SortOrder
+                End If
+            End With
+            Call SendMessage(hwndHeader, HDM_SETITEM, ColumnHeader.Index - 1, hdItem)
+        Next
+        Call pvFixListNumbers
+    End If
+    Exit Sub
+EH:
+    Select Case ShowError(FUNC_NAME)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub lvwPlayList_ItemClick(ByVal Item As MSComctlLib.ListItem)
+    On Error Resume Next
+    Call pvRefreshButtonBar
+End Sub
+
+Private Sub lvwPlayList_OLEStartDrag(Data As MSComctlLib.DataObject, AllowedEffects As Long)
+    Dim lIdx            As Long
+    
+    On Error Resume Next
+    '--- construct dragged collections
+    Set m_cDragged = New Collection
+    Set m_cDraggedIdx = New Collection
+    With lvwPlayList.ListItems
+        For lIdx = .Count To 1 Step -1
+            If .Item(lIdx).Selected Then
+                Call m_cDragged.Add(.Item(lIdx).Tag)
+                Call m_cDraggedIdx.Add(lIdx)
+            End If
+        Next
+        '--- de-select dragged items
+        For lIdx = 1 To m_cDraggedIdx.Count
+            .Item(m_cDraggedIdx(lIdx)).Selected = False
+        Next
+    End With
+    '--- if any entries are found being dragged -> start OLE dragging
+    If m_cDragged.Count > 0 Then
+        Call Data.SetData("", vbCFText)
+    Else
+        Set m_cDragged = Nothing
+        Set m_cDraggedIdx = Nothing
+    End If
+End Sub
+
+Private Sub lvwPlayList_OLEDragOver(Data As MSComctlLib.DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single, State As Integer)
+    Dim oItem           As ListItem
+    
+    On Error Resume Next
+    '--- if internal dragging (and inside client rect) -> move and/or scroll
+    If Not m_cDragged Is Nothing And (X <> 0 Or Y <> 0) Or Data.GetFormat(vbCFFiles) Then
+        Set oItem = lvwPlayList.HitTest(X, Y)
+        '--- deselect current
+        If Not lvwPlayList.SelectedItem Is Nothing Then
+            lvwPlayList.SelectedItem.Selected = False
+        End If
+        '--- select hovering listitem
+        Set lvwPlayList.SelectedItem = oItem
+        If Not oItem Is Nothing Then
+            Call oItem.EnsureVisible
+        End If
+        Effect = vbDropEffectMove
+    Else
+        Effect = vbDropEffectNone
+    End If
+End Sub
+
+Private Sub lvwPlayList_OLEDragDrop(Data As MSComctlLib.DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Const FUNC_NAME     As String = "lvwPlayList_OLEDragDrop"
+    Dim lIdx            As Long
+    Dim lBefore         As Long
+    
+    On Error GoTo EH
+    '--- if anything selected -> find where to insert
+    If Not lvwPlayList.SelectedItem Is Nothing Then
+        '--- figure out insertion index (lBefore)
+        lBefore = lvwPlayList.SelectedItem.Index + 1
+        If lBefore > lvwPlayList.ListItems.Count Then
+            lBefore = 0
+        End If
+        lvwPlayList.SelectedItem.Selected = False
+    Else
+        '--- otherwise if internal dragging -> cancel dragging
+        If Not m_cDragged Is Nothing Then
+            Exit Sub
+        End If
+    End If
+    Screen.MousePointer = vbHourglass
+    '--- if internal dragging -> move dragged entries to the insertion index
+    If Not m_cDragged Is Nothing Then
+        '--- remove dragged items from playlist, keeping insertion
+        '---   index current
+        For lIdx = 1 To m_cDraggedIdx.Count
+            If m_cDraggedIdx(lIdx) < lBefore Then
+                lBefore = lBefore - 1
+            End If
+            Call lvwPlayList.ListItems.Remove(m_cDraggedIdx(lIdx))
+        Next
+        '--- add dragged items to playlist
+        Call pvSetRedraw(False)
+        For lIdx = 1 To m_cDragged.Count
+            Set lvwPlayList.SelectedItem = pvAddMediaToPlaylist(m_cDragged(lIdx), lBefore)
+            Call lvwPlayList.SelectedItem.EnsureVisible
+        Next
+        '--- fix playlist numbers
+        Call pvFixListNumbers
+        Call pvSetRedraw(True)
+        Call pvRefreshButtonBar
+        '--- mark internal dragging completed ok
+        Set m_cDragged = Nothing
+        Set m_cDraggedIdx = Nothing
+    '--- if files dragged from external app (explorer) -> add them to playlist
+    ElseIf Data.GetFormat(vbCFFiles) Then
+        '--- add dragged files
+        Call pvSetRedraw(False)
+        For lIdx = 1 To Data.Files.Count
+            If pvFileExists(Data.Files(lIdx)) Then
+                If (GetAttr(Data.Files(lIdx)) And vbDirectory) = 0 Then
+                    Call pvAddMediaToPlaylist(Data.Files(lIdx), lBefore)
+                Else
+                    Call pvAddAllMediaToPlaylist(Data.Files(lIdx), lBefore)
+                End If
+            End If
+        Next
+        '--- fix playlist numbers
+        Call pvFixListNumbers
+        '--- autosize Number column
+        Call SendMessage(lvwPlayList.hWnd, LVM_FIRST + 30, ucsColNumber - 1, ByVal -1)
+        Call pvSetRedraw(True)
+        Call pvRefreshButtonBar
+    End If
+    Screen.MousePointer = vbDefault
+    Exit Sub
+EH:
+    PushError FUNC_NAME, MODULE_NAME
+    Screen.MousePointer = vbDefault
+    Select Case PopShowError(CAP_MSG)
+    Case vbRetry: Resume
+    Case vbIgnore: Resume Next
+    End Select
+End Sub
+
+Private Sub lvwPlayList_OLECompleteDrag(Effect As Long)
+    Dim lIdx            As Long
+    
+    On Error Resume Next
+    '--- if internal dragging did not complete ok -
+    If Not m_cDragged Is Nothing Then
+        '--- re-select dragged items
+        For lIdx = 1 To m_cDraggedIdx.Count
+            lvwPlayList.ListItems(m_cDraggedIdx(lIdx)).Selected = True
+            Call lvwPlayList.ListItems(m_cDraggedIdx(lIdx)).EnsureVisible
+        Next
+        '--- mark dragging as complete
+        Set m_cDragged = Nothing
+        Set m_cDraggedIdx = Nothing
+    End If
+End Sub
+
+
+
+

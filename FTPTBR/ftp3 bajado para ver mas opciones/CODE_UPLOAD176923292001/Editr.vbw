@@ -1,0 +1,7 @@
+Main = 0, 0, 500, 441, , 154, 154, 654, 595, 
+MdGlobal = 198, 198, 698, 639, 
+cIniFile = 0, 0, 0, 0, C
+cCommonDialog = 110, 110, 610, 551, 
+GCommonDialog = 132, 132, 632, 573, 
+mDialogHook = 0, 0, 500, 441, Z
+cMemory = 0, 0, 0, 0, C

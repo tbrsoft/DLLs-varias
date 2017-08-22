@@ -1,0 +1,10 @@
+LIBRARY MEncoder
+
+EXPORTS
+	SetBitrate			@1
+	SetCopyright		@2
+	SetOriginal			@3
+	SetPrivate			@4
+	SetCRC				@5
+	Cancel				@6
+	EncodeMp3			@7

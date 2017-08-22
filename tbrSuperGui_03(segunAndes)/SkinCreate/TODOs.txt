@@ -1,0 +1,9 @@
+tareas a realizar
+
+En el menu skin -> reutil (frmReUsar) se debe poder crear objetos de todos los tipos
+
+Tambien hay que conseguir que los objetos se puedan elegir con un click para modificarle sus propiedades
+
+probar objeto por objeto para que se graben y se abran correctamente
+
+clsLabel y clsNumeric apoarente ya funcionan bien con algunos problemas de refresco de la imagen ya que trabajn directo sobre el HDC de sus erspectivos pictureboxes

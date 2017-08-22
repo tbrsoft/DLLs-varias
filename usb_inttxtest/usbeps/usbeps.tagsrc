@@ -1,0 +1,17 @@
+E:\PIC\prj\usbeps\main.c
+E:\PIC\prj\usbeps\system\usb\usbmmap.c
+E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c
+E:\PIC\prj\usbeps\system\usb\usb9\usb9.c
+E:\PIC\prj\usbeps\autofiles\usbdsc.c
+E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c
+E:\PIC\prj\usbeps\user\user.c
+E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c
+E:\PIC\prj\usbeps\io_cfg.h
+E:\PIC\prj\usbeps\system\usb\usbmmap.h
+E:\PIC\prj\usbeps\autofiles\usbcfg.h
+E:\PIC\prj\usbeps\system\usb\usb.h
+E:\PIC\prj\usbeps\system\typedefs.h
+E:\PIC\prj\usbeps\autofiles\usbdsc.h
+E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h
+E:\PIC\prj\usbeps\user\user.h
+E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h

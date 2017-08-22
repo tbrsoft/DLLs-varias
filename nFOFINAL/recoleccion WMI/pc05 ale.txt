@@ -1,0 +1,23 @@
+MAC 1: 000C76CEAFCE
+BiosCaption: Phoenix - AwardBIOS v6.00PG
+BiosDate: noX11
+BIOSDescription: Phoenix - AwardBIOS v6.00PG
+BIOSIdentificationCode: NULO
+BIOSManufacturer: Phoenix Technologies, LTD
+BIOSName: Phoenix - AwardBIOS v6.00PG
+BIOSReleaseDate: 20050330000000.000000+000
+BIOSSerialNumber:  
+BIOSSMBIOSBIOSVersion: 6.00 PG
+BIOSSMBIOSMajorVersion: 2
+BIOSSMBIOSMinorVersion: 2
+BIOSVersion: VIAP4M - 42302e31
+Country: Spain
+PROCCaption: x86 Family 15 Model 2 Stepping 9
+PROCCCspeed: 2400
+PROCDeviceId: CPU0
+PROCFamily: 2
+PROCId: BFEBFBFF00000F29
+PROCInfoReserved: 209000F
+PROCRevis: 521
+PROCType: 3
+WinVersion: Windows XP

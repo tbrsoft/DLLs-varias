@@ -1,0 +1,12 @@
+clsDES = 44, 56, 676, 459, C
+clsGost = 0, 0, 632, 403, C
+clsRC4 = 132, 168, 764, 571, C
+clsSimpleXOR = 110, 140, 742, 543, C
+clsSkipjack = 88, 112, 720, 515, C
+clsTEA = 66, 84, 698, 487, C
+clsTwofish = 66, 84, 698, 487, C
+clsBlowfish = -31, 2, 601, 405, C
+clsCryptAPI = 44, 56, 676, 459, C
+Crypt = 44, 56, 676, 460, C
+modFunciones = 132, 168, 764, 571, C
+clsB64 = 88, 88, 628, 507, C

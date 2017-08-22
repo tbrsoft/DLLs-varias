@@ -1,0 +1,1 @@
+When web camera detects a motion this program shows what is the motion grade,counts all motions and barks like a dog!!!

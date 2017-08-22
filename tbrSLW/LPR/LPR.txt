@@ -1,0 +1,15 @@
+Linux Port Redirecting
+----------------------
+
+Es una simple aplicacion de consola que redirecciona la informacion
+que llega de un puerto hacia otra ip/puerto
+
+para hacer esto, lee el archivo 'puerto.txt'
+
+este archivo tiene 3 parametros
+
+local_port, remote_ip, remote_port
+
+
+ej:
+22, 192.168.2.52, 8811

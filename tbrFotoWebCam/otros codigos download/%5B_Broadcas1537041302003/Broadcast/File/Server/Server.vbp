@@ -1,0 +1,37 @@
+Type=Exe
+Form=Form1.frm
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\..\..\..\..\..\WINNT\System32\stdole2.tlb#OLE Automation
+Module=modMsgDef; ..\..\modMsgDef.bas
+Module=Module1; ..\..\..\..\Module1.bas
+Object={95A385DC-B15E-4285-9F45-49F3B6DEABA6}#1.0#0; AVPhone3.ocx
+Module=modCommon; ..\..\modCommon.bas
+IconForm="Form1"
+Startup="Form1"
+ExeName32="Server.exe"
+Command32=""
+Name="Server"
+HelpContextID="0"
+CompatibleMode="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="Banasoft"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[MS Transaction Server]
+AutoRefresh=1

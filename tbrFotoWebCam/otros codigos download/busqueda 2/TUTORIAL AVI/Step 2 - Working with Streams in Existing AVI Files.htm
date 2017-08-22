@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.shrinkwrapvb.com/avihelp/avihlp_2.htm -->
+<HTML><HEAD><TITLE>Step 2 - Working with Streams in Existing AVI Files</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Content-Language content=en-us>
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="shrinkwrap-style 100, default" name="Microsoft Theme">
+<META content="t, default" name="Microsoft Border"></HEAD>
+<BODY text=#003366 vLink=#3366ff aLink=#99ccff link=#9900ff bgColor=#ffffff><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face=Arial>
+      <P align=center><STRONG><B><FONT size=6><IMG height=60 
+      alt="Gently down the Streams" 
+      src="Step 2 - Working with Streams in Existing AVI Files_archivos/avihlp_2.htm_cmp_shrinkwrap-style100_bnr.gif" 
+      width=600 border=0></FONT></B></STRONG><BR><FONT 
+      face=Arial><B><NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/videocap.htm">Video&nbsp;Capture&nbsp;Help</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm">AVIFile&nbsp;Tutorial</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbdist.htm">Licensing&nbsp;and&nbsp;Distribution</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbtips.htm">Resources</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/awd_rec.htm">Awards</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbnews.htm">Latest&nbsp;News</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbcode.htm">Source&nbsp;Code</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbctrls.htm">Free&nbsp;Controls</A>&nbsp;]</NOBR></B></FONT></P>
+      <P 
+  align=center>&nbsp;</P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><!--mstheme--><FONT face=Arial>
+      <H2 align=center><!--mstheme--><FONT color=#3366ff><B>STEP 2 - Working 
+      with streams in existing AVI files </B><!--mstheme--></FONT></H2>
+      <P><B>HERE ARE THE PROJECT FILES FOR STEP 2 <A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr2.zip">AVITutr2.zip</A></B></P>
+      <P><B><BR></B>AVI files contain "streams" which contain "chunks" of 
+      data.&nbsp; There are four types of streams defined in mAVIDecs.bas:</P>
+      <P><FONT face=Courier><FONT color=#006600>'Stream types for use in VB 
+      (translated from C macros)</FONT><BR><FONT color=#000080>Global Const 
+      streamtypeVIDEO&nbsp;As Long = 1935960438 </FONT><FONT color=#006600>'= 
+      mmioStringToFOURCC("vids", 0&amp;)</FONT><BR><FONT color=#000080>Global 
+      Const streamtypeAUDIO&nbsp;As Long = 1935963489</FONT> <FONT 
+      color=#006600>'= mmioStringToFOURCC("auds", 0&amp;)</FONT><BR><FONT 
+      color=#000080>Global Const streamtypeMIDI&nbsp;&nbsp;As Long = 1935960429 
+      </FONT><FONT color=#006600>'= mmioStringToFOURCC("mids", 
+      0&amp;)</FONT><BR><FONT color=#000080>Global Const 
+      streamtypeTEXT&nbsp;&nbsp;As Long = 1937012852</FONT> <FONT 
+      color=#006600>'= mmioStringToFOURCC("txts", 0&amp;)</FONT></FONT> </P>
+      <P>Theoretically, AVI files can contain multiple streams of the same 
+      type.&nbsp; However most players assume only one video and one audio 
+      stream per file.&nbsp; The first step in using streams in the AVIFile API 
+      is to get a PAVISTREAM handle to the existing stream.&nbsp; Since we 
+      already have a PAVIFILE handle from the previous step, all we need to do 
+      is pass that to the AVIFileGetStream function along with the type of 
+      stream we are looking for.&nbsp; First, dimension a new Long variable to 
+      hold the stream interface pointer: </P>
+      <P><FONT face=Courier color=#000080>Dim pAVIStream As Long </FONT><FONT 
+      face=Courier color=#006600>'pointer to AVI stream interface (PAVISTREAM 
+      handle)</FONT></P>
+      <P>Then add this code right after the call to AVIFileOpen in the sample 
+      program you created in the previous step:</P>
+      <P><FONT face=Courier><FONT color=#006600>'Get the first available video 
+      stream (PAVISTREAM)</FONT><BR><FONT color=#000080>res = 
+      AVIFileGetStream(pAVIFile, pAVIStream, streamtypeVIDEO, 0)<BR>If res 
+      &lt;&gt; AVIERR_OK Then GoTo ErrorOut</FONT></FONT></P>
+      <P>When the call to AVIFileGetStream returns, the pAVIStream variable will 
+      contain a PAVISTREAM handle that we can pass to other functions.&nbsp; 
+      There is one other important thing to remember.&nbsp; When you are done 
+      using the handle you need to free it by calling AVIStreamRelease.&nbsp; 
+      Add this call right after the ErrorOut tag so that it will be called even 
+      if there is an error:</P>
+      <P><FONT face=Courier color=#000080>If pAVIStream &lt;&gt; 0 
+      Then<BR>&nbsp;&nbsp;&nbsp; Call AVIStreamRelease(pAVIStream) </FONT><FONT 
+      face=Courier color=#006600>'//closes video stream</FONT><FONT face=Courier 
+      color=#000080><BR>End If</FONT></P>
+      <P>Once we have the handle we can get the first frame and the length of 
+      the stream by adding a couple of lines of code.&nbsp; First, dim two 
+      variables to hold the start frame and length of the file:</P>
+      <P><FONT face=Courier color=#000080>Dim numFrames As Long</FONT><FONT 
+      face=Courier color=#006600> 'number of frames in video 
+      stream<BR></FONT><FONT face=Courier color=#000080>Dim firstFrame As 
+      Long</FONT><FONT face=Courier color=#006600> 'position of the first video 
+      frame</FONT></P>
+      <P>And then add these lines right after the call to AVIFileGetStream:</P>
+      <P><FONT face=Courier color=#006600>'get the starting position of the 
+      stream (some streams may not start simultaneously)</FONT><FONT 
+      face=Courier color=#000080><BR>firstFrame = 
+      AVIStreamStart(pAVIStream)<BR>If firstFrame = -1 Then GoTo ErrorOut 
+      </FONT><FONT face=Courier color=#006600>'this function returns -1 on 
+      error</FONT><FONT face=Courier color=#000080><BR><BR></FONT><FONT 
+      face=Courier color=#006600>'get the length of video stream in 
+      frames</FONT><FONT face=Courier color=#000080><BR>numFrames = 
+      AVIStreamLength(pAVIStream)<BR>If numFrames = -1 Then GoTo ErrorOut 
+      </FONT><FONT face=Courier color=#006600>' this function returns -1 on 
+      error</FONT></P>
+      <P>In order to make the sample program do something interesting let's show 
+      the results in a message box again.&nbsp; We will also print out the 
+      members of the AVI_FILE_INFO and AVI_STREAM_INFO UDTs in the debug window 
+      so let's inform the user of that fact in the same message.&nbsp; Add this 
+      line to show the message:</P>
+      <P><FONT color=#000080>MsgBox "PAVISTREAM handle is " &amp; pAVIStream 
+      &amp; vbCrLf &amp; _<BR>"Video stream length - " &amp; numFrames &amp; 
+      vbCrLf &amp; _<BR>"Stream starts on frame #" &amp; firstFrame &amp; vbCrLf 
+      &amp; _<BR>"File and Stream info will be written to Immediate Window (from 
+      IDE - Ctrl+G to view)", vbInformation, App.title</FONT> </P>
+      <P>You can call AVIFileInfo and AVIStreamInfo to get information about the 
+      AVI file and the video stream you have open.&nbsp; While you are working 
+      in the IDE you can also use the Immediate window to print out this 
+      information.&nbsp; This is extremely useful, since you can immediately see 
+      whether you have opened a valid file and whether the API is returning 
+      valid information.&nbsp; I included a couple of utility functions in the 
+      mAVIDecs.bas file as an example of how to do this.&nbsp; You can call 
+      these Subs by first dimensioning a couple of UDT variables to hold the 
+      information:</P>
+      <P><FONT face=Courier color=#000080>Dim fileInfo As AVI_FILE_INFO 
+      </FONT><FONT face=Courier color=#006600>'file info struct</FONT><FONT 
+      face=Courier color=#000080><BR>Dim streamInfo As AVI_STREAM_INFO 
+      </FONT><FONT face=Courier color=#006600>'stream info struct</FONT></P>
+      <P>And then put these lines of code after the MsgBox call:</P>
+      <P><FONT face=Courier color=#006600>'get file info struct 
+      (UDT)</FONT><FONT face=Courier color=#000080><BR>res = 
+      AVIFileInfo(pAVIFile, fileInfo, Len(fileInfo))<BR>If res &lt;&gt; 
+      AVIERR_OK Then GoTo ErrorOut<BR><BR></FONT><FONT face=Courier 
+      color=#006600>'print file info to Debug Window</FONT><FONT face=Courier 
+      color=#000080><BR>Call DebugPrintAVIFileInfo(fileInfo)<BR><BR></FONT><FONT 
+      face=Courier color=#006600>'get stream info struct (UDT)</FONT><FONT 
+      face=Courier color=#000080><BR>res = AVIStreamInfo(pAVIStream, streamInfo, 
+      Len(streamInfo))<BR>If res &lt;&gt; AVIERR_OK Then GoTo 
+      ErrorOut<BR><BR></FONT><FONT face=Courier color=#006600>'print stream info 
+      to Debug Window</FONT><FONT face=Courier color=#000080><BR>Call 
+      DebugPrintAVIStreamInfo(streamInfo)</FONT></P>
+      <P>If you copied all this code properly, you will now have a useful sample 
+      program that can open any AVI file and obtain an interface pointer to its 
+      video stream.&nbsp; It should also show the length of the file in frames 
+      in a pop-up msgbox window and record more detailed file and stream 
+      information in the immediate window of the IDE.&nbsp; You can download the 
+      full project for this step from here (<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr2.zip">AVITutr2.zip</A>)</P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_3.htm">Go to the 
+      next step</A></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm#Contents">Go 
+      back to the Table of Contents</A></P>
+      <DIV align=center>
+      <CENTER><!--mstheme--></FONT>
+      <TABLE height=66 borderColorDark=#330099 width=636 
+      borderColorLight=#99ccff border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=middle width="85%"><!--mstheme--><FONT 
+            face=Arial>
+            <H5 align=center><!--mstheme--><FONT color=#3366ff>This 
+            <B>Shrinkwrap Visual Basic AVIFile Tutorial </B>is Copyright (C) 
+            2000 by Ray Mercer<BR>Redistribution of the tutorial text and/or 
+            samples is prohibited.&nbsp; Please contact the author Ray Mercer 
+            &lt;<A 
+            href="mailto:raymer@shrinkwrapvb.com">raymer@shrinkwrapvb.com</A>&gt; 
+            if you have a question about this policy.<!--mstheme--></FONT></H5><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+      face=Arial></CENTER></DIV>&nbsp;<!--mstheme--></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

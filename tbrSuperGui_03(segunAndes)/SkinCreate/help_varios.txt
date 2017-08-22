@@ -1,0 +1,6 @@
+pasos para verificar que se lee y se escribe un determinado tipo de objetos del manu
+
+ver cuales son las propiedades minimas para crear un objeto del tipo deseado
+en CmdNew_Click se defines las propiedades basicas y segun el tipo se agregan mas. Esto para que se cree un objeto lo mas básico posible.
+
+Revisar que cargar propiedades de la clase del manu tenga refrencia a todas las propiedades usadas y que ademas existan las variables del modulo en cada caso

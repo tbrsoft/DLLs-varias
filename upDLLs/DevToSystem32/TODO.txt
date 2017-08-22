@@ -1,0 +1,5 @@
+* Deberia saber si la DLL es de las que no se registra o si es una DLL
+de tipo .NET que lleva otro tipo de registro
+
+* como cada quien lo tiene en un path diferente estaria bueno que se 
+haga una lista de paths usados para poder usarlos de la lista

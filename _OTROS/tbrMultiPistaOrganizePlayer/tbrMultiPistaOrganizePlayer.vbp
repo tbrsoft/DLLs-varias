@@ -1,0 +1,33 @@
+Type=OleExe
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{21B6EB40-688B-430D-820A-D0557A2A1CE8}#27.0#0#C:\WINDOWS\system32\tbrplayer.dll#tbrSoft mmPlayer
+Reference=*\G{DC1AA032-62CD-4B34-B517-DF2624310D72}#e.0#0#C:\WINDOWS\system32\tbrListaRep.dll#tbrSoft Lista de reproduccion
+Class=clsMultiPistaPlayer; clsMultiPistaPlayer.cls
+Startup="Sub Main"
+Command32=""
+Name="Proyecto1"
+HelpContextID="0"
+CompatibleMode="1"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[MS Transaction Server]
+AutoRefresh=1

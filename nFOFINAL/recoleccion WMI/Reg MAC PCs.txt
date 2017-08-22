@@ -1,0 +1,23 @@
+NUEVA PC PC ANDRES Celeron con placa MSI
+Adaptador Fast Ethernet compatible VIA - Minipuerto del administrador de paquetes
+ADDRESS: 00-11-9-DC-7F-66
+------------------
+NUEVA PC NUEVA PC Duron 2200+ (inrternet)
+Adaptador Ethernet Fast PCI de SiS 900 - Minipuerto del administrador de paquetes
+ADDRESS: 00-D-87-82-B5-A5
+------------------
+NUEVA PC Del Ale Celeron 
+Intel(R) PRO/100 VE Network Connection - Minipuerto del administrador de paquetes
+ADDRESS: 00-13-20-1E-C7-AF
+------------------
+NUEVA PC Del manuel PIII 550
+PPP Adapter.
+ADDRESS: 44-45-53-54-00-00
+------------------
+NUEVA PC 12 del cyber
+Adaptador Fast Ethernet compatible VIA - Minipuerto del administrador de paquetes
+ADDRESS: 00-C-76-CE-AF-CE
+------------------
+NUEVA PC 11 del cyber
+Adaptador Fast Ethernet compatible VIA - Minipuerto del administrador de paquetes
+ADDRESS: 00-C-76-CE-AF-D1

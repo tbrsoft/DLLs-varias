@@ -1,0 +1,8 @@
+Title: DevCon FTP 3.0.3
+Description: This is an update to the old DevCon 3.0 client.DevCon FTP has local & remote file deletion, local & remote file and folder renaming, local & remote creation
+or deletion of files and/or folders, upload, download, passive connections(for firewalls/proxies), 
+profile saving, FTP, HTTP, or Gopher connections, DNS lookup, ASCII or Binary modes, file searching, displaying file properties, file patterns, telnet shell for Unix/Linux/BSD servers, time, sizable directory structure view, clean interface, and some other neat features. This client covers most of the FTP game. However, it is missing CHMOD for Unix. I shelled out telnet because of this. The only way to change remote file permissions on a Unix server is to telnet into it from this app or Windows. At this time I am working on CHMOD for it but it is taking some time. If you are connecting to a Windows based server there shouldn't be a problem with permissions unless you have a perl, cgi, or php script that HAS to be changed. This client still needs alot of work to get it where I want it. I want to continue development on it but I am not sure if it is worth it. Let me know and please vote! I hope this helps with any questions you may have on FTP and VB.
+This file came from Planet-Source-Code.com...the home millions of lines of source code
+You can view comments on this code/and or vote on it at: http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=39307&lngWId=1
+
+The author may have retained certain copyrights to this code...please observe their request and the law by reviewing all copyright conditions at the above URL.

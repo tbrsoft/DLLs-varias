@@ -1,0 +1,10 @@
+CONVERTER.DLL
+
+Converte un file Bitmap (BMP) in Jpeg (JPG).
+
+Si raccomanda di copiare la libreria Converter.dll nella cartella \SYSTEM
+
+Questa DLL e' una libreria scritta in Delphi e presente in formato sorgente su www.planetsourcecode.com.
+
+
+gibra@amc2000.it

@@ -1,0 +1,30 @@
+Attribute VB_Name = "mApiConsts"
+Option Explicit
+
+'Public Const WS_VSCROLL As Long = &H200000
+'Public Const WS_VISIBLE As Long = &H10000000
+Public Const WS_THICKFRAME As Long = &H40000
+'Public Const WS_TABSTOP As Long = &H10000
+'Public Const WS_SYSMENU As Long = &H80000
+'Public Const WS_SIZEBOX As Long = WS_THICKFRAME
+'Public Const WS_POPUP As Long = &H80000000
+'Public Const WS_OVERLAPPED As Long = &H0&
+'Public Const WS_TILED As Long = WS_OVERLAPPED
+'Public Const WS_MINIMIZEBOX As Long = &H20000
+'Public Const WS_MINIMIZE As Long = &H20000000
+Public Const WS_MAXIMIZEBOX As Long = &H10000
+'Public Const WS_MAXIMIZE As Long = &H1000000
+'Public Const WS_ICONIC As Long = WS_MINIMIZE
+'Public Const WS_HSCROLL As Long = &H100000
+'Public Const WS_GROUP As Long = &H20000
+'Public Const WS_DLGFRAME As Long = &H400000
+'Public Const WS_DISABLED As Long = &H8000000
+'Public Const WS_CLIPSIBLINGS As Long = &H4000000
+'Public Const WS_CLIPCHILDREN As Long = &H2000000
+Public Const WS_CHILD As Long = &H40000000
+Public Const WS_CAPTION As Long = &HC00000                  '  WS_BORDER Or WS_DLGFRAME
+Public Const WS_BORDER As Long = &H800000
+'Public Const WS_POPUPWINDOW As Long = (WS_POPUP Or WS_BORDER Or WS_SYSMENU)
+'Public Const WS_OVERLAPPEDWINDOW As Long = (WS_OVERLAPPED Or WS_CAPTION Or WS_SYSMENU Or WS_THICKFRAME Or WS_MINIMIZEBOX Or WS_MAXIMIZEBOX)
+'Public Const WS_TILEDWINDOW As Long = WS_OVERLAPPEDWINDOW
+'Public Const WS_CHILDWINDOW As Long = (WS_CHILD)

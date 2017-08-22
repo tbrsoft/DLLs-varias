@@ -1,0 +1,217 @@
+
+
+{ID=000001}
+{baseText=Archivo}
+{fechaBase=40114}
+{var=0=Menu "Archivo"}
+{var=1=No har VARs}
+{trans=40114=English=File=1=0=0=}
+{trans=40114=Portuges=Archivao=1=0=0=}
+{tags=F1}
+&&&
+
+{ID=000002}
+{baseText=Nuevo}
+{fechaBase=40114}
+{var=0=Menu "Archivo" -> "nuevo"}
+{trans=40114=English=New=1=0=1=prueba de obervaciones
+Con 
+varios
+renglones}
+{trans=40114=Portuges=Nuevao=1=0=0=}
+{tags=F1}
+&&&
+
+{ID=000003}
+{baseText=Abrir}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=English=Open=1=0=0=}
+{trans=40114=Portuges=Abrirao=1=0=0=}
+{tags=F1}
+&&&
+
+{ID=000004}
+{baseText=Guardar}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=English=Save=1=0=0=}
+{trans=40114=Portuges=Guardarao=1=0=0=}
+{tags=F1}
+{tags=frmTR}
+&&&
+
+{ID=000005}
+{baseText=Guardar como ...}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=English=Save As ...=1=0=0=}
+{trans=40114=Portuges=Guardarao como ...=1=0=0=}
+{tags=F1}
+&&&
+
+{ID=000006}
+{baseText=Idioma}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=English=Languaje=1=0=0=}
+{trans=40114=Portuges=Idiomao=1=0=0=}
+{tags=F1}
+&&&
+
+{ID=000007}
+{baseText=Salir}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=Portuges=Salirao=1=0=0=}
+{trans=40114=English=Exit=1=0=0=}
+{tags=F1}
+{tags=frmTR}
+&&&
+
+{ID=000008}
+{baseText=Ayuda}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=English=Help=1=0=0=}
+{trans=40114=Portuges=Ayudaçao=1=0=0=}
+{tags=F1}
+&&&
+
+{ID=000009}
+{baseText=Acerca de ...}
+{fechaBase=40114}
+{var=0=}
+{trans=40114=English=About ...=1=0=0=}
+{trans=40114=Portuges=Acedaçao ...=1=0=0=}
+&&&
+
+{ID=000010}
+{baseText=Software desarrollado por 
+%1% 
+en %2%}
+{fechaBase=40114}
+{var=0=}
+{var=1=Nombre de la empresa desarrolladora}
+{var=2=Pais de la empresa desarroladora}
+{trans=40114=English=Software developed by 
+%1% 
+in %2%=1=0=0=}
+{trans=40114=Portuges=En %2%
+softwaçao desarroçao por 
+%1% 
+=1=0=0=}
+{tags=frmAbout}
+&&&
+
+{ID=000011}
+{baseText=Exportar}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Export=1=0=0=}
+{trans=40115=Portuges=Expotaçao=1=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000012}
+{baseText=Cadena}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=String=1=0=0=}
+{trans=40115=Portuges=Cadenaçao=1=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000013}
+{baseText=Agregar cadena}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Add String text=1=0=0=}
+{trans=40115=Portuges=Agregao cadenaçao=1=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000014}
+{baseText=Agregar variable}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Add variable=1=0=0=}
+{trans=40115=Portuges=Agregao variablao=1=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000015}
+{baseText=Agregar tag}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Add tag=1=0=0=}
+{trans=40115=Portuges=Agregar tagao=1=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000016}
+{baseText=No terminada}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Don't finished=1=0=0=}
+{trans=40115=Portuges=No terminada=0=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000017}
+{baseText=Terminada}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Finished=1=0=0=}
+{trans=40115=Portuges=Terminada=0=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000018}
+{baseText=No entiendo}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=i don't underestand=1=0=0=}
+{trans=40115=Portuges=No entiendo=0=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000019}
+{baseText=Hecho}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Done=1=0=0=}
+{trans=40115=Portuges=Hecho=0=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000020}
+{baseText=Fecha base}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Base date=1=0=0=}
+{trans=40115=Portuges=Fecha base=0=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000021}
+{baseText=Fecha trad}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=English=Trans. date=1=0=0=}
+{trans=40115=Portuges=Fecha trad=0=0=0=}
+{tags=frmTR}
+&&&
+
+{ID=000022}
+{baseText=DEFINIR TEXTO}
+{fechaBase=40115}
+{var=0=}
+{trans=40115=Portuges=DEFINIR TEXTO=0=0=0=}
+{trans=40115=English=DEFINIR TEXTO=0=0=0=}
+&&&
+
+{ID=000023}
+{baseText=DEFINIR TEXTO}
+{fechaBase=40115}
+{var=0=}

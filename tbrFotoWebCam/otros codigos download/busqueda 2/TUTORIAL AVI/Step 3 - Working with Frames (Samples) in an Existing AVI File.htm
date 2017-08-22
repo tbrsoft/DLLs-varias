@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.shrinkwrapvb.com/avihelp/avihlp_3.htm -->
+<HTML><HEAD><TITLE>Step 3 - Working with Frames (Samples) in an Existing AVI File</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="shrinkwrap-style 100, default" name="Microsoft Theme">
+<META content="t, default" name="Microsoft Border"></HEAD>
+<BODY text=#003366 vLink=#3366ff aLink=#99ccff link=#9900ff bgColor=#ffffff><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face="ＭＳ Ｐゴシック">
+      <P align=center><STRONG><B><FONT size=6><IMG height=60 alt="AVI to BMPs" 
+      src="Step 3 - Working with Frames (Samples) in an Existing AVI File_archivos/avihlp_3.htm_cmp_shrinkwrap-style100_bnr.gif" 
+      width=600 border=0></FONT></B></STRONG><BR><FONT 
+      face=Arial><B><NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/videocap.htm">Video&nbsp;Capture&nbsp;Help</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm">AVIFile&nbsp;Tutorial</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbdist.htm">Licensing&nbsp;and&nbsp;Distribution</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbtips.htm">Resources</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/awd_rec.htm">Awards</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbnews.htm">Latest&nbsp;News</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbcode.htm">Source&nbsp;Code</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbctrls.htm">Free&nbsp;Controls</A>&nbsp;]</NOBR></B></FONT></P>
+      <P 
+  align=center>&nbsp;</P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><!--mstheme--><FONT face="ＭＳ Ｐゴシック">
+      <H2 align=center><!--mstheme--><FONT color=#3366ff><B>STEP 3 - Working 
+      with frames in existing AVI files</B> <!--mstheme--></FONT></H2>
+      <P align=left><B>HERE ARE THE PROJECT FILES FOR STEP 3 <A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr3.zip">AVITutr3.zip</A></B></P>
+      <P align=left><B><FONT color=#ff0000>UPDATE!</FONT> - <I>I have noticed 
+      that some systems (like my RIVA TNT on Win2000) seem unable to decompress 
+      palletized video to 24bit RGB.&nbsp; The </I></B><FONT face=Courier 
+      color=#000080>AVIStreamGetFrameOpen() </FONT><B><I>fails when passing in 
+      the </I></B><FONT face=Courier color=#000080>BITMAPINFOHEADER 
+      </FONT><B><I>UDT.&nbsp; I originally made the sample use 24bit RGB because 
+      I thought that all modern graphics cards would support it in any 
+      case.&nbsp; But it seems I may have been wrong.&nbsp; I am investigating 
+      now and I plan to put a revised sample up soon.</I></B></P>
+      <P align=left><B><I>-Ray</I></B></P>
+      <P>The next step in working with AVI files is to get down to the 
+      sample/frame level.&nbsp; Since we have already opened a video stream in 
+      the previous sample, let's try to save each frame in the stream as 
+      separate bitmap files.&nbsp; This will involve a bit more code than the 
+      previous steps, so instead of copying from the HTML here, this time 
+      download the full sample project first here (<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr3.zip">AVITutr3.zip</A>) 
+      and I will highlight some of the important parts of the code as we go 
+      through it together. </P>
+      <P>Assuming you have now downloaded and opened the project in either VB5 
+      or VB6, you will notice that I have added a textbox to the form (this is 
+      just for status information) and a new class called <A 
+      href="http://www.shrinkwrapvb.com/avihelp/cDIB.cls">cDIB.cls</A> .&nbsp; 
+      This class is just to wrap some of the messy APIs involved in dealing with 
+      DIBs (Device Independent Bitmaps) in VB.&nbsp; It is especially tricky 
+      working with the variable-length BitmapInfo structure, since the size 
+      varies depending on the color-depth of the bitmap image.&nbsp; Anyway, 
+      ignoring the implementation details of the cDIB class for now (maybe I 
+      will write some *more* HTML someday &lt;groan&gt;), you will notice that 
+      it doesn't take too many more lines of code in the command button's click 
+      event to do what we want. </P>
+      <P>You will see 5 new variables dimensioned at the top of the Sub: </P>
+      <P><FONT face=Courier color=#000080>Dim dib As cDIB<BR>Dim pGetFrameObj As 
+      Long </FONT><FONT face=Courier color=#006600>'pointer to GetFrame 
+      interface</FONT><FONT face=Courier color=#000080><BR>Dim pDIB As Long 
+      'pointer to packed DIB in memory<BR>Dim bih As BITMAPINFOHEADER 
+      </FONT><FONT face=Courier color=#006600>'infoheader to pass to GetFrame 
+      functions</FONT><FONT face=Courier color=#000080><BR>Dim i As Long</FONT> 
+      </P>
+      <P>The dib variable is, of course, an instance of the new class that let's 
+      us keep our code relatively neat.&nbsp; The pGetFrameObj variable is a new 
+      kind of handle which is required by the AVIStreamGetFrame functions.&nbsp; 
+      These functions automatically allocate the resources to decompress one 
+      frame into any type DIB that we specify and return a pointer to it so we 
+      can process it and use it how we want.&nbsp; To use these functions I 
+      first allocate the resources and get a pointer to the GetFrame interface 
+      like this: </P>
+      <P><FONT face=Courier color=#006600>'init AVISTreamGetFrame* functions and 
+      create GETFRAME object<BR></FONT><FONT face=Courier 
+      color=#000080>pGetFrameObj = AVIStreamGetFrameOpen(pAVIStream, bih) 
+      </FONT><FONT face=Courier color=#006600>'force function to return 24bit 
+      DIBS</FONT> </P>
+      <P>Before that line of code, I initialized a BitmapInfoHeader UDT to the 
+      format I wanted the GetFrame functions to return (in this case 24-bit, 
+      uncompressed RGB): </P>
+      <P><FONT face=Courier color=#006600>'set bih attributes which we want 
+      GetFrame functions to return</FONT><FONT face=Courier 
+      color=#000080><BR>With bih<BR>&nbsp;&nbsp;&nbsp; .biBitCount = 
+      24<BR>&nbsp;&nbsp;&nbsp; .biClrImportant = 0<BR>&nbsp;&nbsp;&nbsp; 
+      .biClrUsed = 0<BR>&nbsp;&nbsp;&nbsp; .biCompression = 
+      BI_RGB<BR>&nbsp;&nbsp;&nbsp; .biHeight = streamInfo.rcFrame.bottom - 
+      streamInfo.rcFrame.top<BR>&nbsp;&nbsp;&nbsp; .biPlanes = 
+      1<BR>&nbsp;&nbsp;&nbsp; .biSize = 40<BR>&nbsp;&nbsp;&nbsp; .biWidth = 
+      streamInfo.rcFrame.right - streamInfo.rcFrame.left<BR>&nbsp;&nbsp;&nbsp; 
+      .biXPelsPerMeter = 0<BR>&nbsp;&nbsp;&nbsp; .biYPelsPerMeter = 
+      0<BR>&nbsp;&nbsp;&nbsp; 'calculate total size of RGBQUAD scanlines (DWORD 
+      aligned)<BR>&nbsp;&nbsp;&nbsp; .biSizeImage = (((.biWidth * 3) + 3) And 
+      &amp;HFFFC) * .biHeight&nbsp;<BR>End With<BR></FONT></P>
+      <P>This makes it possible to know what DIB format is coming in advance, so 
+      that my DIB class can handle it (right now the DIB class can only handle 
+      unpalletized memory DIBs - RGB 16 or 24bit color).&nbsp; If you are going 
+      to pass the returned DIB pointer to another function like DrawDIB, that 
+      understands any type of format then you might want to call the function 
+      like this instead: </P>
+      <P><FONT face=Courier color=#006600>'tell AVIStream API to choose the best 
+      display format automatically<BR></FONT><FONT face=Courier 
+      color=#000080>pGetFrameObj = AVIStreamGetFrameOpen(pAVIStream, ByVal 
+      AVIGETFRAMEF_BESTDISPLAYFMT)&nbsp;</FONT> </P>
+      <P>This is easier than setting up the BitmapInfoHeader UDT, but it means 
+      that you cannot be sure what format you will get back - it depends on the 
+      current display settings and hardware. </P>
+      <P>Now that we have succesfully initialize the GetFrame API to the format 
+      we want and received a valid GetFrame interface pointer in the 
+      pGetFrameObj variable, all we need to do is pass the handle and the frame 
+      number that we want to the AVIStreamGetFrame function.&nbsp; I then use my 
+      handy cDIB class to copy the Bitmap headers and bits and write the new 
+      data out to disk as a Bitmap file.&nbsp; It only takes a few lines of 
+      code: </P>
+      <P><FONT face=Courier><FONT color=#006600>'create a DIB class to load the 
+      frames into</FONT><BR><FONT color=#000080>Set dib = New cDIB<BR>For i = 
+      firstFrame To (numFrames - 1) + firstFrame<BR>&nbsp;&nbsp;&nbsp; pDIB = 
+      AVIStreamGetFrame(pGetFrameObj, i) </FONT><FONT color=#006600>'returns 
+      "packed DIB"</FONT><FONT color=#000080><BR>&nbsp;&nbsp;&nbsp; If 
+      dib.CreateFromPackedDIBPointer(pDIB) 
+      Then<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Call 
+      dib.WriteToFile(App.Path &amp; "\" &amp; i &amp; 
+      ".bmp")<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; txtStatus = "Bitmap 
+      " &amp; i + 1 &amp; " of " &amp; numFrames &amp; " written to app 
+      folder"<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      txtStatus.Refresh<BR>&nbsp;&nbsp;&nbsp; 
+      Else<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp; 
+      End If<BR>Next<BR>Set dib = Nothing</FONT></FONT> </P>
+      <P>That's all there is to it!&nbsp; As you can see, the i variable is just 
+      counter that I used to loop through the entire file.&nbsp; Be careful 
+      using this example on very large AVI files, since there is no way to stop 
+      the loop until it writes every frame to disk once you start ;-)&nbsp; If 
+      you run this on an AVI you will find the application folder filled with 
+      RGB 24bit bitmaps named after the frame numbers.&nbsp; If you want to see 
+      how I wrote out the Bitmap to disk you can take a look at the cDIB class 
+      implementation code.&nbsp; Only 2 functions were necessary - 
+      .CreateFromPackedDIBPointer and .WriteToFile.&nbsp; The other functions in 
+      cDIB are mostly for creating DIBs from bitmap files, which we will do in a 
+      later step.&nbsp; In your own program, you might want to create an hDC and 
+      blit each frame to a picture control instead of saving them to disk.. </P>
+      <P>The only other thing to remember is to tell the FrameGet API to 
+      deallocate the resources when you are done.&nbsp; To do this just pass the 
+      same handle to AVIStreamGetFrameClose: </P>
+      <P><FONT face=Courier><FONT color=#000080>Call 
+      AVIStreamGetFrameClose(pGetFrameObj) </FONT>'//deallocates the GetFrame 
+      resources</FONT>　 </P>
+      <P>When this function returns the pointer will no longer be valid.&nbsp; 
+      It would be a good idea to set it to 0 if you plan on reusing it.&nbsp; 
+      Because my pGetFrameObj variable is only in scope for one subroutine I 
+      didn't bother. </P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_4.htm">Go to the 
+      next step</A></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm#Contents">Go 
+      back to the Table of Contents</A></P>
+      <DIV align=center>
+      <CENTER><!--mstheme--></FONT>
+      <TABLE height=66 borderColorDark=#330099 width=636 
+      borderColorLight=#99ccff border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=middle width="85%"><!--mstheme--><FONT 
+            face="ＭＳ Ｐゴシック">
+            <H5 align=center><!--mstheme--><FONT color=#3366ff>This 
+            <B>Shrinkwrap Visual Basic AVIFile Tutorial </B>is Copyright (C) 
+            2000 by Ray Mercer<BR>Redistribution of the tutorial text and/or 
+            samples is prohibited.&nbsp; Please contact the author Ray Mercer 
+            &lt;<A 
+            href="mailto:raymer@shrinkwrapvb.com">raymer@shrinkwrapvb.com</A>&gt; 
+            if you have a question about this policy.<!--mstheme--></FONT></H5><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+      face="ＭＳ Ｐゴシック"></CENTER></DIV>
+      <P>　 
+  </P><!--mstheme--></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

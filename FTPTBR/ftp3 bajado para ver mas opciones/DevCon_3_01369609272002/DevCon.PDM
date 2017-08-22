@@ -1,0 +1,97 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Brian\Desktop\DevCon Project\Package
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Documents and Settings\Brian\Desktop\Resiware Development\MacShell (Vmac)\MSCOMCTL.OCX=
+C:\WINDOWS\SYSTEM32\mswinsck.ocx=
+C:\WINDOWS\SYSTEM32\wininet.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\Documents and Settings\Brian\Desktop\DevCon Project\DevCon_302b.exe=Yes
+C:\WINDOWS\SYSTEM32\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM32\oleaut32.dll=Yes
+C:\WINDOWS\SYSTEM32\olepro32.dll=Yes
+C:\WINDOWS\SYSTEM32\asycfilt.dll=Yes
+C:\WINDOWS\SYSTEM32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM32\wininet.dll=Yes
+C:\WINDOWS\SYSTEM32\mswinsck.ocx=Yes
+C:\Documents and Settings\Brian\Desktop\Resiware Development\MacShell (Vmac)\MSCOMCTL.OCX=Yes
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Documents and Settings\Brian\Desktop\DevCon Project\DevCon_302b.exe=$(AppPath)
+C:\WINDOWS\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\wininet.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\mswinsck.ocx=$(WinSysPath)
+C:\Documents and Settings\Brian\Desktop\Resiware Development\MacShell (Vmac)\MSCOMCTL.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Basic\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\Brian\Desktop\DevCon Project\DevCon_302b.exe=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=DevCon
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=DevCon
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|DevCon]
+Icon1=DevCon_302b.exe
+Title1=DevCon
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\Documents and Settings\Brian\Desktop\DevCon Project\Package
+ProjectFolder=C:\Documents and Settings\Brian\Desktop\DevCon Project
+ServerSideCab=
+File1=C:\Documents and Settings\Brian\Desktop\DevCon Project\Package\setup.exe
+File2=C:\Documents and Settings\Brian\Desktop\DevCon Project\Package\Setup.Lst
+File3=C:\Documents and Settings\Brian\Desktop\DevCon Project\Package\DevCon_302b.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

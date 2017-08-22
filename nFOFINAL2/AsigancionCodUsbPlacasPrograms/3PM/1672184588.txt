@@ -1,0 +1,10 @@
+#define     CIF0    8
+#define     CIF1    8
+#define     CIF2    5
+#define     CIF3    4
+#define     CIF4    8
+#define     CIF5    1
+#define     CIF6    2
+#define     CIF7    7
+#define     CIF8    6
+#define     CIF9    1

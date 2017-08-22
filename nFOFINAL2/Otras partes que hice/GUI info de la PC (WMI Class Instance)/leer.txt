@@ -1,0 +1,2 @@
+necesita tener instlalado el WBEM en componentes de internt(?) 
+para quer tire los datos en W98

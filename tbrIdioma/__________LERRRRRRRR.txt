@@ -1,0 +1,24 @@
+****************************
+19 enero 2010
+
+los archivos LanSource son la base que sale del 3PM
+ya no quiero entras mas al 3PM a generarla aunque deberia si hay alguna correcion rtografica
+
+en enero de 2010 necsite agregar una cadena de karaoke y directamente escribi el LanSource con la cadena nueva
+respetando la estructura chr30 texto %99% chr31 texto %99% (igual en los dos)
+Despues combine el nuevo LanSource con el LAN anterior (english.idm) y se da un conteo de las cadenas nuevas OK
+
+
+El sistema tbridioma no grana LanSource, las opciones de grabar grabasn solo como LAN que son IDM
+
+Si agarro un LanSource debo usar Guardar como, nunca gurdar (se usa en proceso de traduccion con un LAN abierto)
+Lo que se graba es el español.idm
+
+Cuando abro el LAN y con las cadenas traducidas y se graba eso debe ser el english.idm
+
+**************************
+opcion 2, abrir el ADDIN y regenerar el lansource, combinarlo con el LAN ultimo que tengamos y hacer las 
+traducciones de las nuevas cadenas por la que se empezo este kilombo (con el metodo uno algo fallaba y no se que es)
+
+
+**************************

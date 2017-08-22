@@ -1,0 +1,97 @@
+Preguntas manu
+¿Que son los archivos LOAD?
+Son archivos que definen las claves que usara cada sistema que se licencie con nFoFinal2
+
+¿Por que hay un LOAD para cada programa?
+Para que sea mas seguro, cada programa usa claves diferentes
+Ademas si fuera uno solo el licenciero podria activar todos los programas con una sola licencia
+La idea es que este licenciero se pueda mandar a un cliente que compro licencias indefinidas sin perder la seguridad de los otros sistemas
+
+¿Necesito generar una licencia del licenciador por cada programa?
+Si, este licenciero genera licencias para las cueles ha sido licenciado previamente
+
+¿De que habla este archivo?
+De como esta formado un archivo LOAD y como usarlo
+
+********************************************************************************
+CONTENIDO DEL ARCHIVO LOAD
+------------------------
+cada sistema se registra en este licenciero con el "system" siguiente
+Este es el nombre del programa y el codigo interno que el programa que use estas licencias
+debe esperar como nombre del programa en el archivo de licencia
+*********************
+{system:e2games}
+*********************
+
+------------------------
+clave de encriptacion de la licencia a generar
+{llave:Error al cargar}
+
+
+------------------------
+clave de encriptacion del licenciero mismo
+{llave2:Falla la carga}
+No usa la misma que el sistema, solo para que sea mas complicado y molesto
+
+------------------------
+a continuacion lista de indices de la licencia
+Determinados tipos de codigos representan determinados tipos de licencia
+por ejemplo en 3PM 7, el 7 (entre otros) representa superlicencia.
+
+{setID:7:1:4}
+
+el primer valor es la licencia que se entregara
+7 es SL por ejemplo
+
+El segundo es un valor entre 1 y 5 que representa cada una de las formas de
+acceder a una licencia que se describe en el punto 1.
+
+el tercer valor es el mnr que devuelve el archivo de licencia
+cada archivo de licencia generado tiene dos identificadores,
+el que aqui se denomina system mas arriba y el mnr
+El MNR es un numero del 1 al 99 que sirve para saber que tipo de licencia es el archivo
+
+Ejemplo:
+{setID:7:1:4}
+
+quiere decir que la forma numero 1 de obtener una licencia tipo 7 (SL)
+es que el mnr devuelva 4
+
+Es por esto que es importante que no haya ningun duplicado en el indice 3
+ni tampoco ninguna combinacion de los indices 1 y 2 duplicada.
+
+-----------------------
+la misma carga de IDs pero para la licencia de este licenciero
+
+{setID2:7:1:33}
+
+Cuando el licenciero pregunte "Cuantas licencias desea programar"
+En reralidad le esta pidiendo un MNR para la licencia de este sistema en el licenciero
+En el ejemplo
+{setID2:7:1:33} 
+si yo digo en "Cuantas licencias desea programar" el 33 se generaran solo licencias tipo 7 
+(en 3pm son superlicencias)
+
+
+-----------------------
+valores de licencia que se daran segun el mNR que devuelva
+la licencia del licenciero
+
+{usenr:0:51} (el cero representa a todos los negativos o el cero)
+
+esto quiere decir por ejemplo que si el mNR da -2 (creo que es error del archivo de licencia) la licencia que genera el generador tendra el mNR 51
+que por ejemplo puede ser una licencia gratuita
+
+
+solo para saber segun numero el tipo de lic:
+{usenr:1:00}  -> erronea         => genera gratuitas
+{usenr:2:00}  -> gratuita        => genera gratuitas
+{usenr:3:00}  -> minima          => genera minima
+{usenr:4:00}  -> comun           => genera comun
+{usenr:5:00}  -> premium         => genera Premium
+{usenr:6:00}  -> full            => genera full
+{usenr:7:00}  -> SL              => genera SL
+
+********************************************************
+
+Hay un archivo por cada programa, con datos de la maquina licenciadora.

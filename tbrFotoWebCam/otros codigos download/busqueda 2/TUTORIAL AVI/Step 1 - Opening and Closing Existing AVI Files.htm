@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.shrinkwrapvb.com/avihelp/avihlp_1.htm -->
+<HTML><HEAD><TITLE>Step 1 - Opening and Closing Existing AVI Files</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Content-Language content=en-us>
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="shrinkwrap-style 100, default" name="Microsoft Theme">
+<META content="t, default" name="Microsoft Border"></HEAD>
+<BODY text=#003366 vLink=#3366ff aLink=#99ccff link=#9900ff bgColor=#ffffff><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face=Arial>
+      <P align=center><STRONG><B><FONT size=6><IMG height=60 
+      alt="Getting a handle on AVIs" 
+      src="Step 1 - Opening and Closing Existing AVI Files_archivos/avihlp_1.htm_cmp_shrinkwrap-style100_bnr.gif" 
+      width=600 border=0></FONT></B></STRONG><BR><FONT 
+      face=Arial><B><NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/videocap.htm">Video&nbsp;Capture&nbsp;Help</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm">AVIFile&nbsp;Tutorial</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbdist.htm">Licensing&nbsp;and&nbsp;Distribution</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbtips.htm">Resources</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/awd_rec.htm">Awards</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbnews.htm">Latest&nbsp;News</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbcode.htm">Source&nbsp;Code</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbctrls.htm">Free&nbsp;Controls</A>&nbsp;]</NOBR></B></FONT></P>
+      <P 
+  align=center>&nbsp;</P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><!--mstheme--><FONT face=Arial>
+      <H2 align=center><!--mstheme--><FONT color=#3366ff><B>STEP 1 - Opening and 
+      closing existing AVI files</B><!--mstheme--></FONT></H2>
+      <P><B>HERE ARE THE PROJECT FILES FOR STEP 1 <A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr1.zip">AVITutr1.zip</A></B></P>
+      <P>Before calling any of the AVIFile API functions you need to be sure 
+      that you call the AVIFileInit Sub.&nbsp; This subroutine (or 'function 
+      which returns VOID' in C-speak) merely tells Windows to initialize the 
+      AVIFile library functions for later use.&nbsp; When you are finished with 
+      all AVI functions you should make a corresponding call to the AVIFileExit 
+      Sub.</P>
+      <P>For our simple test program, put the following line of code in 
+      Form_Load:</P>
+      <P><FONT face=Courier><FONT color=#000080>Call AVIFileInit</FONT> <FONT 
+      color=#006600>'// opens AVIFile library</FONT></FONT></P>
+      <P>And put the following line of code in Form_Unload:</P>
+      <P><FONT face=Courier><FONT color=#000080>Call AVIFileExit</FONT> <FONT 
+      color=#006600>'// releases AVIFile library</FONT></FONT></P>
+      <P>If you were creating a class wrapper for working with AVI files, you 
+      could put AVIFileInit in the Class_Initialize method and the corresponding 
+      call to AVIFileExit in the Class_Terminate method.&nbsp; The point here is 
+      that AVIFileInit needs to be called first and must be balanced by a call 
+      to AVIFileExit when you are finished using the AVIFile functions.</P>
+      <P>We also need to get the name of an AVI file to open.&nbsp; I don't 
+      really like hard-coding path names in my code, even in sample apps like 
+      this - so I have included the cFileDlg Class in the project.&nbsp; This 
+      class is one that I use to replace the bulky Common Dialog control.&nbsp; 
+      Feel free to replace cFileDlg.cls class with the VB Common Dialog ocx if 
+      you really want to.&nbsp; To get an AVI file to work with add a command 
+      button to the form in your test program.&nbsp; In the click event of the 
+      command button add these lines of code:</P>
+      <P><FONT face=Courier><FONT color=#000080>Dim res As Long</FONT> <FONT 
+      color=#006600>'result code</FONT><BR><FONT color=#000080>Dim ofd As 
+      cFileDlg </FONT><FONT color=#006600>'OpenFileDialog class</FONT><BR><FONT 
+      color=#000080>Dim szFile As String </FONT><FONT 
+      color=#006600>'filename</FONT></FONT></P>
+      <P><FONT face=Courier><FONT color=#006600>'Get the name of an AVI file to 
+      work with</FONT><BR><FONT color=#000080>Set ofd = New cFileDlg<BR>With 
+      ofd<BR>&nbsp;&nbsp;&nbsp; .OwnerHwnd = Me.hWnd<BR>&nbsp;&nbsp;&nbsp; 
+      .Filter = "AVI Files|*.avi"<BR>&nbsp;&nbsp;&nbsp; .DlgTitle = "Open AVI 
+      File"<BR>End With<BR>res = ofd.VBGetOpenFileName(szFile)<BR>If res = False 
+      Then GoTo ErrorOut</FONT></FONT></P>
+      <P>All of this code is simply to display an open file dialog to the user 
+      and allow them to select an AVI file to work with.&nbsp; If the user 
+      clicks the cancel button on the dialog, the GoTo will send the program to 
+      the ErrorOut tag (which we will add later).</P>
+      <P>The next step is to be able to open the AVI file that the user selects 
+      from the common dialog and get a PAVIFILE handle which can be passed to 
+      other AVIFile functions as necessary.&nbsp; We use the AVIFileOpen 
+      function to do this.&nbsp;&nbsp;Add these 2 lines of code to the command 
+      button click event:</P>
+      <P><FONT face=Courier><FONT color=#000080>Dim pAVIFile as Long 
+      </FONT><FONT color=#006600>'pointer to AVI File (PAVIFILE 
+      handle)</FONT><BR><BR><FONT color=#000080>res = AVIFileOpen(pAVIFile, 
+      szFile, OF_SHARE_DENY_WRITE, 0&amp;)</FONT></FONT></P>
+      <P>The AVIFileOpen function accepts the same OF flags as the OpenFile API 
+      function.&nbsp; The pAVIFile variable will contain the file interface 
+      pointer to the AVI file specified in the szFile varable.&nbsp; If the call 
+      is successful, it will return AVIERR_OK (which is a constant defined in 
+      the mAVIDecs.bas file as 0).&nbsp;</P>
+      <P>Since we are going to eventually be calling a lot of WinAPI functions 
+      that need clean-up, it's important to add a basic error-handling structure 
+      so the program can exit cleanly if there are problems.&nbsp; To check the 
+      results of this function, I add the following line of code immediately 
+      after the call to AVIFileOpen:</P>
+      <P><FONT face=Courier color=#000080>If res &lt;&gt; AVIERR_OK Then GoTo 
+      ErrorOut</FONT></P>
+      <P><FONT face=Courier color=#000080>(*note - Please don't write telling me 
+      how horrible it is to use 'GoTo'.&nbsp; I agree!&nbsp; Normally all this 
+      stuff would be in a class and neatly componentized, but in order to keep 
+      the error/cleanup routine seperated out from the code I decided to use 
+      GoTo.&nbsp; Feel free to not use it in your own program.)</FONT></P>
+      <P>Then I add cleanup code after the ErrorOut: tag and check to see if 
+      there was an error at the very end of the function.&nbsp; This will allow 
+      us to properly clean up all resources which may have been allocated by API 
+      calls and show user feedback if there was an error.&nbsp; The call to 
+      AVIFileRelease releases the file handle and closes the file.&nbsp; You 
+      need to be careful that you always call AVIFileRelease eventually after 
+      calling AVIFileOpen.&nbsp; Also, in this sample I show a message box to 
+      the user if there was an error.&nbsp; Of course, if you are building a 
+      class-based program you would probably want to raise an error to the 
+      client instead of showing a message box.&nbsp; Here is the code for the 
+      end of the Click Sub:</P>
+      <P><FONT face=Courier color=#000080>ErrorOut:<BR>&nbsp;&nbsp;&nbsp; If 
+      pAVIFile &lt;&gt; 0 Then<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      Call AVIFileRelease(pAVIFile) </FONT><FONT face=Courier color=#006600>'// 
+      closes the file</FONT><FONT face=Courier 
+      color=#000080><BR>&nbsp;&nbsp;&nbsp; End If<BR><BR>&nbsp;&nbsp;&nbsp; If 
+      (rc &lt;&gt; AVIERR_OK) Then </FONT><FONT face=Courier color=#006600>'if 
+      there was an error then show feedback to user</FONT><FONT face=Courier 
+      color=#000080><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "There 
+      was an error working with the file:" 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &amp; vbCrLf &amp; szFile, vbInformation, App.Title<BR>&nbsp;&nbsp;&nbsp; 
+      End If</FONT></P>
+      <P>That's all there is to it!&nbsp; You can now open an existing AVI file 
+      from VB and get a PAVIFILE interface pointer to use with the AVIFile 
+      WinAPI functions.&nbsp; Since this program doesn't really do anything, I 
+      added one MsgBox call to display the interface pointer value (probably a 
+      very long number) to the user.&nbsp; You can download the entire sample 
+      program here (<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr1.zip">AVITutr1.zip</A>).</P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_2.htm">Go to the 
+      next step</A></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm#Contents">Go 
+      back to the Table of Contents</A></P>
+      <DIV align=center>
+      <CENTER><!--mstheme--></FONT>
+      <TABLE height=66 borderColorDark=#330099 width=636 
+      borderColorLight=#99ccff border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=middle width="85%"><!--mstheme--><FONT 
+            face=Arial>
+            <H5 align=center><!--mstheme--><FONT color=#3366ff>This 
+            <B>Shrinkwrap Visual Basic AVIFile Tutorial </B>is Copyright (C) 
+            2000 by Ray Mercer<BR>Redistribution of the tutorial text and/or 
+            samples is prohibited.&nbsp; Please contact the author Ray Mercer 
+            &lt;<A 
+            href="mailto:raymer@shrinkwrapvb.com">raymer@shrinkwrapvb.com</A>&gt; 
+            if you have a question about this policy.<!--mstheme--></FONT></H5><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+      face=Arial></CENTER></DIV>
+      <P></P><!--mstheme--></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

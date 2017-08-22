@@ -1,0 +1,24 @@
+MAC 1: 444553540000
+MAC 2: 000854E1145E
+BiosCaption: 
+BiosDate: aaIBM COMPATIBLE IBM IS A TRADEMARK OF INTERNATIONAL BUSINESS MACHINES CORP.j@VWlnu=u<uE_^jtBPR€>@t@u€&?  ZX(C)1985-1996,American Megatrends Inc.,All Rights Reserved,6145F Northbelt Parkway,GA-30071,USA.(770)-246-8600.j
+BIOSDescription: 
+BIOSIdentificationCode: 
+BIOSManufacturer: 
+BIOSName: 
+BIOSReleaseDate: 
+BIOSSerialNumber: 
+BIOSSMBIOSBIOSVersion: 
+BIOSSMBIOSMajorVersion: 
+BIOSSMBIOSMinorVersion: 
+BIOSVersion: 
+Country: Argentina
+PROCCaption: AMD-K6(tm) 3D processor
+PROCCCspeed: 550
+PROCDeviceId: CPU0
+PROCFamily: 27
+PROCId: 000000550000058C
+PROCInfoReserved: 80C0005
+PROCRevis: 2060
+PROCType: 3
+WinVersion: Windows Millenium

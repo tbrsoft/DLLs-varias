@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.shrinkwrapvb.com/avihelp/avihelp.htm -->
+<HTML><HEAD><TITLE>AVIFile Tutorial</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Content-Language content=en-us>
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="shrinkwrap-style 100, default" name="Microsoft Theme">
+<META content=t name="Microsoft Border"></HEAD>
+<BODY text=#003366 vLink=#3366ff aLink=#99ccff link=#9900ff bgColor=#ffffff><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face=Arial>
+      <P align=center><STRONG><B><FONT size=6><IMG height=60 
+      alt="AVIFile Tutorial" 
+      src="AVIFile Tutorial_archivos/avihelp.htm_cmp_shrinkwrap-style100_bnr.gif" 
+      width=600 border=0></FONT></B></STRONG><BR><FONT 
+      face=Arial><B><NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/videocap.htm">Video&nbsp;Capture&nbsp;Help</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;AVIFile&nbsp;Tutorial&nbsp;]</NOBR> <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbdist.htm">Licensing&nbsp;and&nbsp;Distribution</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbtips.htm">Resources</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/awd_rec.htm">Awards</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbnews.htm">Latest&nbsp;News</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbcode.htm">Source&nbsp;Code</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbctrls.htm">Free&nbsp;Controls</A>&nbsp;]</NOBR></B></FONT></P>
+      <P 
+  align=center>&nbsp;</P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><!--mstheme--><FONT face=Arial>
+      <H2><!--mstheme--><FONT color=#3366ff><B>VB Programmer's AVIFile Function 
+      Help Pages</B><!--mstheme--></FONT></H2>
+      <P>Windows contains a powerful set of video file functions called the 
+      AVIFile API ('Application Programming Interface').&nbsp; The AVIFile API 
+      set of functions is part of an even larger API called the Video For 
+      Windows API.&nbsp; It is possible to use the AVIFile functions from Visual 
+      Basic.&nbsp; However, the lack of samples and documentation for VB 
+      programmers makes it a non-trivial and even daunting task.&nbsp; I have 
+      been using the Video For Windows API with Visual Basic for a couple of 
+      years now and from C/C++ before that.&nbsp; Most recently, I have been 
+      experimenting with the AVIFile functions for creating and editing AVI 
+      files.&nbsp; I hope that sharing some of my discoveries here will allow 
+      others to get through the maze of quirks and pitfalls in these functions a 
+      little quicker than I did.</P>
+      <P><FONT size=2><B>SPECIAL THANKS:</B><BR>The following people deserve a 
+      special thanks for reporting bugs and/or making suggestions which made 
+      this tutorial even better:</FONT></P>
+      <P><B><FONT size=3>Patrick Pasteels<BR>Scott Rhodes</FONT></B></P>
+      <P><FONT size=2>If you find a bug or wish to contribute code or 
+      suggestions, please see <A 
+      href="http://www.shrinkwrapvb.com/avihelp/contact.htm">here</A> for info 
+      on how to contact me.</FONT></P>
+      <P>&nbsp;</P>
+      <H4><!--mstheme--><FONT color=#330099><FONT color=#000080><A 
+      name=Contents>AVIFile Tutorial Table of 
+      Contents</A><BR>------------------------------</FONT><A 
+      href="http://www.shrinkwrapvb.com/avihelp/avihlp_0.htm"><BR>Introduction 
+      and Preparation<BR></A>Read this first!<!--mstheme--></FONT></H4>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_1.htm">Step 1 - 
+      <B>Getting a Handle on AVIs</B><BR><I><FONT size=2>Opening And Closing 
+      Existing AVI Files</FONT></I><BR></A><FONT size=2>Create a sample program 
+      that allows the user to choose an AVI file from the disk and get an 
+      interface pointer to it for use with the AVIFile functions.&nbsp; This is 
+      the framework sample which is built on in all the other steps.&nbsp; Be 
+      sure you understand it before going on.</FONT></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_2.htm">Step 2 - 
+      <B>Gently down the Streams</B><BR><FONT size=2><I>Working With Existing 
+      Streams</I><BR></FONT></A><FONT size=2>Create a sample program that gets a 
+      pointer to the existing video stream in an AVI file and returns 
+      information about the stream.&nbsp;</FONT></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_3.htm">Step 3 - 
+      <B>AVI to BMPs</B><BR><FONT size=2><I>Working With Existing 
+      Frames</I><BR></FONT></A><FONT size=2>Create a utility that gets each 
+      frame from the video stream in an AVI file and saves it to a bitmap 
+      file.</FONT></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_4.htm">Step 4 - 
+      <B>Recompress your videos</B><BR><FONT size=2><I>Creating New AVI Files 
+      From Streams</I><BR></FONT></A><FONT size=2>Create a utility that copies 
+      the video stream from any AVI file, recompresses it using whatever codec 
+      the user chooses and saves it to a new AVI file.</FONT></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_5.htm">Step 5 - 
+      <B>BMPs to AVI</B><BR><FONT size=2><I>Creating New AVI Files From Bitmap 
+      Files</I><BR></FONT></A><FONT size=2>Create a utility that gets a list of 
+      bitmap files from the user and creates a new AVI file from them using a 
+      specified frame rate.</FONT></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/contact.htm" 
+      name=Contact><B>How to Contact Me</B></A><BR>This concludes the <A 
+      href="http://www.shrinkwrapvb.com/">Shrinkwrap Visual Basic</A> AVIFile 
+      Tutorial.&nbsp; If you have questions, please see this section for contact 
+      info.</P>
+      <P><B>Other sources of information:</B></P><!--mstheme--></FONT><!--msthemelist-->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0><!--msthemelist-->
+        <TBODY>
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 hspace=13 
+            src="AVIFile Tutorial_archivos/blubul1d.gif" width=15></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Arial>The 
+            definitive source of documentation for these functions is available 
+            online at the Microsoft website.&nbsp; The last time they scrambled 
+            their html, these functions ended up here -&gt; ( Online WinSDK docs 
+            for <A 
+            href="http://msdn.microsoft.com/isapi/msdnlib2.idc?theURL=/library/psdk/multimed/avifile_3uwj.htm">AVIFile 
+            functions</A> ).<!--mstheme--></FONT><!--msthemelist--></TD></TR><!--msthemelist-->
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 hspace=13 
+            src="AVIFile Tutorial_archivos/blubul1d.gif" width=15></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Arial>If you 
+            find that you need to do something with an AVI file that cannot be 
+            done with the AVIFile API, you may want to look into MMIO in the <A 
+            href="http://msdn.microsoft.com/default.asp">Windows Platform 
+            SDK</A>.&nbsp; However, using those lower level functions is beyond 
+            the scope of this 
+        tutorial.<!--mstheme--></FONT><!--msthemelist--></TD></TR><!--msthemelist-->
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 hspace=13 
+            src="AVIFile Tutorial_archivos/blubul1d.gif" width=15></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Arial>AVI files 
+            are actually a special type of RIFF file designed by Microsoft and 
+            IBM.&nbsp; A general overview of the AVI format is available online 
+            here -&gt; ( John McGowan's <A 
+            href="http://www.jmcgowan.com/avi.html">AVI Overview</A> ).<!--mstheme--></FONT><!--msthemelist--></TD></TR><!--msthemelist-->
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 hspace=13 
+            src="AVIFile Tutorial_archivos/blubul1d.gif" width=15></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Arial>&nbsp;The 
+            technical file format can be downloaded in Word format online here 
+            -&gt; ( AVI file format info on <A 
+            href="http://www.wotsit.org/cgi-bin/search.cgi?avi">Wotsit.org</A> 
+).<!--mstheme--></FONT><!--msthemelist--></TD></TR><!--msthemelist-->
+        <TR>
+          <TD vAlign=baseline width=42><IMG height=15 hspace=13 
+            src="AVIFile Tutorial_archivos/blubul1d.gif" width=15></TD>
+          <TD vAlign=top width="100%"><!--mstheme--><FONT face=Arial>Also, my 
+            own <A href="http://www.shrinkwrapvb.com/mminfo.htm">mmInfo.exe</A> 
+            sample may provide VB programmers with some insights into the 
+            various UDTs that are used by the AVIFile API.&nbsp;&nbsp;<!--mstheme--></FONT><!--msthemelist--></TD></TR><!--msthemelist--></TBODY></TABLE><!--mstheme--><FONT 
+      face=Arial>
+      <P>&nbsp;</P>
+      <DIV align=center>
+      <CENTER><!--mstheme--></FONT>
+      <TABLE height=66 borderColorDark=#330099 width=636 
+      borderColorLight=#99ccff border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=middle width="85%"><!--mstheme--><FONT 
+            face=Arial>
+            <H5 align=center><!--mstheme--><FONT color=#3366ff>This 
+            <B>Shrinkwrap Visual Basic AVIFile Tutorial </B>is Copyright (C) 
+            2000 by Ray Mercer<BR>Redistribution of the tutorial text and/or 
+            samples is prohibited.&nbsp; Please contact the author Ray Mercer 
+            &lt;<A 
+            href="mailto:raymer@shrinkwrapvb.com">raymer@shrinkwrapvb.com</A>&gt; 
+            if you have a question about this policy.<!--mstheme--></FONT></H5><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+      face=Arial></CENTER></DIV>
+      <H5><!--mstheme--><FONT color=#3366ff>&nbsp;<!--mstheme--></FONT></H5>
+      <P>&nbsp;</P><!--mstheme--></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

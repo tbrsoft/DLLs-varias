@@ -1,0 +1,6 @@
+frmAddIn = 154, 154, 679, 600, Z, 88, 88, 613, 534, C
+Connect = 220, 220, 745, 666, C, 110, 110, 1174, 1010, C
+frmPrincipal = 66, 66, 591, 512, C, 22, 22, 547, 468, C
+CommonDialog = 0, 0, 0, 0, C
+frmInsertarReferencias = 110, 110, 641, 556, C, 88, 88, 619, 534, C
+frmAnulla = 88, 88, 456, 533, C, 66, 66, 549, 511, C

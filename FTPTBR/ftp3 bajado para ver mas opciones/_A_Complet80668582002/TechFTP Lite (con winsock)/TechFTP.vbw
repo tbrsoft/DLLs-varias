@@ -1,0 +1,5 @@
+frmSiteManager = 88, 88, 506, 358, C, 44, 44, 462, 314, C
+modMyFunctions = 22, 22, 440, 292, 
+frmSettings = 44, 44, 463, 310, , 22, 22, 441, 288, C
+modBinDec = 0, 0, 417, 266, 
+frmMain = 110, 110, 506, 383, Z, 22, 22, 418, 295, C

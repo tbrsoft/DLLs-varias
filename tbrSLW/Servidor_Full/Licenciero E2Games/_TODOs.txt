@@ -1,0 +1,6 @@
+todos
+
+20091124 poner en mprock que funcione las licencias con la misma clave
+20091124 probar todo
+
+20100220 Cuando se pida una licencia que s eindique que es na misma PC si ya se habia sacado antes para solo regenrar la licencia y no hacer otro registro

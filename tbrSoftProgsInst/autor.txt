@@ -1,0 +1,7 @@
+Ejemplo para listar el soft y desintalarlo
+
+-------------------------------------------------
+
+
+Autor : Ben Jones
+

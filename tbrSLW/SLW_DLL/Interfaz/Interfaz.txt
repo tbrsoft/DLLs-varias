@@ -1,0 +1,1 @@
+Este programa es la interfaz grafica del Servidor

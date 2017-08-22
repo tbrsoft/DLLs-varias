@@ -1,0 +1,38 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "ISoundInfo"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Public Property Get Tags() As StreamTags
+End Property
+
+Public Property Get Force16Bit() As Boolean
+End Property
+
+Public Property Get samplerate() As Long
+End Property
+
+Public Property Get channels() As Integer
+End Property
+
+Public Property Get BitsPerSample() As Integer
+End Property
+
+Public Property Get Bitrate() As Long
+End Property
+
+Public Property Get Position() As Long
+End Property
+
+Public Property Get Duration() As Long
+End Property

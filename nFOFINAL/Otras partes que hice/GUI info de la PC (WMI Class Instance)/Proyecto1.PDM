@@ -1,0 +1,96 @@
+[Root]
+Most Recent Package=tbrInfo
+
+
+[Package|tbrInfo|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\codigo fuente\sistema\info de la PC\i
+
+[Package|tbrInfo|Configure DAO ISAMs]
+Applicable=No
+
+[Package|tbrInfo|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|tbrInfo|Files Found]
+
+[Package|tbrInfo|Files Released]
+
+[Package|tbrInfo|Missing Dependency Information]
+C:\WINDOWS\SYSTEM\WBEM\WBEMDISP.TLB=
+
+[Package|tbrInfo|Out-of-Date Dependency Information]
+
+[Package|tbrInfo|Files Added]
+
+[Package|tbrInfo|Files Removed]
+
+[Package|tbrInfo|Files In Project]
+D:\codigo fuente\sistema\info de la PC\tbrInfo.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6ES.DLL=Yes
+C:\WINDOWS\SYSTEM\WBEM\WBEMDISP.TLB=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|tbrInfo|Configure Registry Files]
+Applicable=No
+
+[Package|tbrInfo|Configure Remote Servers]
+Applicable=No
+
+[Package|tbrInfo|Install Locations]
+D:\codigo fuente\sistema\info de la PC\tbrInfo.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6ES.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\WBEM\WBEMDISP.TLB=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|tbrInfo|Configure Shared Files]
+Applicable=Yes
+D:\codigo fuente\sistema\info de la PC\tbrInfo.exe=No
+
+[Package|tbrInfo|Distribution]
+Type=multi
+Size=720 KB
+Title=tbrInfo
+
+[Package|tbrInfo|IconGroups]
+Group0=tbrInfo
+PrivateGroup0=Falso
+Parent0=$(Programs)
+
+[Package|tbrInfo|tbrInfo]
+Icon1=tbrInfo.exe
+Title1=tbrInfo
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|tbrInfo|Package]
+PackageFolder=D:\codigo fuente\sistema\info de la PC\i
+ProjectFolder=D:\codigo fuente\sistema\info de la PC
+ServerSideCab=
+File1=D:\codigo fuente\sistema\info de la PC\i\setup.exe
+File2=D:\codigo fuente\sistema\info de la PC\i\Setup.Lst
+File3=D:\codigo fuente\sistema\info de la PC\i\tbrInf1.CAB
+File4=D:\codigo fuente\sistema\info de la PC\i\tbrInf2.CAB
+File5=D:\codigo fuente\sistema\info de la PC\i\tbrInf3.CAB
+Handler1=PDWizard.FloppyDplySubWiz
+Handler2=PDWizard.FolderDplySubWiz
+Handler3=PDWizard.WebPostDplySubWiz

@@ -1,0 +1,8 @@
+
+
+necesito que cuando se extraigan los archivos se creen subcarpetas
+en 3pm el skin lleva bastantes archivos y es mejor que esten organizados
+los iconos de la config por ejemplo van en una sola carpeta
+
+andresv
+07/10/2009

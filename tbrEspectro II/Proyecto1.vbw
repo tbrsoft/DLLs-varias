@@ -1,0 +1,6 @@
+clsDraw = 45, 44, 650, 469, Z
+WaveInRecorder = 110, 145, 787, 570, 
+modDraw = 0, 0, 605, 425, 
+tbrEspectro = 44, 58, 649, 483, , 132, 174, 737, 599, C
+clsFourier = 110, 145, 715, 570, C
+FX = 0, 0, 0, 0, C

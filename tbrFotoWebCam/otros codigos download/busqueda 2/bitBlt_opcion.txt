@@ -1,0 +1,164 @@
+Option Explicit
+
+Private Const WM_USER As Long = &H400
+Private Const WM_CAP_DRIVER_CONNECT As Long = (WM_USER + &HA)
+Private Const WM_CAP_DRIVER_DISCONNECT As Long = (WM_USER + &HB)
+Private Const WM_CAP_SET_PREVIEWRATE As Long = (WM_USER + &H34)
+Private Const WM_CAP_SET_PREVIEW As Long = (WM_USER + &H32)
+Private Const WM_CAP_GET_STATUS As Long = (WM_USER + &H36)
+Private Const HWND_TOP As Long = 0
+Private Const SWP_NOMOVE As Long = &H2
+Private Const SWP_NOZORDER As Long = &H4
+Private Const SWP_NOENDCHANGING As Long = &H400
+
+Private Declare Function SendMessage Lib "user32.dll" Alias "SendMessageA" ( _
+ByVal hWnd As Long, _
+ByVal wMsg As Long, _
+ByVal wParam As Long, _
+ByVal lParam As Long) As Long
+
+Private Declare Function SendMessage_2 Lib "user32.dll" Alias "SendMessageA" ( _
+ByVal hWnd As Long, _
+ByVal wMsg As Long, _
+ByVal wParam As Long, _
+ByRef lParam As CAPSTATUS) As Long
+
+Private Declare Function SetWindowPos Lib "user32.dll" ( _
+ByVal hWnd As Long, _
+ByVal hWndInsertAfter As Long, _
+ByVal x As Long, _
+ByVal y As Long, _
+ByVal cx As Long, _
+ByVal cy As Long, _
+ByVal wFlags As Long) As Long
+
+
+Private Sub Form_Load()
+Dim pCS As CAPSTATUS
+Dim res As Long
+
+hCapWin = capCreateCaptureWindow("CaptureWindow", WS_CHILD Or WS_VISIBLE, 0, 0, 0, 0, Me.hWnd, 0)
+If Not hCapWin = 0 Then
+SendMessage hCapWin, WM_CAP_DRIVER_CONNECT, 0, 0
+SendMessage hCapWin, WM_CAP_SET_PREVIEWRATE, 66, 0
+SendMessage hCapWin, WM_CAP_SET_PREVIEW, True, 0
+res = SendMessage_2(hCapWin, WM_CAP_GET_STATUS, Len(pCS), pCS)
+w = pCS.uiImageWidth
+h = pCS.uiImageHeight
+SetWindowPos hCapWin, HWND_TOP, 0, 0, w, h, SWP_NOMOVE Or SWP_NOZORDER Or SWP_NOENDCHANGING
+w = w + 10
+h = h + 40
+SetWindowPos Me.hWnd, HWND_TOP, 0, 0, w, h, SWP_NOMOVE Or SWP_NOZORDER Or SWP_NOENDCHANGING
+End If
+End Sub
+
+Private Sub Form_Terminate()
+SendMessage hCapWin, WM_CAP_DRIVER_DISCONNECT, 0, 0
+End Sub
+
+Private Sub mnuCapFrame_Click()
+CapFrame
+End Sub
+
+
+Add this code to Module1:
+
+Option Explicit
+
+Public Const WS_CHILD As Long = &H40000000
+Public Const WS_VISIBLE As Long = &H10000000
+
+Public Type POINT
+x As Long
+y As Long
+End Type
+
+Public Type CAPSTATUS
+uiImageWidth As Long
+uiImageHeight As Long
+fLiveWindow As Long
+fOverlayWindow As Long
+fScale As Long
+ptScroll As POINT
+fUsingDefaultPalette As Long
+fAudioHardware As Long
+fCapFileExists As Long
+dwCurrentVideoFrame As Long
+dwCurrentVideoFramesDropped As Long
+dwCurrentWaveSamples As Long
+dwCurrentTimeElapsedMS As Long
+hPalCurrent As Long
+fCapturingNow As Long
+dwReturn As Long
+wNumVideoAllocated As Long
+wNumAudioAllocated As Long
+End Type
+
+Public Declare Function capCreateCaptureWindow Lib "avicap32.dll" Alias "capCreateCaptureWindowA" ( _
+ByVal lpszWindowName As String, _
+ByVal dwStyle As Long, _
+ByVal x As Long, _
+ByVal y As Long, _
+ByVal nWidth As Long, _
+ByVal nHeight As Long, _
+ByVal hWndParent As Long, _
+ByVal nID As Long) As Long
+
+Public Declare Function GetDC Lib "user32.dll" ( _
+ByVal hWnd As Long) As Long
+
+Private Declare Function CreateCompatibleBitmap Lib "gdi32.dll" ( _
+ByVal hdc As Long, _
+ByVal nWidth As Long, _
+ByVal nHeight As Long) As Long
+
+Public Declare Function CreateCompatibleDC Lib "gdi32.dll" ( _
+ByVal hdc As Long) As Long
+
+Public Declare Function SelectObject Lib "gdi32.dll" ( _
+ByVal hdc As Long, _
+ByVal hObject As Long) As Long
+
+Public Declare Function BitBlt Lib "gdi32.dll" ( _
+ByVal hDestDC As Long, _
+ByVal x As Long, _
+ByVal y As Long, _
+ByVal nWidth As Long, _
+ByVal nHeight As Long, _
+ByVal hSrcDC As Long, _
+ByVal xSrc As Long, _
+ByVal ySrc As Long, _
+ByVal dwRop As Long) As Long
+
+Public Declare Function DeleteDC Lib "gdi32.dll" ( _
+ByVal hdc As Long) As Long
+
+
+Public hCapWin As Long
+Public w As Long
+Public h As Long
+
+Public Sub CapFrame()
+Dim hCapWinDC As Long
+Dim hBitmap As Long
+Dim hdc As Long
+Dim hOldBMP As Long
+Dim r As Long
+
+hCapWinDC = GetDC(hCapWin)
+hBitmap = CreateCompatibleBitmap(hCapWinDC, w, h)
+hdc = CreateCompatibleDC(hCapWinDC)
+hOldBMP = SelectObject(hdc, hBitmap)
+
+r = BitBlt(hdc, 0, 0, w, h, hCapWinDC, 0, 0, vbSrcCopy)
+
+Form2.Show
+Form2.Picture1.AutoRedraw = True
+r = BitBlt(Form2.Picture1.hdc, 0, 0, w, h, hdc, 0, 0, vbSrcCopy)
+Form2.Picture1.Refresh
+Form2.Picture2.Picture = Form2.Picture1.Image
+
+r = SelectObject(hdc, hOldBMP)
+r = DeleteDC(hdc)
+
+end sub

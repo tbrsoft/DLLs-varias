@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.shrinkwrapvb.com/avihelp/avihlp_5.htm -->
+<HTML><HEAD><TITLE>Step 5 - Creating New AVI Files From Individual Frames (Samples)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="shrinkwrap-style 100, default" name="Microsoft Theme">
+<META content="t, default" name="Microsoft Border"></HEAD>
+<BODY text=#003366 vLink=#3366ff aLink=#99ccff link=#9900ff bgColor=#ffffff><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face="ＭＳ Ｐゴシック">
+      <P align=center><STRONG><B><FONT size=6><IMG height=60 alt="BMPs to AVI" 
+      src="Step 5 - Creating New AVI Files From Individual Frames (Samples)_archivos/avihlp_5.htm_cmp_shrinkwrap-style100_bnr.gif" 
+      width=600 border=0></FONT></B></STRONG><BR><FONT 
+      face=Arial><B><NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/videocap.htm">Video&nbsp;Capture&nbsp;Help</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm">AVIFile&nbsp;Tutorial</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbdist.htm">Licensing&nbsp;and&nbsp;Distribution</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbtips.htm">Resources</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/awd_rec.htm">Awards</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbnews.htm">Latest&nbsp;News</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbcode.htm">Source&nbsp;Code</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbctrls.htm">Free&nbsp;Controls</A>&nbsp;]</NOBR></B></FONT></P>
+      <P 
+  align=center>&nbsp;</P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><!--mstheme--><FONT face="ＭＳ Ｐゴシック">
+      <H2 align=center><!--mstheme--><FONT color=#3366ff><B>STEP 5 - Creating 
+      new AVI files from individual samples/frames</B><!--mstheme--></FONT></H2>
+      <P align=left><B>HERE ARE THE PROJECT FILES FOR STEP 5 <A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr5.zip">AVITutr5.zip</A></B></P>
+      <P>By now, you should have a good idea of what is possible with the 
+      AVIFile functions.&nbsp; The final sample will demonstrate how to create 
+      an AVI file from a sequence of individual bitmap file.&nbsp; If you don't 
+      have a video capture device or commercial graphics software you can still 
+      prepare a series of bitmaps with the mspaint.exe program included with 
+      windows.&nbsp; Just save several different files the same width, height 
+      and color depth and you will have something to work with as you experiment 
+      with the code here (<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr5.zip">AVITutr5.zip</A>).&nbsp; 
+      You might even want to use the utility we built in step three to create 
+      bitmaps from an existing AVI file you have.&nbsp; Then you could mix up 
+      the frames any way you want and write a new AVI file with this sample.</P>
+      <P>The only new things in this sample's code are that I create a stream 
+      from "scratch" (instead of just copying and existing stream), and use a 
+      different method of saving the stream to an AVI file (I don't use AVISave 
+      in this sample).&nbsp; The rest of the sample should be fairly easy to 
+      understand if you have gone through the other steps before this one.</P>
+      <P>A stream can be created by initializing the AVI_STREAM_INFO UDT and 
+      passing it into the AVIFileCreateStream function.&nbsp; When this function 
+      returns, the second parameter will contain a valid pointer to a newly 
+      allocated stream interface pointer:</P>
+      <P><FONT face=Courier color=#006600>' Fill in the header for the video 
+      stream</FONT><FONT face=Courier color=#000080><BR>With 
+      strhdr<BR>&nbsp;&nbsp;&nbsp; .fccType = mmioStringToFOURCC("vids", 
+      0&amp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </FONT><FONT 
+      face=Courier color=#006600>'// stream type video</FONT><FONT face=Courier 
+      color=#000080><BR>&nbsp;&nbsp;&nbsp; .fccHandler = 
+      0&amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </FONT><FONT face=Courier color=#006600>'// default AVI 
+      handler</FONT><FONT face=Courier color=#000080><BR>&nbsp;&nbsp;&nbsp; 
+      .dwScale = 1<BR>&nbsp;&nbsp;&nbsp; .dwRate = 
+      Val(txtFPS)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </FONT><FONT face=Courier color=#006600>'// fps</FONT><FONT face=Courier 
+      color=#000080><BR>&nbsp;&nbsp;&nbsp; .dwSuggestedBufferSize = 
+      bmp.SizeImage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      '// size of one frame pixels<BR>&nbsp;&nbsp;&nbsp; Call SetRect(.rcFrame, 
+      0, 0, bmp.Width, bmp.Height)</FONT><FONT face=Courier color=#006600>'// 
+      rectangle for stream</FONT><FONT face=Courier color=#000080><BR>End 
+      With<BR><BR></FONT><FONT face=Courier color=#006600>'validate user 
+      input</FONT><FONT face=Courier color=#000080><BR>If strhdr.dwRate &lt; 1 
+      Then strhdr.dwRate = 1<BR>If strhdr.dwRate &gt; 30 Then strhdr.dwRate = 
+      30<BR><BR></FONT><FONT face=Courier color=#006600>' And create the 
+      stream</FONT><FONT face=Courier color=#000080><BR>res = 
+      AVIFileCreateStream(pfile, ps, strhdr)<BR>If (res &lt;&gt; AVIERR_OK) Then 
+      GoTo error</FONT></P>
+      <P>Now that the ps variable points to a stream, we can use that to create 
+      a compressed stream which contains all the information neccesary to write 
+      a file with a codec-compressed video stream:</P>
+      <P>First we let the user decide which codec and settings to use:</P>
+      <P><FONT face=Courier><FONT color=#006600>'get the compression options 
+      from the user<BR>'Careful! this API requires a pointer to a pointer to a 
+      UDT</FONT><BR><FONT color=#000080>pOpts = VarPtr(opts)<BR>res = 
+      AVISaveOptions(Me.hWnd, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ICMF_CHOOSE_KEYFRAME Or ICMF_CHOOSE_DATARATE, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      1, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ps, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      pOpts) </FONT><FONT color=#006600>'returns TRUE if User presses OK, FALSE 
+      if Cancel</FONT><FONT color=#000080><BR>If res &lt;&gt; 1 Then 'In C TRUE 
+      = 1<BR>&nbsp;&nbsp;&nbsp; Call AVISaveOptionsFree(1, 
+      pOpts)<BR>&nbsp;&nbsp;&nbsp; GoTo error<BR>End If</FONT></FONT></P>
+      <P>Then we pass this information, along with the stream to the 
+      AVIMakeCompressedStream function:</P>
+      <P><FONT face=Courier><FONT color=#006600>'make compressed 
+      stream</FONT><BR><FONT color=#000080>res = 
+      AVIMakeCompressedStream(psCompressed, ps, opts, 0&amp;)<BR>If res &lt;&gt; 
+      AVIERR_OK Then GoTo error</FONT></FONT></P>
+      <P>Once this function returns sucessfully, we know that psCompressed 
+      points to a valid compressed stream interface which can write out a 
+      compressed video stream in the format we specified with the 
+      AVI_STREAM_INFO and AVI_COMPRESS_OPTIONS UDTs.&nbsp; All we have to do 
+      then is to set the format of the DIBs that the stream will expect us to 
+      pass in.&nbsp; This requires a BITMAPINFO UDT which is a variable sized 
+      UDT and difficult to use from VB.&nbsp; Fortunately the cDIB class will 
+      help us again here.&nbsp; The cDIB class has a function which receives a 
+      bmp file from the disk.&nbsp; Earlier in the sub I called this function 
+      and loaded the first bitmap from the list in order to get the width, 
+      height and size of the data buffer for the AVI_STREAM_INFO UDT:</P>
+      <P><FONT face=Courier><FONT color=#006600>'Get the first bmp in the list 
+      for setting format</FONT><BR><FONT color=#000080>Set bmp = New 
+      cDIB<BR>lstDIBList.ListIndex = 0<BR>If bmp.CreateFromFile(lstDIBList.Text) 
+      &lt;&gt; True Then<BR>&nbsp;&nbsp;&nbsp; MsgBox "Could not load first 
+      bitmap file in list!", vbExclamation, App.title<BR>&nbsp;&nbsp;&nbsp; GoTo 
+      error<BR>End If</FONT></FONT></P>
+      <P>Now we can use the same UDT to set the format of the video 
+      stream.&nbsp; First we will store all the necessary information in a 
+      BITMAPINFOHEADER UDT:</P>
+      <P><FONT face=Courier><FONT color=#006600>'set format of stream according 
+      to the bitmap</FONT><BR><FONT color=#000080>With BI<BR>&nbsp;&nbsp;&nbsp; 
+      .biBitCount = bmp.BitCount<BR>&nbsp;&nbsp;&nbsp; .biClrImportant = 
+      bmp.ClrImportant<BR>&nbsp;&nbsp;&nbsp; .biClrUsed = 
+      bmp.ClrUsed<BR>&nbsp;&nbsp;&nbsp; .biCompression = 
+      bmp.Compression<BR>&nbsp;&nbsp;&nbsp; .biHeight = 
+      bmp.Height<BR>&nbsp;&nbsp;&nbsp; .biWidth = 
+      bmp.Width<BR>&nbsp;&nbsp;&nbsp; .biPlanes = 
+      bmp.Planes<BR>&nbsp;&nbsp;&nbsp; .biSize = 
+      bmp.SizeInfoHeader<BR>&nbsp;&nbsp;&nbsp; .biSizeImage = 
+      bmp.SizeImage<BR>&nbsp;&nbsp;&nbsp; .biXPelsPerMeter = 
+      bmp.XPPM<BR>&nbsp;&nbsp;&nbsp; .biYPelsPerMeter = bmp.YPPM<BR>End 
+      With</FONT></FONT></P>
+      <P>And then pass the UDT along with the stream to the AVIStreamSetFormat 
+      function:</P>
+      <P><FONT face=Courier><FONT color=#006600>'set the format of the 
+      compressed stream</FONT><BR><FONT color=#000080>res = 
+      AVIStreamSetFormat(psCompressed, 0, ByVal bmp.PointerToBitmapInfo, 
+      bmp.SizeBitmapInfo)<BR>If (res &lt;&gt; AVIERR_OK) Then GoTo 
+      error</FONT></FONT></P>
+      <P>If this function returns successfully then the compressed stream is 
+      fully initialized and ready to be passed some DIBs for writing.&nbsp; You 
+      do this by passing it and the stream, along with the position you what it 
+      written, to the AVIStreamWrite function.&nbsp; Notice that the cDIB class 
+      comes in handy here again because it has a method which returns a direct 
+      pointer to the exact bits that you need to pass in to the function:</P>
+      <P><FONT face=Courier><FONT color=#006600>' Now write out each video 
+      frame</FONT><BR><FONT color=#000080>For i = 0 To lstDIBList.ListCount - 
+      1<BR>&nbsp;&nbsp;&nbsp; lstDIBList.ListIndex = i<BR>&nbsp;&nbsp;&nbsp; 
+      bmp.CreateFromFile (lstDIBList.Text) </FONT><FONT color=#006600>'load the 
+      bitmap (ignore errors)</FONT><FONT color=#000080><BR>&nbsp;&nbsp;&nbsp; 
+      res = AVIStreamWrite(psCompressed, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bmp.PointerToBits, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bmp.SizeImage, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      AVIIF_KEYFRAME, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal 
+      0&amp;, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal 
+      0&amp;)<BR>&nbsp;&nbsp;&nbsp; If res &lt;&gt; AVIERR_OK Then GoTo 
+      error<BR>&nbsp;&nbsp;&nbsp; 'Show user feedback<BR>&nbsp;&nbsp;&nbsp; 
+      imgPreview.Picture = LoadPicture(lstDIBList.Text)<BR>&nbsp;&nbsp;&nbsp; 
+      imgPreview.Refresh<BR>&nbsp;&nbsp;&nbsp; lblStatus = "Frame number " &amp; 
+      i &amp; " saved"<BR>&nbsp;&nbsp;&nbsp; 
+      lblStatus.Refresh<BR>Next<BR>lblStatus = "Finished!"</FONT></FONT></P>
+      <P>Once this loop is finished writing the bitmaps, all you have to do is 
+      clean up afterwards and release the stream and file handles.&nbsp; The 
+      file you created at the beginning of the sub will then contain a valid 
+      video stream and you can play it back in the Windows Media Player or other 
+      AVI player.&nbsp; Please see the code in the sample for all the cleanup 
+      details.&nbsp; When you run the sample, you will have to select the 
+      individual bitmaps one at a time then type in a frame rate between 1fps 
+      and 30fps before writing the new file.&nbsp; Have fun! </P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/contact.htm">Go to the 
+      contact information page</A></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm#Contents">Go 
+      back to the Table of Contents</A></P>
+      <DIV align=center>
+      <CENTER><!--mstheme--></FONT>
+      <TABLE height=66 borderColorDark=#330099 width=636 
+      borderColorLight=#99ccff border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=middle width="85%"><!--mstheme--><FONT 
+            face="ＭＳ Ｐゴシック">
+            <H5 align=center><!--mstheme--><FONT color=#3366ff>This 
+            <B>Shrinkwrap Visual Basic AVIFile Tutorial </B>is Copyright (C) 
+            2000 by Ray Mercer<BR>Redistribution of the tutorial text and/or 
+            samples is prohibited.&nbsp; Please contact the author Ray Mercer 
+            &lt;<A 
+            href="mailto:raymer@shrinkwrapvb.com">raymer@shrinkwrapvb.com</A>&gt; 
+            if you have a question about this policy.<!--mstheme--></FONT></H5><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+      face="ＭＳ Ｐゴシック"></CENTER></DIV>
+      <P>　 
+  </P><!--mstheme--></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

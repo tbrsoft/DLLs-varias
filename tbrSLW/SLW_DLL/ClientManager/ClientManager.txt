@@ -1,0 +1,1 @@
+Esta clase revisa que el cliente tenga los Creditos necesarios

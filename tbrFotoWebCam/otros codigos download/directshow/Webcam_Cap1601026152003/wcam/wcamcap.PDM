@@ -1,0 +1,130 @@
+[Root]
+Most Recent Package=Standard Setup Package 2
+
+
+[Package|Standard Setup Package 2|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\Package
+
+[Package|Standard Setup Package 2|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 2|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 2|Files Found]
+
+[Package|Standard Setup Package 2|Files Released]
+
+[Package|Standard Setup Package 2|Missing Dependency Information]
+X:\My Documents\Mes documents\vbasic\wcamcap\streamcap\streamcap.dll=
+X:\My Documents\Mes documents\vbasic\Integrator\Integrator_v2.2.14\IntService\ntsvc.ocx=
+X:\My Documents\Mes documents\vbasic\Integrator\Integrator_v2.2.14\IntService\SysTray.ocx=
+C:\WINXP\system32\FSFWrap.dll=
+C:\WINXP\system32\CapStill.dll=
+C:\WINXP\system32\quartz.dll=
+C:\WINXP\system32\SysTray.ocx=
+C:\WINXP\system32\NTSVC.ocx=
+X:\My Documents\Mes documents\vbasic\ImageDiff\ImageDiff.dll=
+
+[Package|Standard Setup Package 2|Out-of-Date Dependency Information]
+
+[Package|Standard Setup Package 2|Files Added]
+
+[Package|Standard Setup Package 2|Files Removed]
+
+[Package|Standard Setup Package 2|Files In Project]
+X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\wcamcap.exe=Yes
+C:\WINXP\system32\msvbvm60.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINXP\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINXP\system32\converter.dll=Yes
+C:\WINXP\system32\MSCOMCTL.OCX=Yes
+C:\WINXP\system32\quartz.dll=Yes
+C:\WINXP\system32\CapStill.dll=Yes
+C:\WINXP\system32\FSFWrap.dll=Yes
+C:\WINXP\system32\NTSVC.ocx=Yes
+C:\WINXP\system32\SysTray.ocx=Yes
+X:\My Documents\Mes documents\vbasic\ImageDiff\ImageDiff.dll=Yes
+
+[Package|Standard Setup Package 2|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 2|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 2|Install Locations]
+X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\wcamcap.exe=$(AppPath)
+C:\WINXP\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+X:\My Documents\Mes documents\vbasic\wcamcap\streamcap\streamcap.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINXP\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINXP\system32\converter.dll=$(WinSysPath)
+C:\WINXP\system32\COMDLG32.OCX=$(WinSysPath)
+X:\My Documents\Mes documents\vbasic\Integrator\Integrator_v2.2.14\IntService\ntsvc.ocx=$(WinSysPath)
+X:\My Documents\Mes documents\vbasic\Integrator\Integrator_v2.2.14\IntService\SysTray.ocx=$(WinSysPath)
+C:\Program Files\Fichiers communs\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINXP\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINXP\system32\VB5DB.DLL=$(WinSysPath)
+C:\WINXP\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINXP\system32\quartz.dll=$(WinSysPath)
+C:\WINXP\system32\CapStill.dll=$(WinSysPath)
+C:\WINXP\system32\FSFWrap.dll=$(WinSysPath)
+C:\WINXP\system32\NTSVC.ocx=$(WinSysPath)
+C:\WINXP\system32\SysTray.ocx=$(WinSysPath)
+X:\My Documents\Mes documents\vbasic\ImageDiff\ImageDiff.dll=$(WinSysPath)
+
+[Package|Standard Setup Package 2|Configure Shared Files]
+Applicable=Yes
+X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\wcamcap.exe=No
+
+[Package|Standard Setup Package 2|Distribution]
+Type=single
+Size=
+Title=Webcam Capture
+
+[Package|Standard Setup Package 2|Package]
+PackageFolder=X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\Package
+ProjectFolder=X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap
+ServerSideCab=
+File1=X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\Package\setup.exe
+File2=X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\Package\Setup.Lst
+File3=X:\My Documents\Mes documents\vbasic\wcamcap\wcamcap\Package\wcamcap.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 2|IconGroups]
+Group0=Webcam Capture
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 2|Webcam Capture]
+Icon1=wcamcap.exe
+Title1=Webcam Capture
+StartIn1=$(AppPath)
+Key1=Icon1

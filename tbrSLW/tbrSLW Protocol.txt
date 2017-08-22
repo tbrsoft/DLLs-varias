@@ -1,0 +1,13 @@
+tbrSLW Protocol
+***************
+
+Codigo 001 = Enviar Archivo con Datos
+este usa el cliente para enviar licencia al servidor
+
+Estructura
+001//IdUsuario//NombreArchivo//LargoArchivo::BufferArchivoTotal
+----------------------------------------------------------------
+Codigo 002 = Archivo Recibido
+----------------------------------------------------------------
+Codigo 003 = Creditos Insuficientes
+----------------------------------------------------------------

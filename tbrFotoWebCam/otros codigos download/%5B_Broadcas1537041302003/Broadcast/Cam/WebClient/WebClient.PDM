@@ -1,0 +1,78 @@
+[Root]
+Most Recent Package=Internet 包 1
+
+
+[Package|Internet 包 1|Root]
+SubWizProgID=PDWizard.InetCABPkgSubWiz
+BuildFolder=C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient\包
+Controls Design-Time Support=No
+
+[Package|Internet 包 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Internet 包 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Internet 包 1|Files Found]
+
+[Package|Internet 包 1|Files Released]
+
+[Package|Internet 包 1|Missing Dependency Information]
+C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\AVPhone3.ocx=
+
+[Package|Internet 包 1|Out-of-Date Dependency Information]
+
+[Package|Internet 包 1|Files Added]
+c:\windows\system32\msstkprp.dll=这个文件用于用户控件的设计时的支持。
+
+[Package|Internet 包 1|Files Removed]
+c:\windows\system32\msstkprp.dll=
+c:\windows\system32\msprpchs.dll=
+c:\windows\system32\msvbvm60.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\oleaut32.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\olepro32.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\asycfilt.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\stdole2.tlb=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\comcat.dll=
+c:\windows\system32\vb6chs.dll=
+
+[Package|Internet 包 1|Files In Project]
+C:\WINDOWS\SYSTEM32\msvbvm60.dll=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=No
+C:\WINDOWS\SYSTEM32\VB6CHS.DLL=No
+C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\AVPhone3.ocx=Yes
+C:\WINDOWS\SYSTEM32\MSSTKPRP.DLL=No
+C:\WINDOWS\SYSTEM32\MSPRPCHS.DLL=No
+C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient\WebClient.ocx=Yes
+
+[Package|Internet 包 1|Configure Registry Files]
+Applicable=No
+
+[Package|Internet 包 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Internet 包 1|Install Locations]
+
+[Package|Internet 包 1|Configure Shared Files]
+Applicable=
+
+[Package|Internet 包 1|ComponentInfo]
+WebClient.ocx=thiscab
+AVPhone3.ocx=thiscab
+
+[Package|Internet 包 1|ObjectInfo]
+VideoWindow=true;true
+
+[Package|Internet 包 1|Package]
+PackageFolder=C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient\包
+ProjectFolder=C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient
+ServerSideCab=C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient\包\WebClient.CAB
+File1=C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient\包\WebClient.CAB
+File2=C:\Program Files\Microsoft Visual Studio\Vb5\Temp\AVPhone3\Samples\Applications\Broadcast\Cam\WebClient\包\WebClient.HTM
+Handler1=PDWizard.WebPostDplySubWiz
+Handler2=PDWizard.FolderDplySubWiz

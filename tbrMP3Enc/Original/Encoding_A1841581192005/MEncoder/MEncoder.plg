@@ -1,0 +1,28 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MEncoder - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\Deion\LOCALS~1\Temp\RSPA0.tmp" with contents
+[
+/nologo /MD /w /W0 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "MENCODER_EXPORTS" /D "_WINDLL" /D "_AFXDLL" /Fp"Release/MEncoder.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Goodies\test\MEncoder\main.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\Deion\LOCALS~1\Temp\RSPA0.tmp" 
+Creating command line "link.exe winmm.lib /nologo /version:1.0 /dll /incremental:no /pdb:"Release/MEncoder.pdb" /machine:I386 /def:".\main.def" /out:"Release/MEncoder.dll" /implib:"Release/MEncoder.lib"  .\Release\main.obj .\Release\MEncoder.res "
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+Linking...
+   Creating library Release/MEncoder.lib and object Release/MEncoder.exp
+
+
+
+<h3>Results</h3>
+MEncoder.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

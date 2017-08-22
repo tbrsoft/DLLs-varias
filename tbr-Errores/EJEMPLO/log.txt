@@ -1,0 +1,39 @@
+14/09/2007*11:13:39 p.m.
+
+aaaa.Falso
+aaab.Form1.frm.4719
+aaae
+No dice hola, dice:VERS
+
+14/09/2007*11:13:39 p.m.
+
+aaaa.Falso
+aaab.Form1.frm.4719
+aaab.Proyecto1.vbp.859
+aaae
+No dice hola, dice:Type
+
+14/09/2007*11:14:20 p.m.
+
+aaaa.Falso
+aaab.Form1.frm.4719
+aaae
+No dice hola, dice:VERS
+
+14/09/2007*11:14:20 p.m.
+
+aaaa.Falso
+aaab.Form1.frm.4719
+aaab.log.txt.306
+aaae
+No dice hola, dice:14/0
+
+14/09/2007*11:14:20 p.m.
+
+aaaa.Falso
+aaab.Form1.frm.4719
+aaab.log.txt.306
+aaab.Proyecto1.vbp.859
+aaae
+No dice hola, dice:Type
+

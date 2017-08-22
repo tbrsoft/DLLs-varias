@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.shrinkwrapvb.com/avihelp/avihlp_4.htm -->
+<HTML><HEAD><TITLE>Step 4 - Creating New AVI Files From Streams</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="shrinkwrap-style 100, default" name="Microsoft Theme">
+<META content="t, default" name="Microsoft Border"></HEAD>
+<BODY text=#003366 vLink=#3366ff aLink=#99ccff link=#9900ff bgColor=#ffffff><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><!--mstheme--><FONT face="ＭＳ Ｐゴシック">
+      <P align=center><STRONG><B><FONT size=6><IMG height=60 
+      alt="Recompress your videos" 
+      src="Step 4 - Creating New AVI Files From Streams_archivos/avihlp_4.htm_cmp_shrinkwrap-style100_bnr.gif" 
+      width=600 border=0></FONT></B></STRONG><BR><FONT 
+      face=Arial><B><NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/videocap.htm">Video&nbsp;Capture&nbsp;Help</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm">AVIFile&nbsp;Tutorial</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbdist.htm">Licensing&nbsp;and&nbsp;Distribution</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbtips.htm">Resources</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/awd_rec.htm">Awards</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbnews.htm">Latest&nbsp;News</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbcode.htm">Source&nbsp;Code</A>&nbsp;]</NOBR> 
+      <NOBR>[&nbsp;<A 
+      href="http://www.shrinkwrapvb.com/vbctrls.htm">Free&nbsp;Controls</A>&nbsp;]</NOBR></B></FONT></P>
+      <P 
+  align=center>&nbsp;</P><!--mstheme--></FONT></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><!--mstheme--><FONT face="ＭＳ Ｐゴシック">
+      <H2 align=center><!--mstheme--><FONT color=#3366ff><B>STEP 4 - Creating 
+      new AVI files from streams</B><!--mstheme--></FONT></H2>
+      <P><B>HERE ARE THE PROJECT FILES FOR STEP 4 <A 
+      href="http://www.shrinkwrapvb.com/avihelp/avitutr4.zip">AVITutr4.zip</A></B></P>
+      <P>This sample code shows how to create new AVI files from existing 
+      streams.&nbsp; It uses the CFileDlg class to allow the user to choose an 
+      existing file.&nbsp; You have already seen how to use the CFileDlg class 
+      in step one so I won't repeat it here.&nbsp; Again, I included this class 
+      simply to keep the code as simple and clear as possible while still 
+      allowing for full freedom in choosing a file.&nbsp; After the filename is 
+      received from the user, the code gets an PAVIFILE handle and then finds 
+      the PAVISTREAM handle for the video stream.&nbsp; All this was covered in 
+      step one so it should be easy to understand.&nbsp;&nbsp;</P>
+      <P>Next, I use the CFileDlg again to get a save file name from the user 
+      because we are going to create a new file.&nbsp; The code should be fairly 
+      straightforward.&nbsp; Most of the necessary properties in the class are 
+      already initialized, we just need to add 3 lines:</P>
+      <P><FONT face=Courier><FONT color=#000080>ofd.DlgTitle = "Choose Location 
+      and Name to Save New AVI File"<BR>ofd.DefaultExt = "avi"<BR>szFileOut = 
+      "MyFile.avi" </FONT><FONT color=#006600>'suggested name to prompt users 
+      with</FONT></FONT></P>
+      <P>And then call the VBGetSaveFileName method:</P>
+      <P><FONT face=Courier color=#000080>res = 
+      ofd.VBGetSaveFileName(szFileOut)</FONT></P>
+      <P>Once we have the input (existing) and output (non existing file or file 
+      to be overwritten) filenames we are ready to call some AVIFile 
+      functions.&nbsp; The functions in this example were some of the most 
+      difficult to declare and call from Visual Basic.&nbsp; The three AVISave 
+      functions all require a a pointer to a pointer to an array of 
+      AVI_COMPRESS_OPTIONS UDTs.&nbsp; The only way I could figure out to call 
+      these was to declare the functions using ByRef AVI_COMPRESS_OPTIONS and 
+      then use the undocumented VarPtr() function to get a pointer to the 
+      UDT.&nbsp; I then passed this pointer in to the API function and all went 
+      smoothly.&nbsp; It would probably be cleaner to write and compile a 
+      TypeLibrary, but since my purpose in writing this tutorial was to keep it 
+      as simple as possible to understand, I stuck with straight API 
+      declares.</P>
+      <P>The other problem I ran into was even uglier.&nbsp; AVISave is actually 
+      declared in Vfw.h as using CDECL calling convention.&nbsp; As you may 
+      know, this is one of the worst situations a VB API programmer can run 
+      into.&nbsp; VB only understands the STDCALL calling convention (also 
+      called Pascal or Fortran calling convention).&nbsp; Because the parameters 
+      are pushed onto the stack in a different order and clean up is not handled 
+      the same way, VB cannot call exported functions which use this calling 
+      convention.&nbsp; Fortunately, the Win32 system programmers at MS made a 
+      concession to languages other than C/C++ and included a second exported 
+      function with equivalent functionality called AVISaveV which is declared 
+      using STDCALL.&nbsp; Because this is the only one we can use from Visual 
+      Basic, I aliased AVISaveV to be called AVISave, but if you use the MSDN 
+      documentation you should look up AVISaveV instead because the last 
+      parameter is different.</P>
+      <P>Now that I have explained some of the difficulties involved, let's get 
+      down to the code.&nbsp; We are going to show the Compression Options 
+      dialog to the user to get the codec with which to save the new AVI 
+      file.&nbsp; First, I get a pointer to the UDT:</P>
+      <P><FONT face=Courier color=#000080>pOpts = VarPtr(opts)</FONT></P>
+      <P>Then I pass this pointer to the function ByRef, which gives us a 
+      pointer to a pointer, which the API is expecting.&nbsp; The 3 flags in the 
+      second parameter control how the compression options dialog will look:</P>
+      <P><FONT face=Courier color=#000080>res = AVISaveOptions(Me.hWnd, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ICMF_CHOOSE_KEYFRAME Or 
+      ICMF_CHOOSE_DATARATE Or ICMF_CHOOSE_PREVIEW, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pAVIStream, 
+      _<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pOpts) </FONT><FONT 
+      face=Courier color=#006600>'returns TRUE if User presses OK, FALSE if 
+      Cancel, or an error code</FONT></P>
+      <P>If this function returns a 1 (which is TRUE in C), then you know that 
+      the AVI_COMP_OPTIONS UDT has been correctly initialized.&nbsp; Now we have 
+      enough information to create a new compressed stream from the video stream 
+      we got from the existing AVI file at the beginning of the sample.&nbsp; If 
+      the existing stream is already compressed it will be re-compressed using 
+      the new codec (and will probably lose some quality).&nbsp; This sample 
+      would be useful for post-processing uncompressed video captures or 
+      creating video-only AVIs to use in the Win32 Animation control (*note- the 
+      Animation control can only playback uncompressed video or RLE compressed 
+      video, so choose one of those options if you want to use the video for an 
+      Animation control).&nbsp; To create a compressed stream&nbsp; we just need 
+      one line of code:</P>
+      <P><FONT face=Courier color=#006600>'recompress the stream with user 
+      options<BR></FONT><FONT face=Courier color=#000080>res = 
+      AVIMakeCompressedStream(pAVIStreamOut, pAVIStream, opts, 
+0&amp;)</FONT></P>
+      <P>Now that we have a new video stream interface, we are ready to save a 
+      new AVI file.&nbsp; Because this can take a long time the AVISave function 
+      supports a callback which can show status information and allow the user 
+      to cancel if necessary.&nbsp; I have filled in the Callback "template" 
+      function in the AviDecs.bas file with information specific to this sample 
+      app so you can see an example of how to use this.&nbsp; I have also used a 
+      global "abort" flag to allow the user to abort by clicking a button.&nbsp; 
+      Here is the call to AVISave:</P>
+      <P><FONT face=Courier color=#000080>pOpts = VarPtr(opts) </FONT><FONT 
+      face=Courier color=#006600>'make sure pointer is still valid</FONT><FONT 
+      face=Courier color=#000080><BR>res = AVISave(szFileOut, 0&amp;, AddressOf 
+      AVISaveCallback, 1, pAVIStreamOut, pOpts)</FONT></P>
+      <P>If you use a callback function which includes DoEvents to allow the 
+      user to cancel like I did, then you have to be careful about reentrancy 
+      problems.&nbsp; Also you will want to handle the case where the user 
+      closes the application while it is saving a file.&nbsp; In this simple 
+      app, I just prevented the user from closing the app during a save by 
+      putting a line of code in the form's Query_Unload event.&nbsp; Another 
+      solution would be to cancel the file save and clean up when the user 
+      unloads the form this way.</P>
+      <P>Once the file is saved, you should deallocate the AVISaveOptions 
+      resources by calling AVISaveOptionsFree:</P>
+      <P><FONT face=Courier color=#000080>Call AVISaveOptionsFree(1, 
+      pOpts)</FONT><FONT face=Courier color=#006600> 'frees resources</FONT></P>
+      <P>That's all there is to it.&nbsp; Feel free to experiment with the 
+      codecs installed on your system.&nbsp;&nbsp;</P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihlp_5.htm">Go to the 
+      next step</A></P>
+      <P><A href="http://www.shrinkwrapvb.com/avihelp/avihelp.htm#Contents">Go 
+      back to the Table of Contents</A></P>
+      <DIV align=center>
+      <CENTER><!--mstheme--></FONT>
+      <TABLE height=66 borderColorDark=#330099 width=636 
+      borderColorLight=#99ccff border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=center align=middle width="85%"><!--mstheme--><FONT 
+            face="ＭＳ Ｐゴシック">
+            <H5 align=center><!--mstheme--><FONT color=#3366ff>This 
+            <B>Shrinkwrap Visual Basic AVIFile Tutorial </B>is Copyright (C) 
+            2000 by Ray Mercer<BR>Redistribution of the tutorial text and/or 
+            samples is prohibited.&nbsp; Please contact the author Ray Mercer 
+            &lt;<A 
+            href="mailto:raymer@shrinkwrapvb.com">raymer@shrinkwrapvb.com</A>&gt; 
+            if you have a question about this policy.<!--mstheme--></FONT></H5><!--mstheme--></FONT></TD></TR></TBODY></TABLE><!--mstheme--><FONT 
+      face="ＭＳ Ｐゴシック"></CENTER></DIV>
+      <P>　</P><!--mstheme--></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

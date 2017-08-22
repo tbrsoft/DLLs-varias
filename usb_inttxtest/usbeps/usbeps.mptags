@@ -1,0 +1,397 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+ADDRESS_STATE::5	E:\PIC\prj\usbeps\system\usb\usbmmap.h	62;"	d	line:62
+ADR	E:\PIC\prj\usbeps\system\usb\usbmmap.h	123;"	m	line:123	struct:_BDT::<anonymous>
+ADRH	E:\PIC\prj\usbeps\system\usb\usbmmap.h	117;"	m	line:117	struct:_BDT::<anonymous>
+ADRL	E:\PIC\prj\usbeps\system\usb\usbmmap.h	116;"	m	line:116	struct:_BDT::<anonymous>
+ADR_PENDING_STATE::4	E:\PIC\prj\usbeps\system\usb\usbmmap.h	61;"	d	line:61
+ATTACHED_STATE::1	E:\PIC\prj\usbeps\system\usb\usbmmap.h	58;"	d	line:58
+BC8	E:\PIC\prj\usbeps\system\usb\usbmmap.h	84;"	m	line:84	struct:_BD_STAT::<anonymous>
+BC8	E:\PIC\prj\usbeps\system\usb\usbmmap.h	94;"	m	line:94	struct:_BD_STAT::<anonymous>
+BC9	E:\PIC\prj\usbeps\system\usb\usbmmap.h	85;"	m	line:85	struct:_BD_STAT::<anonymous>
+BC9	E:\PIC\prj\usbeps\system\usb\usbmmap.h	95;"	m	line:95	struct:_BD_STAT::<anonymous>
+BDT	E:\PIC\prj\usbeps\system\usb\usbmmap.h	125;"	t	line:125
+BD_STAT	E:\PIC\prj\usbeps\system\usb\usbmmap.h	108;"	t	line:108
+BOOL	E:\PIC\prj\usbeps\system\typedefs.h	150;"	t	line:150
+BSTALL	E:\PIC\prj\usbeps\system\usb\usbmmap.h	86;"	m	line:86	struct:_BD_STAT::<anonymous>
+BYTE	E:\PIC\prj\usbeps\system\typedefs.h	58;"	t	line:58
+BlinkUSBStatus	E:\PIC\prj\usbeps\user\user.c	173;"	f	line:173	signature:(void)
+BlinkUSBStatus	E:\PIC\prj\usbeps\user\user.c	59;"	p	line:59	file:	signature:(void)
+Byte0	E:\PIC\prj\usbeps\system\typedefs.h	103;"	m	line:103	struct:_DWORD::<anonymous>
+Byte0	E:\PIC\prj\usbeps\system\typedefs.h	70;"	m	line:70	struct:_WORD::<anonymous>
+Byte1	E:\PIC\prj\usbeps\system\typedefs.h	104;"	m	line:104	struct:_DWORD::<anonymous>
+Byte1	E:\PIC\prj\usbeps\system\typedefs.h	71;"	m	line:71	struct:_WORD::<anonymous>
+Byte2	E:\PIC\prj\usbeps\system\typedefs.h	105;"	m	line:105	struct:_DWORD::<anonymous>
+Byte3	E:\PIC\prj\usbeps\system\typedefs.h	106;"	m	line:106	struct:_DWORD::<anonymous>
+CFG01::romstruct\	E:\PIC\prj\usbeps\autofiles\usbdsc.h	50;"	d	line:50
+CMD	E:\PIC\prj\usbeps\user\user.h	69;"	m	line:69	struct:DATA_PACKET::<anonymous>
+CONFIGURED_STATE::6	E:\PIC\prj\usbeps\system\usb\usbmmap.h	63;"	d	line:63
+ClearArray	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	578;"	f	line:578	signature:(byte* startAdr,byte count)
+Cnt	E:\PIC\prj\usbeps\system\usb\usbmmap.h	115;"	m	line:115	struct:_BDT::<anonymous>
+CtrlTrfData	E:\PIC\prj\usbeps\system\usb\usbmmap.c	269;"	v	line:269
+DATA_PACKET	E:\PIC\prj\usbeps\user\user.h	53;"	u	line:53
+DATA_PACKET	E:\PIC\prj\usbeps\user\user.h	88;"	t	line:88
+DEFAULT_STATE::3	E:\PIC\prj\usbeps\system\usb\usbmmap.h	60;"	d	line:60
+DETACHED_STATE::0	E:\PIC\prj\usbeps\system\usb\usbmmap.h	57;"	d	line:57
+DO_SUM	E:\PIC\prj\usbeps\user\user.h	64;"	e	line:64	enum:DATA_PACKET::<anonymous>::<anonymous>
+DTS	E:\PIC\prj\usbeps\system\usb\usbmmap.h	90;"	m	line:90	struct:_BD_STAT::<anonymous>
+DTSEN	E:\PIC\prj\usbeps\system\usb\usbmmap.h	87;"	m	line:87	struct:_BD_STAT::<anonymous>
+DWORD	E:\PIC\prj\usbeps\system\typedefs.h	117;"	t	line:117
+EE_READ_BYTE	E:\PIC\prj\usbeps\user\user.h	66;"	e	line:66	enum:DATA_PACKET::<anonymous>::<anonymous>
+EE_WRITE_BYTE	E:\PIC\prj\usbeps\user\user.h	65;"	e	line:65	enum:DATA_PACKET::<anonymous>::<anonymous>
+EP00_IN::(0x00<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	82;"	d	line:82
+EP00_OUT::(0x00<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	81;"	d	line:81
+EP01_IN::(0x01<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	84;"	d	line:84
+EP01_OUT::(0x01<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	83;"	d	line:83
+EP02_IN::(0x02<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	86;"	d	line:86
+EP02_OUT::(0x02<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	85;"	d	line:85
+EP03_IN::(0x03<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	88;"	d	line:88
+EP03_OUT::(0x03<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	87;"	d	line:87
+EP04_IN::(0x04<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	90;"	d	line:90
+EP04_OUT::(0x04<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	89;"	d	line:89
+EP05_IN::(0x05<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	92;"	d	line:92
+EP05_OUT::(0x05<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	91;"	d	line:91
+EP06_IN::(0x06<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	94;"	d	line:94
+EP06_OUT::(0x06<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	93;"	d	line:93
+EP07_IN::(0x07<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	96;"	d	line:96
+EP07_OUT::(0x07<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	95;"	d	line:95
+EP08_IN::(0x08<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	98;"	d	line:98
+EP08_OUT::(0x08<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	97;"	d	line:97
+EP09_IN::(0x09<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	100;"	d	line:100
+EP09_OUT::(0x09<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	99;"	d	line:99
+EP0_BUFF_SIZE::8	E:\PIC\prj\usbeps\autofiles\usbcfg.h	38;"	d	line:38
+EP10_IN::(0x0A<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	102;"	d	line:102
+EP10_OUT::(0x0A<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	101;"	d	line:101
+EP11_IN::(0x0B<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	104;"	d	line:104
+EP11_OUT::(0x0B<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	103;"	d	line:103
+EP12_IN::(0x0C<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	106;"	d	line:106
+EP12_OUT::(0x0C<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	105;"	d	line:105
+EP13_IN::(0x0D<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	108;"	d	line:108
+EP13_OUT::(0x0D<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	107;"	d	line:107
+EP14_IN::(0x0E<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	110;"	d	line:110
+EP14_OUT::(0x0E<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	109;"	d	line:109
+EP15_IN::(0x0F<<3)|(IN<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	112;"	d	line:112
+EP15_OUT::(0x0F<<3)|(OUT<<2)	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	111;"	d	line:111
+EP_CTRL::0x06	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	59;"	d	line:59
+EP_IN::0x0A	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	61;"	d	line:61
+EP_OUT::0x0C	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	60;"	d	line:60
+EP_OUT_IN::0x0E	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	62;"	d	line:62
+FAIL::FALSE	E:\PIC\prj\usbeps\system\typedefs.h	153;"	d	line:153
+FALSE	E:\PIC\prj\usbeps\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+FIND_RPMS	E:\PIC\prj\usbeps\user\user.h	67;"	e	line:67	enum:DATA_PACKET::<anonymous>::<anonymous>
+HSHK_EN::0x10	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	63;"	d	line:63
+HighB	E:\PIC\prj\usbeps\system\typedefs.h	76;"	m	line:76	struct:_WORD::<anonymous>
+ID	E:\PIC\prj\usbeps\user\user.h	75;"	m	line:75	struct:DATA_PACKET::<anonymous>
+ID_BOARD	E:\PIC\prj\usbeps\user\user.h	62;"	e	line:62	enum:DATA_PACKET::<anonymous>::<anonymous>
+IN::1	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	76;"	d	line:76
+INCDIS	E:\PIC\prj\usbeps\system\usb\usbmmap.h	88;"	m	line:88	struct:_BD_STAT::<anonymous>
+INPUT_PIN::1	E:\PIC\prj\usbeps\io_cfg.h	44;"	d	line:44
+IO_CFG_H	E:\PIC\prj\usbeps\io_cfg.h	38;"	d	line:38
+InitializeSystem	E:\PIC\prj\usbeps\main.c	50;"	p	line:50	file:	signature:(void)
+KEN	E:\PIC\prj\usbeps\system\usb\usbmmap.h	89;"	m	line:89	struct:_BD_STAT::<anonymous>
+LOWER_LSB::(a)((a).v[0])	E:\PIC\prj\usbeps\system\typedefs.h	118;"	d	line:118
+LOWER_MSB::(a)((a).v[1])	E:\PIC\prj\usbeps\system\typedefs.h	119;"	d	line:119
+LSB::(a)((a).v[0])	E:\PIC\prj\usbeps\system\typedefs.h	83;"	d	line:83
+LowB	E:\PIC\prj\usbeps\system\typedefs.h	75;"	m	line:75	struct:_WORD::<anonymous>
+MAJOR_VERSION::0x01	E:\PIC\prj\usbeps\user\user.h	46;"	d	line:46
+MAX_EP_NUMBER::2	E:\PIC\prj\usbeps\autofiles\usbcfg.h	77;"	d	line:77
+MAX_NUM_INT::1	E:\PIC\prj\usbeps\autofiles\usbcfg.h	39;"	d	line:39
+MINOR_VERSION::0x00	E:\PIC\prj\usbeps\user\user.h	45;"	d	line:45
+MODE_PP::_PPBM0	E:\PIC\prj\usbeps\autofiles\usbcfg.h	42;"	d	line:42
+MSB::(a)((a).v[1])	E:\PIC\prj\usbeps\system\typedefs.h	84;"	d	line:84
+MUID_NULL::0	E:\PIC\prj\usbeps\autofiles\usbcfg.h	57;"	d	line:57
+MUID_USB9::1	E:\PIC\prj\usbeps\autofiles\usbcfg.h	58;"	d	line:58
+OK::TRUE	E:\PIC\prj\usbeps\system\typedefs.h	152;"	d	line:152
+OUT::0	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	75;"	d	line:75
+OUTPUT_PIN::0	E:\PIC\prj\usbeps\io_cfg.h	45;"	d	line:45
+PICDEM_FS_DEMO_H	E:\PIC\prj\usbeps\user\user.h	38;"	d	line:38
+PIC_EP_DIR_MASK::0b00000100	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	79;"	d	line:79
+PIC_EP_NUM_MASK::0b01111000	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	78;"	d	line:78
+PID	E:\PIC\prj\usbeps\system\usb\usbmmap.h	105;"	m	line:105	struct:_BD_STAT::<anonymous>
+PID0	E:\PIC\prj\usbeps\system\usb\usbmmap.h	96;"	m	line:96	struct:_BD_STAT::<anonymous>
+PID1	E:\PIC\prj\usbeps\system\usb\usbmmap.h	97;"	m	line:97	struct:_BD_STAT::<anonymous>
+PID2	E:\PIC\prj\usbeps\system\usb\usbmmap.h	98;"	m	line:98	struct:_BD_STAT::<anonymous>
+PID3	E:\PIC\prj\usbeps\system\usb\usbmmap.h	99;"	m	line:99	struct:_BD_STAT::<anonymous>
+POINTER	E:\PIC\prj\usbeps\system\typedefs.h	148;"	t	line:148
+POWERED_STATE::2	E:\PIC\prj\usbeps\system\usb\usbmmap.h	59;"	d	line:59
+ProcessIO	E:\PIC\prj\usbeps\user\user.c	91;"	f	line:91	signature:(void)
+ProcessIO	E:\PIC\prj\usbeps\user\user.h	92;"	p	line:92	signature:(void)
+READ_VERSION	E:\PIC\prj\usbeps\user\user.h	61;"	e	line:61	enum:DATA_PACKET::<anonymous>::<anonymous>
+RESET	E:\PIC\prj\usbeps\user\user.h	68;"	e	line:68	enum:DATA_PACKET::<anonymous>::<anonymous>
+RemoteWakeup	E:\PIC\prj\usbeps\system\usb\usbmmap.h	75;"	m	line:75	struct:_USB_DEVICE_STATUS::<anonymous>
+ServiceRequests	E:\PIC\prj\usbeps\user\user.c	111;"	f	line:111	signature:(void)
+ServiceRequests	E:\PIC\prj\usbeps\user\user.c	60;"	p	line:60	file:	signature:(void)
+SetupPkt	E:\PIC\prj\usbeps\system\usb\usbmmap.c	268;"	v	line:268
+Stat	E:\PIC\prj\usbeps\system\usb\usbmmap.h	114;"	m	line:114	struct:_BDT::<anonymous>
+TEMP_LOGGING::0x01	E:\PIC\prj\usbeps\user\user.h	50;"	d	line:50
+TEMP_REAL_TIME::0x00	E:\PIC\prj\usbeps\user\user.h	49;"	d	line:49
+TRUE	E:\PIC\prj\usbeps\system\typedefs.h	150;"	e	line:150	enum:_BOOL
+TYPEDEFS_H	E:\PIC\prj\usbeps\system\typedefs.h	38;"	d	line:38
+UCFG_VAL::_PUEN|_TRINT|_FS|MODE_PP	E:\PIC\prj\usbeps\autofiles\usbcfg.h	43;"	d	line:43
+UOWN	E:\PIC\prj\usbeps\system\usb\usbmmap.h	101;"	m	line:101	struct:_BD_STAT::<anonymous>
+UOWN	E:\PIC\prj\usbeps\system\usb\usbmmap.h	91;"	m	line:91	struct:_BD_STAT::<anonymous>
+UPDATE_LED	E:\PIC\prj\usbeps\user\user.h	63;"	e	line:63	enum:DATA_PACKET::<anonymous>::<anonymous>
+UPPER_LSB::(a)((a).v[2])	E:\PIC\prj\usbeps\system\typedefs.h	120;"	d	line:120
+UPPER_MSB::(a)((a).v[3])	E:\PIC\prj\usbeps\system\typedefs.h	121;"	d	line:121
+USBCFG_H	E:\PIC\prj\usbeps\autofiles\usbcfg.h	35;"	d	line:35
+USBCheckBusStatus	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	76;"	f	line:76	signature:(void)
+USBCheckStdRequest	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	70;"	f	line:70	signature:(void)
+USBCtrlEPService	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	78;"	f	line:78	signature:(void)
+USBCtrlEPServiceComplete	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	380;"	f	line:380	signature:(void)
+USBCtrlTrfInHandler	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	219;"	f	line:219	signature:(void)
+USBCtrlTrfInHandler	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	54;"	p	line:54	file:	signature:(void)
+USBCtrlTrfOutHandler	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	174;"	f	line:174	signature:(void)
+USBCtrlTrfOutHandler	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	53;"	p	line:53	file:	signature:(void)
+USBCtrlTrfRxService	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	328;"	f	line:328	signature:(void)
+USBCtrlTrfSetupHandler	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	133;"	f	line:133	signature:(void)
+USBCtrlTrfSetupHandler	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	52;"	p	line:52	file:	signature:(void)
+USBCtrlTrfTxService	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	258;"	f	line:258	signature:(void)
+USBDRV_H	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	38;"	d	line:38
+USBDSC_H	E:\PIC\prj\usbeps\autofiles\usbdsc.h	40;"	d	line:40
+USBDriverService	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	215;"	f	line:215	signature:(void)
+USBErrorHandler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	527;"	f	line:527	signature:(void)
+USBErrorHandler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	56;"	p	line:56	file:	signature:(void)
+USBGEN_BD_IN::ep1Bi	E:\PIC\prj\usbeps\autofiles\usbcfg.h	69;"	d	line:69
+USBGEN_BD_OUT::ep1Bo	E:\PIC\prj\usbeps\autofiles\usbcfg.h	68;"	d	line:68
+USBGEN_EP_SIZE::64	E:\PIC\prj\usbeps\autofiles\usbcfg.h	70;"	d	line:70
+USBGEN_H	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	37;"	d	line:37
+USBGEN_INTF_ID::0x00	E:\PIC\prj\usbeps\autofiles\usbcfg.h	66;"	d	line:66
+USBGEN_UEP::UEP1	E:\PIC\prj\usbeps\autofiles\usbcfg.h	67;"	d	line:67
+USBGenInitEP	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	74;"	f	line:74	signature:(void)
+USBGenInitEP	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	108;"	p	line:108	signature:(void)
+USBGenRead	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	207;"	f	line:207	signature:(byte *buffer, byte len)
+USBGenRead	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	110;"	p	line:110	signature:(byte *buffer, byte len)
+USBGenWrite	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	134;"	f	line:134	signature:(byte *buffer, byte len)
+USBGenWrite	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	109;"	p	line:109	signature:(byte *buffer, byte len)
+USBINT_BD_IN::ep2Bi	E:\PIC\prj\usbeps\autofiles\usbcfg.h	74;"	d	line:74
+USBINT_EP_SIZE::64	E:\PIC\prj\usbeps\autofiles\usbcfg.h	75;"	d	line:75
+USBINT_INTF_ID::0x00	E:\PIC\prj\usbeps\autofiles\usbcfg.h	72;"	d	line:72
+USBINT_UEP::UEP2	E:\PIC\prj\usbeps\autofiles\usbcfg.h	73;"	d	line:73
+USBIntWrite	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	157;"	f	line:157	signature:(byte *buffer, byte len)
+USBMMAP_H	E:\PIC\prj\usbeps\system\usb\usbmmap.h	38;"	d	line:38
+USBModuleDisable	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	161;"	f	line:161	signature:(void)
+USBModuleDisable	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	48;"	p	line:48	file:	signature:(void)
+USBModuleEnable	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	135;"	f	line:135	signature:(void)
+USBModuleEnable	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	47;"	p	line:47	file:	signature:(void)
+USBPrepareForNextSetupTrf	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	488;"	f	line:488	signature:(void)
+USBProtocolResetHandler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	53;"	p	line:53	file:	signature:(void)
+USBProtocolResetHandler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	554;"	f	line:554	signature:(void)
+USBRemoteWakeup	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	401;"	f	line:401	signature:(void)
+USBSoftDetach	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	192;"	f	line:192	signature:(void)
+USBStallHandler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	485;"	f	line:485	signature:(void)
+USBStallHandler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	55;"	p	line:55	file:	signature:(void)
+USBStdFeatureReqHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	275;"	f	line:275	signature:(void)
+USBStdFeatureReqHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	50;"	p	line:50	file:	signature:(void)
+USBStdGetDscHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	136;"	f	line:136	signature:(void)
+USBStdGetDscHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	47;"	p	line:47	file:	signature:(void)
+USBStdGetStatusHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	218;"	f	line:218	signature:(void)
+USBStdGetStatusHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	49;"	p	line:49	file:	signature:(void)
+USBStdSetCfgHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	180;"	f	line:180	signature:(void)
+USBStdSetCfgHandler	E:\PIC\prj\usbeps\system\usb\usb9\usb9.c	48;"	p	line:48	file:	signature:(void)
+USBSuspend	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	297;"	f	line:297	signature:(void)
+USBSuspend	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	50;"	p	line:50	file:	signature:(void)
+USBTasks	E:\PIC\prj\usbeps\main.c	51;"	p	line:51	file:	signature:(void)
+USBWakeFromSuspend	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	352;"	f	line:352	signature:(void)
+USBWakeFromSuspend	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	51;"	p	line:51	file:	signature:(void)
+USB_BUS_ATTACHED::1	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	82;"	d	line:82	file:
+USB_BUS_DETACHED::0	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	83;"	d	line:83	file:
+USB_CD_Ptr	E:\PIC\prj\usbeps\autofiles\usbdsc.c	242;"	v	line:242
+USB_DEVICE_STATUS	E:\PIC\prj\usbeps\system\usb\usbmmap.h	78;"	t	line:78
+USB_H	E:\PIC\prj\usbeps\system\usb\usb.h	37;"	d	line:37
+USB_SD_Ptr	E:\PIC\prj\usbeps\autofiles\usbdsc.c	243;"	v	line:243
+USB_SOF_Handler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	442;"	f	line:442	signature:(void)
+USB_SOF_Handler	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	54;"	p	line:54	file:	signature:(void)
+USB_USE_GEN	E:\PIC\prj\usbeps\autofiles\usbcfg.h	50;"	d	line:50
+UserInit	E:\PIC\prj\usbeps\user\user.c	64;"	f	line:64	signature:(void)
+UserInit	E:\PIC\prj\usbeps\user\user.h	91;"	p	line:91	signature:(void)
+WORD	E:\PIC\prj\usbeps\system\typedefs.h	82;"	t	line:82
+Word0	E:\PIC\prj\usbeps\system\typedefs.h	110;"	m	line:110	struct:_DWORD::<anonymous>
+Word1	E:\PIC\prj\usbeps\system\typedefs.h	111;"	m	line:111	struct:_DWORD::<anonymous>
+_BDT	E:\PIC\prj\usbeps\system\usb\usbmmap.h	110;"	u	line:110
+_BD_STAT	E:\PIC\prj\usbeps\system\usb\usbmmap.h	80;"	u	line:80
+_BOOL	E:\PIC\prj\usbeps\system\typedefs.h	150;"	g	line:150
+_BSTALL::0x04	E:\PIC\prj\usbeps\system\usb\usbmmap.h	46;"	d	line:46
+_BYTE	E:\PIC\prj\usbeps\system\typedefs.h	44;"	u	line:44
+_DAT0::0x00	E:\PIC\prj\usbeps\system\usb\usbmmap.h	50;"	d	line:50
+_DAT1::0x40	E:\PIC\prj\usbeps\system\usb\usbmmap.h	51;"	d	line:51
+_DTSEN::0x08	E:\PIC\prj\usbeps\system\usb\usbmmap.h	47;"	d	line:47
+_DTSMASK::0x40	E:\PIC\prj\usbeps\system\usb\usbmmap.h	52;"	d	line:52
+_DWORD	E:\PIC\prj\usbeps\system\typedefs.h	86;"	u	line:86
+_FS::0x04	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	51;"	d	line:51
+_INCDIS::0x10	E:\PIC\prj\usbeps\system\usb\usbmmap.h	48;"	d	line:48
+_KEN::0x20	E:\PIC\prj\usbeps\system\usb\usbmmap.h	49;"	d	line:49
+_LS::0x00	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	50;"	d	line:50
+_OEMON::0x40	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	55;"	d	line:55
+_POINTER	E:\PIC\prj\usbeps\system\typedefs.h	125;"	u	line:125
+_PPBM0::0x00	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	47;"	d	line:47
+_PPBM1::0x01	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	48;"	d	line:48
+_PPBM2::0x02	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	49;"	d	line:49
+_PUEN::0x10	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	54;"	d	line:54
+_RAM::0	E:\PIC\prj\usbeps\system\usb\usbmmap.h	66;"	d	line:66
+_ROM::1	E:\PIC\prj\usbeps\system\usb\usbmmap.h	67;"	d	line:67
+_TREXT::0x08	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	53;"	d	line:53
+_TRINT::0x00	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	52;"	d	line:52
+_UCPU::0x00	E:\PIC\prj\usbeps\system\usb\usbmmap.h	54;"	d	line:54
+_USB_DEVICE_STATUS	E:\PIC\prj\usbeps\system\usb\usbmmap.h	70;"	u	line:70
+_USIE::0x80	E:\PIC\prj\usbeps\system\usb\usbmmap.h	53;"	d	line:53
+_UTEYE::0x80	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	56;"	d	line:56
+_WORD	E:\PIC\prj\usbeps\system\typedefs.h	60;"	u	line:60
+_byte	E:\PIC\prj\usbeps\system\typedefs.h	46;"	m	line:46	union:_BYTE
+_byte	E:\PIC\prj\usbeps\system\usb\usbmmap.h	72;"	m	line:72	union:_USB_DEVICE_STATUS
+_byte	E:\PIC\prj\usbeps\system\usb\usbmmap.h	82;"	m	line:82	union:_BD_STAT
+_byte	E:\PIC\prj\usbeps\user\user.h	55;"	m	line:55	union:DATA_PACKET
+_dword	E:\PIC\prj\usbeps\system\typedefs.h	88;"	m	line:88	union:_DWORD
+_reset	E:\PIC\prj\usbeps\main.c	58;"	f	line:58	signature:(void)
+_startup	E:\PIC\prj\usbeps\main.c	56;"	p	line:56	file:	signature:(void)
+_word	E:\PIC\prj\usbeps\system\typedefs.h	133;"	m	line:133	union:_POINTER
+_word	E:\PIC\prj\usbeps\system\typedefs.h	62;"	m	line:62	union:_WORD
+_word	E:\PIC\prj\usbeps\user\user.h	56;"	m	line:56	union:DATA_PACKET
+b0	E:\PIC\prj\usbeps\system\typedefs.h	49;"	m	line:49	struct:_BYTE::<anonymous>
+b1	E:\PIC\prj\usbeps\system\typedefs.h	50;"	m	line:50	struct:_BYTE::<anonymous>
+b2	E:\PIC\prj\usbeps\system\typedefs.h	51;"	m	line:51	struct:_BYTE::<anonymous>
+b3	E:\PIC\prj\usbeps\system\typedefs.h	52;"	m	line:52	struct:_BYTE::<anonymous>
+b4	E:\PIC\prj\usbeps\system\typedefs.h	53;"	m	line:53	struct:_BYTE::<anonymous>
+b5	E:\PIC\prj\usbeps\system\typedefs.h	54;"	m	line:54	struct:_BYTE::<anonymous>
+b6	E:\PIC\prj\usbeps\system\typedefs.h	55;"	m	line:55	struct:_BYTE::<anonymous>
+b7	E:\PIC\prj\usbeps\system\typedefs.h	56;"	m	line:56	struct:_BYTE::<anonymous>
+bDscType	E:\PIC\prj\usbeps\autofiles\usbdsc.c	228;"	m	line:228	file:
+bDscType	E:\PIC\prj\usbeps\autofiles\usbdsc.c	231;"	m	line:231	file:
+bDscType	E:\PIC\prj\usbeps\autofiles\usbdsc.c	236;"	m	line:236	file:
+bHigh	E:\PIC\prj\usbeps\system\typedefs.h	130;"	m	line:130	struct:_POINTER::<anonymous>
+bLength	E:\PIC\prj\usbeps\autofiles\usbdsc.c	228;"	m	line:228	file:
+bLength	E:\PIC\prj\usbeps\autofiles\usbdsc.c	231;"	m	line:231	file:
+bLength	E:\PIC\prj\usbeps\autofiles\usbdsc.c	236;"	m	line:236	file:
+bLow	E:\PIC\prj\usbeps\system\typedefs.h	129;"	m	line:129	struct:_POINTER::<anonymous>
+bRam	E:\PIC\prj\usbeps\system\typedefs.h	137;"	m	line:137	union:_POINTER
+bRom	E:\PIC\prj\usbeps\system\typedefs.h	142;"	m	line:142	union:_POINTER
+byte	E:\PIC\prj\usbeps\system\typedefs.h	40;"	t	line:40
+byte0	E:\PIC\prj\usbeps\system\typedefs.h	65;"	m	line:65	struct:_WORD::<anonymous>
+byte0	E:\PIC\prj\usbeps\system\typedefs.h	91;"	m	line:91	struct:_DWORD::<anonymous>
+byte1	E:\PIC\prj\usbeps\system\typedefs.h	66;"	m	line:66	struct:_WORD::<anonymous>
+byte1	E:\PIC\prj\usbeps\system\typedefs.h	92;"	m	line:92	struct:_DWORD::<anonymous>
+byte2	E:\PIC\prj\usbeps\system\typedefs.h	93;"	m	line:93	struct:_DWORD::<anonymous>
+byte3	E:\PIC\prj\usbeps\system\typedefs.h	94;"	m	line:94	struct:_DWORD::<anonymous>
+byte_to_read	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	330;"	l	line:330
+byte_to_send	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	260;"	l	line:260
+cd01	E:\PIC\prj\usbeps\autofiles\usbdsc.h	51;"	v	line:51
+counter	E:\PIC\prj\usbeps\user\user.c	50;"	v	line:50
+countval	E:\PIC\prj\usbeps\user\user.c	52;"	v	line:52
+ctrl_trf_mem	E:\PIC\prj\usbeps\system\usb\usbmmap.h	76;"	m	line:76	struct:_USB_DEVICE_STATUS::<anonymous>
+ctrl_trf_session_owner	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	45;"	v	line:45
+ctrl_trf_state	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	44;"	v	line:44
+dataPacket	E:\PIC\prj\usbeps\user\user.c	55;"	v	line:55
+delay_count	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.c	403;"	l	line:403	file:
+device_dsc	E:\PIC\prj\usbeps\autofiles\usbdsc.c	180;"	v	line:180
+dword	E:\PIC\prj\usbeps\system\typedefs.h	42;"	t	line:42
+ep01i_i00a00	E:\PIC\prj\usbeps\autofiles\usbdsc.h	54;"	v	line:54
+ep01o_i00a00	E:\PIC\prj\usbeps\autofiles\usbdsc.h	53;"	v	line:53
+ep02i_i00a00	E:\PIC\prj\usbeps\autofiles\usbdsc.h	55;"	v	line:55
+ep0Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	175;"	v	line:175
+ep0Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	174;"	v	line:174
+ep10Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	225;"	v	line:225
+ep10Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	224;"	v	line:224
+ep11Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	230;"	v	line:230
+ep11Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	229;"	v	line:229
+ep12Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	235;"	v	line:235
+ep12Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	234;"	v	line:234
+ep13Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	240;"	v	line:240
+ep13Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	239;"	v	line:239
+ep14Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	245;"	v	line:245
+ep14Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	244;"	v	line:244
+ep15Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	250;"	v	line:250
+ep15Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	249;"	v	line:249
+ep1Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	180;"	v	line:180
+ep1Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	179;"	v	line:179
+ep2Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	185;"	v	line:185
+ep2Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	184;"	v	line:184
+ep3Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	190;"	v	line:190
+ep3Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	189;"	v	line:189
+ep4Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	195;"	v	line:195
+ep4Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	194;"	v	line:194
+ep5Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	200;"	v	line:200
+ep5Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	199;"	v	line:199
+ep6Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	205;"	v	line:205
+ep6Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	204;"	v	line:204
+ep7Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	210;"	v	line:210
+ep7Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	209;"	v	line:209
+ep8Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	215;"	v	line:215
+ep8Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	214;"	v	line:214
+ep9Bi	E:\PIC\prj\usbeps\system\usb\usbmmap.c	220;"	v	line:220
+ep9Bo	E:\PIC\prj\usbeps\system\usb\usbmmap.c	219;"	v	line:219
+i	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	136;"	l	line:136
+i	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	159;"	l	line:159
+i	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	135;"	l	line:135
+i00a00	E:\PIC\prj\usbeps\autofiles\usbdsc.h	52;"	v	line:52
+lastcountval	E:\PIC\prj\usbeps\user\user.c	53;"	v	line:53
+led_count	E:\PIC\prj\usbeps\user\user.c	175;"	l	line:175	file:
+led_num	E:\PIC\prj\usbeps\user\user.h	80;"	m	line:80	struct:DATA_PACKET::<anonymous>
+led_status	E:\PIC\prj\usbeps\user\user.h	81;"	m	line:81	struct:DATA_PACKET::<anonymous>
+len	E:\PIC\prj\usbeps\user\user.h	70;"	m	line:70	struct:DATA_PACKET::<anonymous>
+mInitAllLEDs::LATD&=0xF0;TRISD&=0xF0;	E:\PIC\prj\usbeps\io_cfg.h	65;"	d	line:65
+mInitializeUSBDriver::{UCFG=UCFG_VAL;\	E:\PIC\prj\usbeps\system\usb\usbdrv\usbdrv.h	135;"	d	line:135
+mLED_1::LATDbits.LATD0	E:\PIC\prj\usbeps\io_cfg.h	67;"	d	line:67
+mLED_1_Off::mLED_1=0;	E:\PIC\prj\usbeps\io_cfg.h	77;"	d	line:77
+mLED_1_On::mLED_1=1;	E:\PIC\prj\usbeps\io_cfg.h	72;"	d	line:72
+mLED_1_Toggle::mLED_1=!mLED_1;	E:\PIC\prj\usbeps\io_cfg.h	82;"	d	line:82
+mLED_2::LATDbits.LATD1	E:\PIC\prj\usbeps\io_cfg.h	68;"	d	line:68
+mLED_2_Off::mLED_2=0;	E:\PIC\prj\usbeps\io_cfg.h	78;"	d	line:78
+mLED_2_On::mLED_2=1;	E:\PIC\prj\usbeps\io_cfg.h	73;"	d	line:73
+mLED_2_Toggle::mLED_2=!mLED_2;	E:\PIC\prj\usbeps\io_cfg.h	83;"	d	line:83
+mLED_3::LATDbits.LATD2	E:\PIC\prj\usbeps\io_cfg.h	69;"	d	line:69
+mLED_3_Off::mLED_3=0;	E:\PIC\prj\usbeps\io_cfg.h	79;"	d	line:79
+mLED_3_On::mLED_3=1;	E:\PIC\prj\usbeps\io_cfg.h	74;"	d	line:74
+mLED_3_Toggle::mLED_3=!mLED_3;	E:\PIC\prj\usbeps\io_cfg.h	84;"	d	line:84
+mLED_4::LATDbits.LATD3	E:\PIC\prj\usbeps\io_cfg.h	70;"	d	line:70
+mLED_4_Off::mLED_4=0;	E:\PIC\prj\usbeps\io_cfg.h	80;"	d	line:80
+mLED_4_On::mLED_4=1;	E:\PIC\prj\usbeps\io_cfg.h	75;"	d	line:75
+mLED_4_Toggle::mLED_4=!mLED_4;	E:\PIC\prj\usbeps\io_cfg.h	85;"	d	line:85
+mLED_Both_Off::{mLED_1_Off;mLED_2_Off;}	E:\PIC\prj\usbeps\user\user.c	180;"	d	line:180	file:
+mLED_Both_On::{mLED_1_On;mLED_2_On;}	E:\PIC\prj\usbeps\user\user.c	181;"	d	line:181	file:
+mLED_Only_1_On::{mLED_1_On;mLED_2_Off;}	E:\PIC\prj\usbeps\user\user.c	182;"	d	line:182	file:
+mLED_Only_2_On::{mLED_1_Off;mLED_2_On;}	E:\PIC\prj\usbeps\user\user.c	183;"	d	line:183	file:
+mUSBGenGetRxLength::usbgen_rx_len	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	100;"	d	line:100
+mUSBGenRxIsBusy::USBGEN_BD_OUT.Stat.UOWN	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	61;"	d	line:61
+mUSBGenTxIsBusy::USBGEN_BD_IN.Stat.UOWN	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	80;"	d	line:80
+mUSBIntTxIsBusy::USBINT_BD_IN.Stat.UOWN	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.h	81;"	d	line:81
+pDst	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
+pFunc	E:\PIC\prj\usbeps\system\typedefs.h	123;"	t	line:123
+pSrc	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	47;"	v	line:47
+pulsecount	E:\PIC\prj\usbeps\user\user.c	237;"	l	line:237	file:
+sd000	E:\PIC\prj\usbeps\autofiles\usbdsc.c	228;"	v	line:228
+sd001	E:\PIC\prj\usbeps\autofiles\usbdsc.c	231;"	v	line:231
+sd002	E:\PIC\prj\usbeps\autofiles\usbdsc.c	236;"	v	line:236
+self_power::1	E:\PIC\prj\usbeps\io_cfg.h	61;"	d	line:61
+self_power::PORTAbits.RA2	E:\PIC\prj\usbeps\io_cfg.h	59;"	d	line:59
+string	E:\PIC\prj\usbeps\autofiles\usbdsc.c	228;"	m	line:228	file:
+string	E:\PIC\prj\usbeps\autofiles\usbdsc.c	231;"	m	line:231	file:
+string	E:\PIC\prj\usbeps\autofiles\usbdsc.c	236;"	m	line:236	file:
+trf_state	E:\PIC\prj\usbeps\user\user.c	51;"	v	line:51
+tris_self_power::TRISAbits.TRISA2	E:\PIC\prj\usbeps\io_cfg.h	56;"	d	line:56
+tris_usb_bus_sense::TRISAbits.TRISA1	E:\PIC\prj\usbeps\io_cfg.h	48;"	d	line:48
+usb_active_cfg	E:\PIC\prj\usbeps\system\usb\usbmmap.c	159;"	v	line:159
+usb_alt_intf	E:\PIC\prj\usbeps\system\usb\usbmmap.c	160;"	v	line:160
+usb_bus_sense::1	E:\PIC\prj\usbeps\io_cfg.h	53;"	d	line:53
+usb_bus_sense::PORTAbits.RA1	E:\PIC\prj\usbeps\io_cfg.h	51;"	d	line:51
+usb_device_state	E:\PIC\prj\usbeps\system\usb\usbmmap.c	157;"	v	line:157
+usb_stat	E:\PIC\prj\usbeps\system\usb\usbmmap.c	158;"	v	line:158
+usbgen_in	E:\PIC\prj\usbeps\system\usb\usbmmap.c	277;"	v	line:277
+usbgen_out	E:\PIC\prj\usbeps\system\usb\usbmmap.c	276;"	v	line:276
+usbgen_rx_len	E:\PIC\prj\usbeps\system\usb\class\generic\usbgen.c	46;"	v	line:46
+usbint_in	E:\PIC\prj\usbeps\system\usb\usbmmap.c	278;"	v	line:278
+user_interrupt	E:\PIC\prj\usbeps\main.c	52;"	p	line:52	file:	signature:(void)
+user_interrupt	E:\PIC\prj\usbeps\user\user.c	233;"	f	line:233	signature:(void)
+v	E:\PIC\prj\usbeps\system\typedefs.h	115;"	m	line:115	struct:_DWORD::<anonymous>
+v	E:\PIC\prj\usbeps\system\typedefs.h	80;"	m	line:80	struct:_WORD::<anonymous>
+wCount	E:\PIC\prj\usbeps\system\usb\usbctrltrf\usbctrltrf.c	49;"	v	line:49
+wRam	E:\PIC\prj\usbeps\system\typedefs.h	139;"	m	line:139	union:_POINTER
+wRom	E:\PIC\prj\usbeps\system\typedefs.h	143;"	m	line:143	union:_POINTER
+word	E:\PIC\prj\usbeps\system\typedefs.h	41;"	t	line:41
+word0	E:\PIC\prj\usbeps\system\typedefs.h	98;"	m	line:98	struct:_DWORD::<anonymous>
+word1	E:\PIC\prj\usbeps\system\typedefs.h	99;"	m	line:99	struct:_DWORD::<anonymous>
+word_data	E:\PIC\prj\usbeps\user\user.h	86;"	m	line:86	struct:DATA_PACKET::<anonymous>

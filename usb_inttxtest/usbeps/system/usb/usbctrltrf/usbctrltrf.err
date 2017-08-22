@@ -1,0 +1,13 @@
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 80 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 82 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 87 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 176 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 185 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 221 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 221 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 223 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 227 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 265 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 285 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 382 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbctrltrf\usbctrltrf.c 396 : comparison of a signed integer to an unsigned integer detected

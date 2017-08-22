@@ -1,0 +1,8 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\InterruptTransferTest.Properties.Resources.resources
+obj\Debug\InterruptTransferTest.csproj.GenerateResource.Cache
+bin\Debug\InterruptTransferTest.exe
+bin\Debug\InterruptTransferTest.pdb
+obj\Debug\InterruptTransferTest.exe
+obj\Debug\InterruptTransferTest.pdb
+obj\Debug\InterruptTransferTest.Form1.resources

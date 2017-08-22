@@ -1,0 +1,47 @@
+'---------------------------------------------------------------------------------------
+' Module    : Crypt Módulo de clase
+' DateTime  : 14/03/2004 10:23 -4UTC
+' Author    : RadioMan (radioman@cantv.net)
+'             es el Autor de la clase que encapsula
+'             los métodos criptográficos hechos por Fredrik Qvarfort
+'
+'
+'            Todas la clases, excepto ésta en este proyecto
+'            fueron creadas por Fredrik Qvarfort.
+'            El archivo original puede descargarse en:
+'            http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=12023&lngWId=1
+'
+'            Según el autor:
+'            Esta es una colección de algoritmos SEGUROS de encriptamiento
+'            BLOWFISH, TWOFISH, SKIPJACK, TEA, GOST, RC4 y DES
+'            Este Post contiene código altamente optimizado y si
+'            alguno similr existe en PSC (PlanetSourceCode.com)
+'            seguramente éste es al menos 1000x mas rápido.
+'
+'            Estos no son como todos los otros códigos irrompibles,
+'            éstos son algoritmos estandarizados de cifrado
+'            donde está la única manera posible de romperlos
+'            es por la fuerza bruta
+'
+'            El DES es probablemente el menos seguro
+'            hay que recordar que tomó 22 horas para una
+'            supercomputadora + 100.000 computadoras para
+'            romperlo (distributed.net)). Y es uno de los mas seguros jajaja
+'
+'
+' Purpose :  Esta clase encapsula a todos los métodos criptográficos
+'            contenidos en las diferentes clases las cuales son privadas
+'            y esta expone todos sus métodos comunes y permite de una
+'            forma sencilla seleccionar el método criptográfico
+'            en un momento dado
+'
+'            '
+'            '
+' Declaration :
+'             '
+'             '
+' Revision History:
+'              'Creada el Sabado 13/03/2004 y terminada el
+'              'Domingo 14/03/2004
+'
+'---------------------------------------------------------------------------------------

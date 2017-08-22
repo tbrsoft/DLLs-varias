@@ -1,0 +1,10 @@
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 87 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 92 : comparison of a signed integer to an unsigned integer detected
+Warning[2056] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 93 : expression is always true
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 103 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 220 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 231 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 254 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 405 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 502 : comparison of a signed integer to an unsigned integer detected
+Warning[2106] L:\tbr\USB 3\usb_inttxtest\usbeps\system\usb\usbdrv\usbdrv.c 565 : comparison of a signed integer to an unsigned integer detected

@@ -1,0 +1,1 @@
+Esta es la DLL que recibe las Licencias y maneja toda la comunicacion TCP
